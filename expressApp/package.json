@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon . & npm run scss",
+    "dev": "nodemon ./bin/www & npm run scss",
     "scss": "sass --watch src/styles/scss/main.scss src/styles/css/main.css"
   },
   "dependencies": {
@@ -15,9 +15,11 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
     "node-sass": "^7.0.1",
     "node-sass-middleware": "^1.0.1",
     "nodemon": "^2.0.15",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "sass": "^1.49.9"
   }
 }
