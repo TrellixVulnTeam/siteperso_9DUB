@@ -1,0 +1,8 @@
+extends layout
+block content
+    div
+        each paragraph in about_paragraph
+            p !{paragraph.about_paragraph}
+    div(id="languages-frame")
+block scripts 
+    script(src="/scripts/jsx/test.jsx" type="text/babel")

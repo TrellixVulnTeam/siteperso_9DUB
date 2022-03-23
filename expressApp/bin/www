@@ -23,7 +23,7 @@ var http = require('http');
     connectionLimit: 10,
     queueLimit:0
  });
-
+app.locals.db= connection;
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
