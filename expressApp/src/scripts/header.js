@@ -21,7 +21,7 @@ function elementCreator({tag,text= null, classList, eventFunction, href}){
 class HeaderSite extends HTMLElement{
     constructor(){
         super();
-        const buttons=["Acceuil","Projet","A propos","Contact"];
+        const buttons=["Acceuil","A propos","Projet","Contact"];
         //this.classList.add("column");
         this.append(elementCreator({tag:"nav"}));
         this.firstChild.append(elementCreator({tag:"ul",/*classList:"columns"*/}));

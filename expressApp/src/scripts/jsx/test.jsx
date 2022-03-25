@@ -50,15 +50,15 @@ class Test extends React.Component{
         });
     } render(){
         const frameJsx=this.state.langagesData.map((item, key)=>(
-            <div className="frameContainer" key={key}>
-                <div onClick={(event=>this.handleFrameChange(event))} frame-id={key} name="previous" >PRV</div>
+            <div className="frame-container" key={key}>
+                <div className="arrow-btn arrow-btn-left" onClick={(event=>this.handleFrameChange(event))} frame-id={key} name="previous" ></div>
                 {item.map((item, key)=>(
-                        <div key={key}>
+                        <div className="image-container" key={key}>
                             <img src={`http://localhost:4000/${item.langages_frameworks_image_path}`} alt="" image-id={item.langages_frameworks_id} />
                             <h3>{item.langages_frameworks_name}</h3>
                         </div>
                 ))}
-                <div onClick={(event=>this.handleFrameChange(event))} frame-id={key} name="next">NXT</div>
+                <div className="arrow-btn arrow-btn-right" onClick={(event=>this.handleFrameChange(event))} frame-id={key} name="next"></div>
             </div>
         ));
         return(

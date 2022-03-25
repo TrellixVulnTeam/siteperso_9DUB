@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const app = express();
+const bodyParser = require('body-parser');
 //const upload= multer({dest: "./public/images/usersImages"});
 
 
@@ -45,28 +46,27 @@ router.get("/contact", function(req,res,next){
 })
 module.exports = router;
 
+router.post("/send-form",async function(req,res,next){
+    const dataBase=req.app.locals.db;
+    let sucess=false;
+    const sendFormSqlRequest= `INSERT INTO contact(name,first_name,email,phone,message)
+                                VALUES(?,?,?,?,?)`;
+    do{
+        try{
+            await dataBase.promise().query(sendFormSqlRequest,[req.body.name,req.body.firstName,req.body.email,req.body.phone,req.body.message])
+            sucess=true;
+        } catch(err){
+            console.log(err);
+        }
+    } while(!sucess){
+        res.json({
+            message: "Votre méssage à bien été enregistrer, je vous recontacterais le plus tot possible.",
+            validator: true
+        })
+    }
+})
+
 router.get("/projet", function(req,res,next){
     res.render("project")
 })
 module.exports = router;
-/*let langagesArray=[]
-let secondArray= []
-data.forEach((langage, iterator) => {
-    if(iterator<=5){
-        langagesArray.push(langage)
-    } else if(iterator>5 && iterator<=11){
-        secondArray.push(langage)
-    }
-    iterator===11? this.setState({
-        langagesData: langagesArray,
-        secondLangagesData: secondArray
-    }): null*/
-    /*let langagesArray=[[],[],[],[]]
-    let index=0
-    data.forEach((langage, iterator) => {
-        langagesArray[index].length===3?i++:null
-        langagesArray[index].push(langage)
-        iterator===11? this.setState({
-            langagesData: langagesArray
-        }): null
-    });*/

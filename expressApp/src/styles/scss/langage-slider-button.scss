@@ -1,0 +1,57 @@
+$langages-slider-button-rules:(
+    btn-circle-size: 10rem,
+    btn-arrow-color:white,
+    btn-background:rgba(0,0,0,0.2),//#
+    btn-border-color: none,
+    btn-hover-arrow-color:rgba(0,0,0,1),
+    btn-background-hover:white,
+    btn-hover-border-color:white,
+);
+
+
+@mixin langages-slider-button($btn-circle-size,$btn-arrow-color,$btn-background,$btn-border-color,$btn-hover-arrow-color,$btn-background-hover,$btn-hover-border-color) {
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc($btn-circle-size /2);
+    height: $btn-circle-size;
+    background: $btn-background;
+    border: 2px solid $btn-border-color;
+    border-radius: $btn-circle-size;
+    color: $btn-arrow-color;
+    cursor: pointer;
+    line-height: calc(($btn-circle-size *3));
+    margin-left: calc(($btn-circle-size / 2));
+    transition: all 0.25s ease-in-out;
+  &:hover {
+    background: $btn-background-hover;
+    border-color: $btn-hover-border-color;
+    color: $btn-hover-arrow-color;
+  }
+  &:after {
+    display: inline-block;
+    content: "";
+    width: calc($btn-circle-size / 4);
+    height: calc($btn-circle-size / 4);
+
+  }
+}
+
+.arrow-btn-left {
+    left: 20%;
+  &:after {
+    border-top: 0.4rem solid;
+    border-left: 0.4rem solid;
+    transform: rotateZ(315deg);
+  }
+}
+.arrow-btn-right {
+    left: 70%;
+  &:after {
+    border-bottom: 0.4rem solid;
+    border-right: 0.4rem solid;
+    transform: rotateZ(315deg);
+  }
+}

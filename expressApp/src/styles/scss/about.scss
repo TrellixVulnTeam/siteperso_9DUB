@@ -1,3 +1,4 @@
+@import "langage-slider-button.scss";
 .about-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/background-about.jpg")/*rgba(0, 0, 0, 0.44)*/  no-repeat;
     background-size: cover;
@@ -5,7 +6,7 @@
     .letter{
         width: 70%;
         p{
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
     }
     #languages-frame{
@@ -13,34 +14,42 @@
         flex-direction: column;
         align-items: center;
         width: 65%;
-        border: $box-show;
+        //border: $box-show;
         .frames-main-container{
-            border: $box-show;
+            //border: $box-show;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: space-around;
-            //overflow: hidden;
-            div{
+            .frame-container{
                 display: flex;
-                border: $box-show;
-                width: 100%;
-                div{
-                    border: $box-show;
+                align-items: center;
+                justify-content: center;
+                //border: $box-show;
+                width: 50%;
+                overflow: hidden;
+                gap: 5rem;
+                .arrow-btn{
+                    @include langages-slider-button($langages-slider-button-rules...);
+                    //display: block;
+                }
+                .image-container{
                     display: flex;
                     flex-direction: column;
+                    height: 35rem;
                     align-items: center;
                     justify-content: center;
-                    //width: 50rem;
                     img{
-                        width: 100%;;
+                        width: 20rem;
                         height: auto;
+                        margin-top: auto;
                     }
                     h3{
+                        margin-top: auto;
                         font-size: 3rem;
                     }
                 }
             }
         }
-
     }
 }

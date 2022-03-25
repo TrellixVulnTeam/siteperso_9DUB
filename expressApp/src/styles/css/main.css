@@ -64,6 +64,24 @@ header .header-line {
   text-align: center;
 }
 
+.arrow-btn-left {
+  left: 20%;
+}
+.arrow-btn-left:after {
+  border-top: 0.4rem solid;
+  border-left: 0.4rem solid;
+  transform: rotateZ(315deg);
+}
+
+.arrow-btn-right {
+  left: 70%;
+}
+.arrow-btn-right:after {
+  border-bottom: 0.4rem solid;
+  border-right: 0.4rem solid;
+  transform: rotateZ(315deg);
+}
+
 .about-body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/background-about.jpg") no-repeat;
   background-size: cover;
@@ -73,39 +91,142 @@ header .header-line {
   width: 70%;
 }
 .about-body .letter p {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 .about-body #languages-frame {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 65%;
-  border: solid 1px white;
 }
 .about-body #languages-frame .frames-main-container {
-  border: solid 1px white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
-.about-body #languages-frame .frames-main-container div {
+.about-body #languages-frame .frames-main-container .frame-container {
   display: flex;
-  border: solid 1px white;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  overflow: hidden;
+  gap: 5rem;
 }
-.about-body #languages-frame .frames-main-container div div {
-  border: solid 1px white;
+.about-body #languages-frame .frames-main-container .frame-container .arrow-btn {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 5rem;
+  height: 10rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid none;
+  border-radius: 10rem;
+  color: white;
+  cursor: pointer;
+  line-height: 30rem;
+  margin-left: 5rem;
+  transition: all 0.25s ease-in-out;
 }
-.about-body #languages-frame .frames-main-container div div img {
-  width: 100%;
+.about-body #languages-frame .frames-main-container .frame-container .arrow-btn:hover {
+  background: white;
+  border-color: white;
+  color: black;
+}
+.about-body #languages-frame .frames-main-container .frame-container .arrow-btn:after {
+  display: inline-block;
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.about-body #languages-frame .frames-main-container .frame-container .image-container {
+  display: flex;
+  flex-direction: column;
+  height: 35rem;
+  align-items: center;
+  justify-content: center;
+}
+.about-body #languages-frame .frames-main-container .frame-container .image-container img {
+  width: 20rem;
   height: auto;
+  margin-top: auto;
 }
-.about-body #languages-frame .frames-main-container div div h3 {
+.about-body #languages-frame .frames-main-container .frame-container .image-container h3 {
+  margin-top: auto;
   font-size: 3rem;
+}
+
+.contact-body {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.contact-body .contact-main {
+  width: 70%;
+}
+.contact-body .contact-main h2 {
+  font-size: 2.5rem;
+}
+.contact-body .contact-main form {
+  width: 100%;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.contact-body .contact-main form .form-data-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.contact-body .contact-main form .form-data-container .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20rem;
+  width: 45%;
+}
+.contact-body .contact-main form .form-data-container .form-container div {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+}
+.contact-body .contact-main form .form-data-container .form-container div label {
+  font-size: 2rem;
+}
+.contact-body .contact-main form .form-data-container .form-container div input {
+  background-color: rgba(113, 112, 113, 0.5);
+  border: none;
+  height: 3rem;
+  width: 75%;
+  font-size: 2rem;
+}
+.contact-body .contact-main form .form-message-container {
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+}
+.contact-body .contact-main form .form-message-container label {
+  font-size: 2rem;
+}
+.contact-body .contact-main form .form-message-container textarea {
+  background-color: rgba(113, 112, 113, 0.5);
+  border: none;
+  width: 50%;
+  height: 10rem;
+  margin-left: 9%;
+  font-size: 1.6rem;
+}
+.contact-body .contact-main form #form-sending-button {
+  border: solid 1px white;
+  background: red;
+  width: 20%;
+  height: 4rem;
+  font-size: 2rem;
 }
 
 * {
@@ -118,7 +239,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-size: cover;
+  background-position: center;
 }
 
 /*# sourceMappingURL=main.css.map */

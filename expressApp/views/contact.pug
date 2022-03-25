@@ -4,19 +4,26 @@ block vars
 block content
     main(class="contact-main")
         h2 Contact
-        form
-            div(class="form-container")
-                label(for="name") Nom:
-                input(name="name" type="text")
-                label(for="first-name") Prénom:
-                input(name="first-name" type="text")
-            div(class="form-container")
-                label(for="email") Email:
-                input(name="email" type="text")
-                label(for="phone") Tel:
-                input(name="phone" type="text")
+        form(id="contact-form")
+            div(class="form-data-container")
+                div(class="form-container")
+                    div
+                        label(for="name") Nom:
+                        input(class="form-input" name="name" type="text")
+                            
+                    div
+                        label(for="email") Email:
+                        input(class="form-input" name="email" type="email")
+                div(class="form-container")
+                    div
+                        label(for="first-name") Prénom:
+                        input(class="form-input" name="first-name" type="text")
+                    div
+                        label(for="phone") Téléphone:
+                        input(class="form-input" name="phone" type="text")
             div(class="form-message-container")
                 label(for="message") Message:
-                textarea(name="message")
-            div() Envoyer
-    
+                textarea(class="form-input" name="message")
+            div(id="form-sending-button") Envoyer
+block scripts
+    script(src="/scripts/contact.js")
