@@ -1,3 +1,22 @@
 extends layout
+block vars
+    - var bodyClass="contact-body"
 block content
-    p azezeazeaez
+    main(class="contact-main")
+        h2 Contact
+        form
+            div(class="form-container")
+                label(for="name") Nom:
+                input(name="name" type="text")
+                label(for="first-name") Prénom:
+                input(name="first-name" type="text")
+            div(class="form-container")
+                label(for="email") Email:
+                input(name="email" type="text")
+                label(for="phone") Tel:
+                input(name="phone" type="text")
+            div(class="form-message-container")
+                label(for="message") Message:
+                textarea(name="message")
+            div() Envoyer
+    

@@ -49,3 +49,24 @@ router.get("/projet", function(req,res,next){
     res.render("project")
 })
 module.exports = router;
+/*let langagesArray=[]
+let secondArray= []
+data.forEach((langage, iterator) => {
+    if(iterator<=5){
+        langagesArray.push(langage)
+    } else if(iterator>5 && iterator<=11){
+        secondArray.push(langage)
+    }
+    iterator===11? this.setState({
+        langagesData: langagesArray,
+        secondLangagesData: secondArray
+    }): null*/
+    /*let langagesArray=[[],[],[],[]]
+    let index=0
+    data.forEach((langage, iterator) => {
+        langagesArray[index].length===3?i++:null
+        langagesArray[index].push(langage)
+        iterator===11? this.setState({
+            langagesData: langagesArray
+        }): null
+    });*/

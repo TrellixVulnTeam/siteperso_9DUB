@@ -34,10 +34,11 @@ class HeaderSite extends HTMLElement{
             .then(response=>response.json())
             .then(data=>data)
             .then((data)=>data.map(item=>{
-                this.append(elementCreator( {tag:"h2", text:`${item.first_name} ${item.name}`}))
-                this.append(elementCreator({tag:"h1",text:item.work}))
-                this.append(elementCreator({tag:"h3",text:item.front_back}))
-                this.append(document.createElement("div"))
+                this.append(elementCreator({tag: "div", classList:"header-info-cntainer"}))
+                this.children[1].append(elementCreator( {tag:"h2", text:`${item.first_name} ${item.name}`}))
+                this.children[1].append(elementCreator({tag:"h1",text:item.work}))
+                this.children[1].append(elementCreator({tag:"h3",text:item.front_back}))
+                this.children[1].append(elementCreator({tag:"div", classList: "header-line"}))
                 })
             );
     };
