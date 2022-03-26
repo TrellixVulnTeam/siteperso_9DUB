@@ -1,11 +1,11 @@
+@import "btn-light.scss";
+
 .landing-body{
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/backgroundportfolio.svg")/*rgba(0, 0, 0, 0.44)*/  no-repeat;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/backgroundportfolio.svg") no-repeat;
     background-position: center;
     background-size: cover;
     background-clip: border-box;
     main{
-        //https://codepen.io/giana/pen/BZaGyP
-        //border: $box-show;
         width: 70%;
         p{
             font:{
@@ -13,12 +13,10 @@
             }
         }
         div{
-            border: $box-show;
-            width: 20%;
-            height: 5rem;
+            width: 15%;
+            height: 2rem;
             margin: auto;
-            font-size: 2rem;
-            text-align: center
+            @include btn-light($btn-light-rules...)
         }
     }
 }

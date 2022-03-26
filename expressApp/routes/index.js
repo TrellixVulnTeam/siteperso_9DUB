@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 //const upload= multer({dest: "./public/images/usersImages"});
@@ -57,6 +58,39 @@ router.post("/send-form",async function(req,res,next){
             sucess=true;
         } catch(err){
             console.log(err);
+            console.log(err.message.split("'"));
+            switch(err.message){
+                case "Data too long for column 'phone' at row 1":
+                    res.json({
+                        message: "Votre numéro de téléphone comporte trop de caratère veuillez éssayer à nouveaux",
+                        validator: false
+                    });
+                break;
+                case "Data too long for column 'name' at row 1":
+                    res.json({
+                        message: "Votre nom comporte trop de caratère veuillez éssayer à nouveaux",
+                        validator: false
+                    });
+                break;
+                case "Data too long for column 'email' at row 1":
+                    res.json({
+                        message: "Votre email comporte trop de caratère veuillez éssayer à nouveaux",
+                        validator: false
+                    });
+                break;
+                case "Data too long for column 'first_name' at row 1":
+                    res.json({
+                        message: "Votre prénom comporte trop de caratère veuillez éssayer à nouveaux",
+                        validator: false
+                    });
+                break;
+                case "Data too long for column 'first_name' at row 1":
+                    res.json({
+                        message: "Votre prénom comporte trop de caratère veuillez éssayer à nouveaux",
+                        validator: false
+                    });
+                break;
+            };
         }
     } while(!sucess){
         res.json({
@@ -65,6 +99,11 @@ router.post("/send-form",async function(req,res,next){
         })
     }
 })
+
+router.get("/download",(req,res,next)=>{
+    res.download(path.resolve("./src/downloads/cv.txt") ,err=>console.log(err))
+})
+module.exports = router;
 
 router.get("/projet", function(req,res,next){
     res.render("project")

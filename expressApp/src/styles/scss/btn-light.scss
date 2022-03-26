@@ -1,0 +1,32 @@
+$btn-light-rules:(
+    main-color: rgba(34, 197, 245, 0.8),
+    hover-color: #{adjust-hue(rgba(16, 16, 16, 0.4), 45deg)},
+    hover-font-color: $main-font-color,
+    hover-border-color: rgba(143, 143, 147, 0.77),
+);
+@mixin btn-light($main-color, $hover-color,$hover-font-color,$hover-border-color){
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font:{
+        size: 1.6rem;
+        family: Ubuntu;
+    }
+    background: none;
+    transition: 0.6s;
+    border: $main-color 0.2rem solid;
+    line-height: 1;
+    //margin: 0.5rem;
+    padding: 1rem 2rem;
+    box-shadow:
+    0.3rem 0.4rem 0 0 $main-color,
+    inset 0.3rem 0.3rem 0 0 $main-color;
+    &:hover,
+    &:focus {
+        box-shadow:
+        0 0 0 0 #{adjust-hue($main-color, 45deg)},
+        inset 8rem 4.5rem 0 0 $hover-color;
+        border-color: $hover-border-color;
+        color: $hover-font-color;
+  }
+}

@@ -36,7 +36,8 @@ class Test extends React.Component{
     } handleFrameChange(event){
         const lessOrMore=event.target.getAttribute("name")==="previous"? 1 : -1
         const frameId= parseInt(event.target.getAttribute("frame-id"))
-        const frame= document.body.children[3].children[0].children[frameId]
+        const frame= document.body.children[2].children[0].children[frameId]
+        //console.log(document.body.children[3].children[0]);
         Object.entries(frame.children).map((item, i) => {
             const langageImage=item[1].children[0];
             if(langageImage){

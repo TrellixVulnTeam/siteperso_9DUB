@@ -9,12 +9,11 @@ block content
                 div(class="form-container")
                     div
                         label(for="name") Nom:
-                        input(class="form-input" name="name" type="text")
-                            
+                        input(class="form-input" name="name" type="text")                        
                     div
                         label(for="email") Email:
                         input(class="form-input" name="email" type="email")
-                div(class="form-container")
+                div(class="form-container" id="contact-form")
                     div
                         label(for="first-name") Prénom:
                         input(class="form-input" name="first-name" type="text")
@@ -26,4 +25,4 @@ block content
                 textarea(class="form-input" name="message")
             div(id="form-sending-button") Envoyer
 block scripts
-    script(src="/scripts/contact.js")
+    script(src="/scripts/contact.js" type="module")

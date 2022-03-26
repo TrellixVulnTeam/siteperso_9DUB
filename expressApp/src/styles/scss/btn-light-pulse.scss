@@ -1,0 +1,30 @@
+
+$btn-light-pulse-rules:(
+    main-color: red,
+    hover-color: #{adjust-hue(lightblue, 45deg)},
+    hover-font-color: red,
+);
+@mixin btn-light-pulse($main-color,$hover-color,
+$hover-font-color){
+    color: $main-color;
+    transition: 0.25s;
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    &:hover,
+    &:focus {
+      animation: pulse 1s;
+      box-shadow: 0 0 0 2em transparent;
+      border-color: $hover-color;
+      color: $hover-font-color;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 $hover-color; }
+    }
+}
+.pulse{
+    @include btn-light-pulse($btn-light-pulse-rules...);
+}

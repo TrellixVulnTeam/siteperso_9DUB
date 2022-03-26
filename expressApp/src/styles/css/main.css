@@ -56,12 +56,25 @@ header .header-line {
   font-size: 3rem;
 }
 .landing-body main div {
-  border: solid 1px white;
-  width: 20%;
-  height: 5rem;
+  width: 15%;
+  height: 2rem;
   margin: auto;
-  font-size: 2rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
+  background: none;
+  transition: 0.6s;
+  border: rgba(34, 197, 245, 0.8) 0.2rem solid;
+  line-height: 1;
+  padding: 1rem 2rem;
+  box-shadow: 0.3rem 0.4rem 0 0 rgba(34, 197, 245, 0.8), inset 0.3rem 0.3rem 0 0 rgba(34, 197, 245, 0.8);
+}
+.landing-body main div:hover, .landing-body main div:focus {
+  box-shadow: 0 0 0 0 rgba(34, 39, 245, 0.8), inset 8rem 4.5rem 0 0 rgba(16, 16, 16, 0.4);
+  border-color: rgba(143, 143, 147, 0.77);
+  color: white;
 }
 
 .arrow-btn-left {
@@ -227,6 +240,28 @@ header .header-line {
   width: 20%;
   height: 4rem;
   font-size: 2rem;
+}
+
+.pulse {
+  color: red;
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}
+.pulse:hover, .pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+  border-color: #adade6;
+  color: red;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #adade6;
+  }
 }
 
 * {
