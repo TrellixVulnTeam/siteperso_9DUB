@@ -5,16 +5,20 @@ fetch(`http://localhost:4000/header`)
     .then(()=>console.log(obj))
 console.log(obj);*/
 
-function elementCreator({tag,text= null, classList, eventFunction, href}){
+function elementCreator({tag,text= null, classList, eventFunction, href, src, alt}){
     const newElement= classList?Object.assign(document.createElement(tag),{classList:classList , innerText:text}):Object.assign(document.createElement(tag),{ innerText:text})
     if(eventFunction){
         newElement.addEventListener("click",(event)=>eventFunction(event))
         return newElement
     } else if(href) {
-        newElement.href=href
-        return newElement
+        newElement.href=href;
+        return newElement;
+    } else if(src){
+        newElement.src=src;
+        newElement.alt=alt;
+        return newElement;
     } else{
-        return newElement
+        return newElement;
     }
 };
 

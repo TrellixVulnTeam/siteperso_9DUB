@@ -32,6 +32,18 @@ VALUES
 ("Sass","src/images/langages/sass.svg"),
 ("Python 3","src/images/langages/python.svg");
 
+INSERT INTO my_project (project_name,project_path,project_langage_id)
+VALUES
+("Projet 1", "#", 1),
+("Projet 2", "#", 2),
+("Projet 3", "#", 3);
+
+INSERT INTO my_component (component_name,component_path,component_langage_id)
+VALUES
+("Composant 1", "#", 1),
+("Composant 2", "#", 2),
+("Composant 3", "#", 3);
+
 INSERT INTO carousel_component_images (image_path)
 VALUES
 ("src/images/carousel/esteiro.jpg"),

@@ -17,6 +17,7 @@ router.get("/header", function(req,res,next){
 })
 module.exports = router;
 
+
 router.get("/",(req,res,next)=>res.redirect("acceuil"))
 router.get('/acceuil', function(req, res, next) {
     const dataBase= req.app.locals.db;
@@ -29,6 +30,7 @@ router.get('/acceuil', function(req, res, next) {
 });
 module.exports = router;
 
+
 router.get("/apropos", function(req,res,next){
     const dataBase=req.app.locals.db;
     const sqlRequestAbout= `SELECT about_paragraph FROM about`
@@ -36,11 +38,13 @@ router.get("/apropos", function(req,res,next){
 })
 module.exports = router;
 
+
 router.get("/langages",function(req,res,next){
     const dataBase=req.app.locals.db;
     const sqlRequestLanguages=`SELECT * FROM langages_frameworks`;
     dataBase.query(sqlRequestLanguages,[],(err, langages_frameworks)=>res.json(langages_frameworks))
 })
+
 
 router.get("/contact", function(req,res,next){
     res.render("contact")
@@ -99,13 +103,38 @@ router.post("/send-form",async function(req,res,next){
         })
     }
 })
+module.exports = router;
+
 
 router.get("/download",(req,res,next)=>{
     res.download(path.resolve("./src/downloads/cv.txt") ,err=>console.log(err))
 })
 module.exports = router;
 
+
 router.get("/projet", function(req,res,next){
-    res.render("project")
+    res.render("project");
+
 })
 module.exports = router;
+
+router.get("/my-project", function(req,res,next){
+    const dataBase=req.app.locals.db;
+    const projectSqlRequest=`SELECT * FROM my_project INNER JOIN langages_frameworks ON langages_frameworks_id
+    WHERE langages_frameworks_id=project_langage_id`;
+    dataBase.query(projectSqlRequest,[],(err,projects)=>{
+        console.log(projects);
+        res.json(projects)
+    })
+})
+
+
+router.get("/my-component", function(req,res,next){
+    const dataBase=req.app.locals.db;
+    const componentSqlRequest=`SELECT * FROM my_component INNER JOIN langages_frameworks ON langages_frameworks_id
+    WHERE langages_frameworks_id=component_langage_id`;
+    dataBase.query(componentSqlRequest,[],(err,components)=>{
+        console.log(components);
+        res.json(components)
+    })
+})
