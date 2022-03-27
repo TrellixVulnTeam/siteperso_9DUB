@@ -10,22 +10,23 @@ const popUpObj={
     message: null,
     tag: null,
     firstPopUp(){
-        console.log(this);
         const tag= document.getElementById(this.tag);
         const firstPopUp=elementCreator({tag:"div", classList: "contact-pop-up"});
         firstPopUp.append(elementCreator({tag:"p", text: "Souhaitez vous télécharger mon CV?"}));
         firstPopUp.append(elementCreator({tag:"div",classList:"contact-pop-up-btn-container"}));
         firstPopUp.children[1].append(elementCreator({tag: "div", classList: "download-cv-button", text: "Télécharger Cv"}));
-        firstPopUp.children[1].append(elementCreator({tag: "div", classList: "contact-pop-up-continue-btn", eventFunction: this.secondPopUp, text: "Continuer"}));
+        firstPopUp.children[1].append(elementCreator({tag: "div", classList: "pop-up-continue-btn", eventFunction: this.secondPopUp, text: "Continuer"}));
         tag.prepend(firstPopUp);
         document.body.appendChild(Object.assign(document.createElement("script"),{src: "/scripts/cv.js"}));
     },
     secondPopUp(){
         const tag=document.getElementById(popUpObj.tag);
-        const secondPopUp= elementCreator({tag:"div",classList:"contact-pop-up"});
-        tag.children[0].remove();
+        Object.entries(tag.children[0].children).forEach((item, i) => {
+            console.log(item);
+            item[1].remove()
+        });
+        const secondPopUp= tag.children[0];
         secondPopUp.appendChild(elementCreator({tag:"p", text: popUpObj.message}));
-        tag.prepend(secondPopUp);
         const removePopUp=(secondPopUp)=>secondPopUp.remove();
         setTimeout(()=>removePopUp(secondPopUp),4000);
    },
@@ -59,7 +60,7 @@ sendingButton.addEventListener("click",(event)=>{
     })
     .then(response=>response.json())
     .then(data => {
-        popUpObj.tag="contact-form";
+        popUpObj.tag="contact-main";
         popUpObj.message=data.message;
         popUpObj.firstPopUp();
     });

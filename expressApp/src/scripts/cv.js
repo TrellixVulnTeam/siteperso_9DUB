@@ -1,4 +1,3 @@
-alert("ok")
 async function downLoadCv(){
     await fetch("http://localhost:4000/download")
     .then(response=>response.blob())
@@ -7,7 +6,7 @@ async function downLoadCv(){
         const link = document.createElement('a');
         link.style.display = 'none';
         link.href = file;
-        link.download = 'backgroundportfolio.svg';
+        link.download = 'Cv-Alexandre-Sage.pdf';
         document.body.appendChild(link);
         link.click();
         window.URL.revokeObjectURL(file);

@@ -66,13 +66,13 @@ header .header-line {
   font-family: Ubuntu;
   background: none;
   transition: 0.6s;
-  border: rgba(34, 197, 245, 0.8) 0.2rem solid;
+  border: rgba(237, 229, 233, 0.8) 0.1rem solid;
   line-height: 1;
   padding: 1rem 2rem;
-  box-shadow: 0.3rem 0.4rem 0 0 rgba(34, 197, 245, 0.8), inset 0.3rem 0.3rem 0 0 rgba(34, 197, 245, 0.8);
+  box-shadow: 0.3rem 0.4rem 0 0 rgba(237, 229, 233, 0.8), inset 0.3rem 0.3rem 0 0 rgba(237, 229, 233, 0.8);
 }
 .landing-body main div:hover, .landing-body main div:focus {
-  box-shadow: 0 0 0 0 rgba(34, 39, 245, 0.8), inset 8rem 4.5rem 0 0 rgba(16, 16, 16, 0.4);
+  box-shadow: 0 0 0 0 rgba(237, 231, 229, 0.8), inset 8rem 4.5rem 0 0 rgba(16, 16, 16, 0.4);
   border-color: rgba(143, 143, 147, 0.77);
   color: white;
 }
@@ -171,83 +171,16 @@ header .header-line {
   font-size: 3rem;
 }
 
-.contact-body {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.contact-body .contact-main {
-  width: 70%;
-}
-.contact-body .contact-main h2 {
-  font-size: 2.5rem;
-}
-.contact-body .contact-main form {
-  width: 100%;
-  height: 45rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.contact-body .contact-main form .form-data-container {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.contact-body .contact-main form .form-data-container .form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 20rem;
-  width: 45%;
-}
-.contact-body .contact-main form .form-data-container .form-container div {
-  display: flex;
-  justify-content: space-around;
-  width: 95%;
-}
-.contact-body .contact-main form .form-data-container .form-container div label {
-  font-size: 2rem;
-}
-.contact-body .contact-main form .form-data-container .form-container div input {
-  background-color: rgba(113, 112, 113, 0.5);
-  border: none;
-  height: 3rem;
-  width: 75%;
-  font-size: 2rem;
-}
-.contact-body .contact-main form .form-message-container {
-  display: flex;
-  flex-direction: column;
-  width: 88%;
-}
-.contact-body .contact-main form .form-message-container label {
-  font-size: 2rem;
-}
-.contact-body .contact-main form .form-message-container textarea {
-  background-color: rgba(113, 112, 113, 0.5);
-  border: none;
-  width: 50%;
-  height: 10rem;
-  margin-left: 9%;
-  font-size: 1.6rem;
-}
-.contact-body .contact-main form #form-sending-button {
-  border: solid 1px white;
-  background: red;
-  width: 20%;
-  height: 4rem;
-  font-size: 2rem;
-}
-
 .pulse {
-  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(237, 229, 233, 0.8);
   transition: 0.25s;
   background: none;
-  border: 2px solid;
-  font: inherit;
+  border: 0.4rem solid;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
   line-height: 1;
   margin: 0.5rem;
   padding: 1rem 2rem;
@@ -255,12 +188,278 @@ header .header-line {
 .pulse:hover, .pulse:focus {
   animation: pulse 1s;
   box-shadow: 0 0 0 2em transparent;
-  border-color: #adade6;
-  color: red;
+  border-color: rgba(143, 143, 147, 0.77);
+  color: rgba(237, 229, 233, 0.8);
 }
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 #adade6;
+    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+  }
+}
+
+.contact-body {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.contact-body #contact-main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-body #contact-main h2 {
+  margin-right: auto;
+  font-size: 2.5rem;
+}
+.contact-body #contact-main form {
+  width: 100%;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.contact-body #contact-main form .form-data-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.contact-body #contact-main form .form-data-container .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20rem;
+  width: 45%;
+}
+.contact-body #contact-main form .form-data-container .form-container div {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+}
+.contact-body #contact-main form .form-data-container .form-container div label {
+  font-size: 2rem;
+}
+.contact-body #contact-main form .form-data-container .form-container div input {
+  background-color: rgba(113, 112, 113, 0.5);
+  border: none;
+  height: 3rem;
+  width: 75%;
+  font-size: 2rem;
+}
+.contact-body #contact-main form .form-message-container {
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+}
+.contact-body #contact-main form .form-message-container label {
+  font-size: 2rem;
+}
+.contact-body #contact-main form .form-message-container textarea {
+  background-color: rgba(113, 112, 113, 0.5);
+  border: none;
+  width: 50%;
+  height: 10rem;
+  margin-left: 9%;
+  font-size: 1.6rem;
+}
+.contact-body #contact-main form #form-sending-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(237, 229, 233, 0.8);
+  transition: 0.25s;
+  background: none;
+  border: 0.4rem solid;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
+  line-height: 1;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  width: 10%;
+  height: 3rem;
+  font-size: 2rem;
+}
+.contact-body #contact-main form #form-sending-button:hover, .contact-body #contact-main form #form-sending-button:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+  border-color: rgba(143, 143, 147, 0.77);
+  color: rgba(237, 229, 233, 0.8);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+  }
+}
+
+.pulse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(237, 229, 233, 0.8);
+  transition: 0.25s;
+  background: none;
+  border: 0.4rem solid;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
+  line-height: 1;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}
+.pulse:hover, .pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+  border-color: rgba(143, 143, 147, 0.77);
+  color: rgba(237, 229, 233, 0.8);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+  }
+}
+
+.contact-pop-up {
+  position: absolute;
+  margin: auto;
+  background: #0a0a0a;
+  background: -webkit-linear-gradient(left, rgba(10, 10, 10, 0.95) 0%, rgba(33, 32, 32, 0.95) 50%, rgba(15, 15, 15, 0.95) 100%);
+  background: -o-linear-gradient(left, rgba(10, 10, 10, 0.95) 0%, rgba(33, 32, 32, 0.95) 50%, rgba(15, 15, 15, 0.95) 100%);
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, rgba(33, 32, 32, 0.95) 50%, rgba(15, 15, 15, 0.95) 100%);
+  width: 50%;
+  height: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact-pop-up p {
+  width: 40rem;
+  text-align: center;
+  line-height: 5rem;
+  font-size: 2rem;
+}
+.contact-pop-up .contact-pop-up-btn-container {
+  width: 100%;
+  display: flex;
+  height: 5rem;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+.contact-pop-up .contact-pop-up-btn-container .download-cv-button {
+  width: 20%;
+  height: 2.1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
+  background: none;
+  transition: 0.6s;
+  border: rgba(237, 229, 233, 0.8) 0.1rem solid;
+  line-height: 1;
+  padding: 1rem 2rem;
+  box-shadow: 0.3rem 0.4rem 0 0 rgba(237, 229, 233, 0.8), inset 0.3rem 0.3rem 0 0 rgba(237, 229, 233, 0.8);
+}
+.contact-pop-up .contact-pop-up-btn-container .download-cv-button:hover, .contact-pop-up .contact-pop-up-btn-container .download-cv-button:focus {
+  box-shadow: 0 0 0 0 rgba(237, 231, 229, 0.8), inset 8rem 4.5rem 0 0 rgba(16, 16, 16, 0.4);
+  border-color: rgba(143, 143, 147, 0.77);
+  color: white;
+}
+.contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn {
+  width: 20%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(237, 229, 233, 0.8);
+  transition: 0.25s;
+  background: none;
+  border: 0.4rem solid;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
+  line-height: 1;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}
+.contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn:hover, .contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+  border-color: rgba(143, 143, 147, 0.77);
+  color: rgba(237, 229, 233, 0.8);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+  }
+}
+
+.project-body {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project-background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.project-body .project-main {
+  width: 70%;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project-body .project-main .project-container {
+  width: 90%;
+  height: 35rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.project-body .project-main .project-container a {
+  width: 45%;
+  height: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+.project-body .project-main .project-container a p {
+  font-size: 2rem;
+}
+
+.project-link {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project.jpg") no-repeat;
+}
+
+.comp-link {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/componentgalery.jpg") no-repeat;
+}
+
+.pulse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(237, 229, 233, 0.8);
+  transition: 0.25s;
+  background: none;
+  border: 0.4rem solid;
+  font-size: 1.6rem;
+  font-family: Ubuntu;
+  line-height: 1;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}
+.pulse:hover, .pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+  border-color: rgba(143, 143, 147, 0.77);
+  color: rgba(237, 229, 233, 0.8);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
   }
 }
 

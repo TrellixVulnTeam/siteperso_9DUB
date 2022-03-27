@@ -1,0 +1,38 @@
+.project-body{
+        background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project-background.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    .project-main{
+        width: 70%;
+        height: 40rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .project-container{
+            width: 90%;
+            height: 35rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            a{
+                width:45%;
+                height: 35rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-size: cover;
+                background-position: center;
+                p{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+.project-link{
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project.jpg") no-repeat;
+}
+.comp-link{
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/componentgalery.jpg") no-repeat;
+}

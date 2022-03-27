@@ -1,5 +1,5 @@
 $btn-light-rules:(
-    main-color: rgba(34, 197, 245, 0.8),
+    main-color: rgba(237, 229, 233, 0.8),
     hover-color: #{adjust-hue(rgba(16, 16, 16, 0.4), 45deg)},
     hover-font-color: $main-font-color,
     hover-border-color: rgba(143, 143, 147, 0.77),
@@ -14,7 +14,7 @@ $btn-light-rules:(
     }
     background: none;
     transition: 0.6s;
-    border: $main-color 0.2rem solid;
+    border: $main-color 0.1rem solid;
     line-height: 1;
     //margin: 0.5rem;
     padding: 1rem 2rem;

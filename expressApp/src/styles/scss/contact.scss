@@ -1,10 +1,17 @@
+@import "btn-light-pulse.scss";
+
 .contact-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
     background-size: cover;
     background-position: center;
-    .contact-main{
+    #contact-main{
         width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         h2{
+            margin-right: auto;
             font:{
                 size: 2.5rem;
             }
@@ -61,11 +68,13 @@
                 }
             }
             #form-sending-button{
-                border: $box-show;
-                background: red;
-                width: 20%;
-                height: 4rem;
-                font-size: 2rem;
+                @include btn-light-pulse($btn-light-pulse-rules...);
+                width: 10%;
+                height: 3rem;
+                font:{
+                    size: 2rem
+                }
+
             }
         }
     }
