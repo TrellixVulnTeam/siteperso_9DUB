@@ -1,8 +1,100 @@
+img{
+    width: 15px;
+    height: 15px;
+}
+
 .project-body{
         background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project-background.jpg") no-repeat;
         background-size: cover;
         background-position: center;
-    .project-main{
+    #project-main{
+        //border: $box-show;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        .tab-container{
+            display: flex;
+            width: 45%;
+            div{
+                border: $box-show;
+                width: 50%;
+                height: 3.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                font-size: 2rem;
+            }
+        }
+        .project-main-container{
+            border: $box-show;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            .path-bar-container{
+                display: flex;
+                align-items: center;
+                padding-left: 3rem;
+                border: $box-show;
+                width: 75%;
+                font-size: 1.6rem;
+                height: 3rem;
+                border-radius: 0.5rem;
+            }
+            .files-deco{
+                border-bottom: 0.1rem solid white;
+                font-size: 1.2rem;
+                padding-left: 2rem;
+                width: 50%;
+            }
+            .icons-lateralNav-container{
+                border: $box-show;
 
+                aside{
+                    border: $box-show;
+                    width: 15%;
+                    display: flex;
+                    flex-direction: column;
+                    div{
+                        h3{
+                            font-size: 2rem;
+                        }
+                        div{
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            border: $box-show;
+                            height: 3rem;
+                            img{
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                            p{
+                                font-size: 1.6rem;
+                            }
+                        }
+                        .projects{
+                            background-color: blue;
+                            flex-direction: column;
+                            div{
+                                background-color: red;
+                            }
+                        }
+                    }
+                }
+                .icons-container{
+                    border: $box-show;
+                    a{
+                        img{
+
+                        }
+                        p{
+
+                        }
+                    }
+                }
+            }
+        }
     }
 }

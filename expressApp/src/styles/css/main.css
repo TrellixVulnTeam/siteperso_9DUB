@@ -396,10 +396,93 @@ header .header-line {
   }
 }
 
+img {
+  width: 15px;
+  height: 15px;
+}
+
 .project-body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project-background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+}
+.project-body #project-main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.project-body #project-main .tab-container {
+  display: flex;
+  width: 45%;
+}
+.project-body #project-main .tab-container div {
+  border: solid 1px white;
+  width: 50%;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  font-size: 2rem;
+}
+.project-body #project-main .project-main-container {
+  border: solid 1px white;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.project-body #project-main .project-main-container .path-bar-container {
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  border: solid 1px white;
+  width: 75%;
+  font-size: 1.6rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+.project-body #project-main .project-main-container .files-deco {
+  border-bottom: 0.1rem solid white;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  width: 50%;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container {
+  border: solid 1px white;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside {
+  border: solid 1px white;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div h3 {
+  font-size: 2rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: solid 1px white;
+  height: 3rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div div img {
+  width: 2rem;
+  height: 2rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div div p {
+  font-size: 1.6rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .projects {
+  background-color: blue;
+  flex-direction: column;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .projects div {
+  background-color: red;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container .icons-container {
+  border: solid 1px white;
 }
 .pulse {
   display: flex;
