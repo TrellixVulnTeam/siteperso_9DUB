@@ -15,8 +15,8 @@ const projectObj={
     componentData: [],
     projectData: [],
     mainContainer: elementCreator({tag:"div", classList:"project-main-container"}),
-    componentsTab: elementCreator({tag: "div", classList:"component-tab", text: "Components"}),
-    projectTab: elementCreator({tag:"div", classList: "project-tab", text: "Project"}),
+    componentsTab: elementCreator({tag: "div", classList:"components-tab", text: "Components"}),
+    projectTab: elementCreator({tag:"div", classList: "projects-tab", text: "Projects"}),
     filesDeco: elementCreator({tag: "div", classList:"files-deco",text:"Files"}),
     iconsLateralNavContainer: elementCreator({tag:"div", classList:"icons-lateralNav-container"}),
     async componentFetch(){
@@ -41,21 +41,29 @@ const projectObj={
             lateralContainer.children[i].append(elementCreator({tag: "h3", text: item}));
         });
         this.lateralNavFolder.forEach((item)=>{
-            const folder=elementCreator({tag: "div"});
-            folder.append(elementCreator({tag:"img", src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
-            folder.append(elementCreator({tag: "p", text: item}));
+
             if(item==="Projects"){
-                folder.classList.add(`${item.toLowerCase()}`)
-                const projectFolder=elementCreator({tag: "div", classList: "project-folder"});
-                this.projectData.map((item,i) => {
-                    console.log("here");
-                    projectFolder.append(elementCreator({tag:"div"}));
-                    projectFolder.children[i].append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt: item.langages_frameworks_name}));
-                    projectFolder.children[i].append(elementCreator({tag:"p", text:`${item.project_name}.${item.langages_frameworks_name}`}));
-                });
-                folder.append(projectFolder);
-            };
-            lateralContainer.children[0].appendChild(folder);
+                //const projectFolder=elementCreator({tag: "div", id: "project-folder"});
+                const folder=elementCreator({tag: "div",classList: "folder" });
+                folder.append(elementCreator({tag: "div", classList: "projects-button", eventFunction: this.changeFolder}));
+                folder.children[0].append(elementCreator({tag:"img",classList: "projects-button" ,src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
+                folder.children[0].append(elementCreator({tag: "p", classList: "projects-button",text: item}));
+                folder.append(elementCreator({tag: "div", id: item.toLowerCase()}));
+                lateralContainer.children[0].appendChild(folder);
+            }else if(item==="Components"){
+                const folder=elementCreator({tag: "div", classList: "folder"});
+                folder.append(elementCreator({tag: "div", classList: "components-button", eventFunction: this.changeFolder}));
+                folder.children[0].append(elementCreator({tag:"img", classList: "components-button", src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
+                folder.children[0].append(elementCreator({tag: "p", classList: "components-button", text: item}));
+                folder.append(elementCreator({tag: "div", id: item.toLowerCase()}));
+                lateralContainer.children[0].appendChild(folder);
+            } else{
+                const folder=elementCreator({tag: "div"});
+                folder.append(elementCreator({tag:"img", src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
+                folder.append(elementCreator({tag: "p", text: item}));
+                lateralContainer.children[0].appendChild(folder);
+            }
+            //lateralContainer.children[0].appendChild(folder);
         });
         this.networkDevicesData.map((item,i)=>{
             lateralContainer.children[1+i].append(elementCreator({tag:"div"}));
@@ -63,16 +71,51 @@ const projectObj={
             lateralContainer.children[1+i].children[1].append(elementCreator({tag: "p", text: item.name}));
         });
         targetTag.children[2].append(lateralContainer);
+        targetTag.children[2].append(elementCreator({tag: "div", classList:"icons-container"}))
     },
-    createIcons(iconsData){
-        const iconsContainer= elementCreator({tag: "div", classList:"icons-container"});
+    createIcons(iconsData, tagId){
+        //const iconsContainer= elementCreator({tag: "div", classList:"icons-container"});
+        const iconsContainer= document.querySelector(".icons-container")
+        console.log(iconsContainer);
+        const projectFolder= document.getElementById(tagId);
         iconsData.map((item)=>{
+            const projectOrComp= tagId==="components"?item.component_name:item.project_name
             const icon=elementCreator({tag: "a"});
-            icon.append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt:item.component_name}));
-            icon.append(elementCreator({tag:"p", text:`${item.component_name.replace(" ","-").toLowerCase()}.${item.langages_frameworks_name}`}));
+            icon.append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt:projectOrComp}));
+            icon.append(elementCreator({tag:"p", text:`${projectOrComp.replace(" ","-").toLowerCase()}.${item.langages_frameworks_name}`}));
+            const folderIcon=icon.cloneNode(true)
             iconsContainer.append(icon);
+            projectFolder.append(folderIcon)
         });
         this.mainContainer.children[2].append(iconsContainer);
+    },
+    async changeFolder(event){
+        const iconsContainer=document.querySelector(".icons-container")
+        switch (event.target.classList[0]){
+            case "projects-button" || "projects-tab":
+                console.log("project");
+                const componentFolder= document.getElementById("components")
+                await Object.entries(iconsContainer.children).forEach((item)=>{
+                    item[1].remove()
+                });
+                await Object.entries(componentFolder.children).forEach((item)=>{
+                    item[1].remove()
+                });
+                projectObj.createIcons(projectObj.projectData, "projects");
+            break;
+            case "components-button" || "components-tab":
+                console.log("components");
+                const projectsFolder= document.getElementById("projects")
+                //const iconsContainer=document.querySelector(".icons-container")
+                await Object.entries(iconsContainer.children).forEach((item)=>{
+                    item[1].remove()
+                });
+                await Object.entries(projectsFolder.children).forEach((item)=>{
+                    item[1].remove()
+                });
+                projectObj.createIcons(projectObj.componentData, "components");
+            break;
+        }
     },
     async generateUi(tagId){
         const targetTag=document.getElementById(tagId)
@@ -82,16 +125,15 @@ const projectObj={
             await this.projectFetch();
             sucess=true;
         }while(!sucess){
-            console.log("here");
-            this.createPathBar()
-            this.mainContainer.append(this.filesDeco)
-            this.mainContainer.append(this.iconsLateralNavContainer)
-            this.createLateralNav()
-            this.createIcons(this.componentData)
             targetTag.prepend(elementCreator({tag:"div", classList:"tab-container"}))
             targetTag.children[0].append(this.projectTab)
             targetTag.children[0].prepend(this.componentsTab)
             targetTag.append(this.mainContainer)
+            this.createPathBar()
+            this.mainContainer.append(this.filesDeco)
+            this.mainContainer.append(this.iconsLateralNavContainer)
+            this.createLateralNav()
+            this.createIcons(this.componentData, "components")
         };
     },
 };

@@ -410,13 +410,15 @@ img {
   width: 70%;
   display: flex;
   flex-direction: column;
+  margin-top: 5%;
 }
 .project-body #project-main .tab-container {
   display: flex;
   width: 45%;
 }
 .project-body #project-main .tab-container div {
-  border: solid 1px white;
+  background-color: rgba(18, 18, 19, 0.8);
+  border-left: rgba(143, 143, 144, 0.8) solid 0.01rem;
   width: 50%;
   height: 3.5rem;
   display: flex;
@@ -427,10 +429,15 @@ img {
   font-size: 2rem;
 }
 .project-body #project-main .project-main-container {
-  border: solid 1px white;
+  background-color: rgba(18, 18, 19, 0.8);
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+  display: flex;
+  height: 60rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .project-body #project-main .project-main-container .path-bar-container {
   display: flex;
@@ -447,12 +454,15 @@ img {
   font-size: 1.2rem;
   padding-left: 2rem;
   width: 50%;
+  margin-right: auto;
+  margin-left: 15%;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container {
   border: solid 1px white;
+  display: flex;
+  width: 100%;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside {
-  border: solid 1px white;
   width: 15%;
   display: flex;
   flex-direction: column;
@@ -474,16 +484,49 @@ img {
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div div p {
   font-size: 1.6rem;
 }
-.project-body #project-main .project-main-container .icons-lateralNav-container aside div .projects {
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder {
   background-color: blue;
-  flex-direction: column;
+  height: auto;
 }
-.project-body #project-main .project-main-container .icons-lateralNav-container aside div .projects div {
-  background-color: red;
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder div {
+  width: 100%;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components #project a {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components #project a p {
+  border: solid 1px white;
+  word-break: keep-all;
+  word-wrap: normal;
+  overflow: hidden;
+  font-size: 1.5rem;
+  width: 25rem;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container {
   border: solid 1px white;
+  margin-top: 5%;
+  display: flex;
+  width: 75%;
 }
+.project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 15rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a img {
+  width: 4rem;
+  height: auto;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
 .pulse {
   display: flex;
   justify-content: center;

@@ -12,11 +12,13 @@ img{
         width: 70%;
         display: flex;
         flex-direction: column;
+        margin-top: 5%;
         .tab-container{
             display: flex;
             width: 45%;
             div{
-                border: $box-show;
+                background-color: rgba(18, 18, 19, 0.8);
+                border-left:rgba(143, 143, 144, 0.8) solid 0.01rem;
                 width: 50%;
                 height: 3.5rem;
                 display: flex;
@@ -28,10 +30,15 @@ img{
             }
         }
         .project-main-container{
-            border: $box-show;
+            background-color: rgba(18, 18, 19, 0.8);
             border-top-right-radius: 0.5rem;
             border-bottom-right-radius: 0.5rem;
             border-bottom-left-radius: 0.5rem;
+            display: flex;
+            height: 60rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
             .path-bar-container{
                 display: flex;
                 align-items: center;
@@ -47,15 +54,18 @@ img{
                 font-size: 1.2rem;
                 padding-left: 2rem;
                 width: 50%;
+                margin-right: auto;
+                margin-left: 15%;
             }
             .icons-lateralNav-container{
                 border: $box-show;
-
+                display: flex;
+                width: 100%;
                 aside{
-                    border: $box-show;
                     width: 15%;
                     display: flex;
                     flex-direction: column;
+                    //overflow:scroll;
                     div{
                         h3{
                             font-size: 2rem;
@@ -74,23 +84,62 @@ img{
                                 font-size: 1.6rem;
                             }
                         }
-                        .projects{
+                        .folder{
                             background-color: blue;
-                            flex-direction: column;
+                            //flex-direction: column;
+                            height: auto;
+                            //overflow: hidden;
                             div{
-                                background-color: red;
+                                width: 100%;
+                            }
+                            #components #project{
+                                //display: none;
+                                //background-color: red;
+                                //display: flex;
+                                //flex-direction: column;
+                                //overflow: auto;
+                                //height: 4rem;
+                                a{
+                                    //background-color: green;
+                                    //margin-left: 35%;
+                                    //margin: auto;
+                                    display: flex;
+                                    align-items: center;
+                                    height: 2.5rem;
+                                    //overflow: hidden;
+                                    p{
+                                        border: $box-show;
+                                        word-break: keep-all;
+                                        word-wrap: normal;
+                                        overflow: hidden;
+                                        font-size: 1.5rem;
+                                        width: 25rem;
+                                    }
+                                }
                             }
                         }
                     }
                 }
                 .icons-container{
                     border: $box-show;
+                    margin-top: 5%;
+                    display: flex;
+                    width: 75%;
                     a{
+                        //border: $box-show;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 15%;
+                        height: 15rem;
                         img{
-
+                            width: 4rem;;
+                            height: auto;
                         }
                         p{
-
+                            font-size: 1.6rem;
+                            text-align: center;
                         }
                     }
                 }
