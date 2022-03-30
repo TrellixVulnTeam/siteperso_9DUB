@@ -48,6 +48,7 @@ header .header-line {
   background-position: center;
   background-size: cover;
   background-clip: border-box;
+  height: 65rem;
 }
 .landing-body main {
   width: 70%;
@@ -99,6 +100,7 @@ header .header-line {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/background-about.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  height: 190rem;
 }
 .about-body .letter {
   width: 70%;
@@ -201,6 +203,7 @@ header .header-line {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  height: 100rem;
 }
 .contact-body #contact-main {
   width: 70%;
@@ -405,6 +408,7 @@ img {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/cssAssets/project-background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  height: 130rem;
 }
 .project-body #project-main {
   width: 70%;
@@ -430,20 +434,21 @@ img {
 }
 .project-body #project-main .project-main-container {
   background-color: rgba(18, 18, 19, 0.8);
+  border: rgba(143, 143, 144, 0.8) solid 0.01rem;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   display: flex;
-  height: 60rem;
+  height: 65rem;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 .project-body #project-main .project-main-container .path-bar-container {
+  background-color: rgba(77, 74, 75, 0.8);
   display: flex;
   align-items: center;
   padding-left: 3rem;
-  border: solid 1px white;
   width: 75%;
   font-size: 1.6rem;
   height: 3rem;
@@ -458,23 +463,29 @@ img {
   margin-left: 15%;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container {
-  border: solid 1px white;
   display: flex;
   width: 100%;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside {
+  border-radius: 0.5rem;
+  background-color: rgba(77, 74, 75, 0.8);
   width: 15%;
   display: flex;
   flex-direction: column;
+  margin-left: 2%;
+  height: 55rem;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div {
+  margin-left: 2%;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div h3 {
   font-size: 2rem;
+  text-align: center;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div div {
   display: flex;
   align-items: center;
   gap: 1rem;
-  border: solid 1px white;
   height: 3rem;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div div img {
@@ -485,32 +496,38 @@ img {
   font-size: 1.6rem;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder {
-  background-color: blue;
+  flex-direction: column;
   height: auto;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder div {
   width: 100%;
 }
-.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components #project a {
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects {
+  margin-top: -7%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: auto;
+}
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components a, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects a {
+  text-decoration: none;
+  margin-left: 55%;
   display: flex;
   align-items: center;
-  height: 2.5rem;
+  height: 2rem;
 }
-.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components #project a p {
-  border: solid 1px white;
-  word-break: keep-all;
-  word-wrap: normal;
-  overflow: hidden;
+.project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components a p, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects a p {
   font-size: 1.5rem;
-  width: 25rem;
+  width: 20rem;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container {
-  border: solid 1px white;
-  margin-top: 5%;
+  margin-left: 5%;
   display: flex;
   width: 75%;
+  gap: 2%;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -520,7 +537,7 @@ img {
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a img {
   width: 4rem;
-  height: auto;
+  height: 4rem;
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a p {
   font-size: 1.6rem;
@@ -553,6 +570,14 @@ img {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   font-size: 10px;
   font-family: "Ubuntu";
@@ -565,6 +590,12 @@ body {
   align-items: center;
   background-size: cover;
   background-position: center;
+  /**/
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -114,7 +114,6 @@ module.exports = router;
 
 router.get("/projet", function(req,res,next){
     res.render("project");
-
 })
 module.exports = router;
 
@@ -123,18 +122,19 @@ router.get("/my-project", function(req,res,next){
     const projectSqlRequest=`SELECT * FROM my_project INNER JOIN langages_frameworks ON langages_frameworks_id
     WHERE langages_frameworks_id=project_langage_id`;
     dataBase.query(projectSqlRequest,[],(err,projects)=>{
-        console.log(projects);
+        //console.log(projects);
         res.json(projects)
-    })
+    });
 })
-
+module.exports = router;
 
 router.get("/my-component", function(req,res,next){
     const dataBase=req.app.locals.db;
     const componentSqlRequest=`SELECT * FROM my_component INNER JOIN langages_frameworks ON langages_frameworks_id
     WHERE langages_frameworks_id=component_langage_id`;
     dataBase.query(componentSqlRequest,[],(err,components)=>{
-        console.log(components);
+        //console.log(components);
         res.json(components)
-    })
+    });
 })
+module.exports = router;

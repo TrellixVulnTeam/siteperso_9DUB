@@ -74,67 +74,76 @@ const projectObj={
         targetTag.children[2].append(elementCreator({tag: "div", classList:"icons-container"}))
     },
     createIcons(iconsData, tagId){
-        //const iconsContainer= elementCreator({tag: "div", classList:"icons-container"});
-        const iconsContainer= document.querySelector(".icons-container")
-        console.log(iconsContainer);
+        this.projectTab.addEventListener("click", (event)=>this.changeFolder(event));
+        this.componentsTab.addEventListener("click", (event)=>this.changeFolder(event));
+        const iconsContainer= document.querySelector(".icons-container");
         const projectFolder= document.getElementById(tagId);
         iconsData.map((item)=>{
-            const projectOrComp= tagId==="components"?item.component_name:item.project_name
-            const icon=elementCreator({tag: "a"});
+            const projectOrComp= tagId==="components"?item.component_name:item.project_name;
+            const icon=elementCreator({tag: "a", href: "#"});
             icon.append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt:projectOrComp}));
             icon.append(elementCreator({tag:"p", text:`${projectOrComp.replace(" ","-").toLowerCase()}.${item.langages_frameworks_name}`}));
-            const folderIcon=icon.cloneNode(true)
+            const folderIcon=icon.cloneNode(true);
             iconsContainer.append(icon);
-            projectFolder.append(folderIcon)
+            projectFolder.append(folderIcon);
         });
         this.mainContainer.children[2].append(iconsContainer);
     },
     async changeFolder(event){
-        const iconsContainer=document.querySelector(".icons-container")
+        const iconsContainer=document.querySelector(".icons-container");
+        const projectsFolder= document.getElementById("projects");
+        const componentFolder= document.getElementById("components");
         switch (event.target.classList[0]){
-            case "projects-button" || "projects-tab":
-                console.log("project");
-                const componentFolder= document.getElementById("components")
+            case "projects-button":
+            case "projects-tab":
                 await Object.entries(iconsContainer.children).forEach((item)=>{
-                    item[1].remove()
+                    item[1].remove();
                 });
                 await Object.entries(componentFolder.children).forEach((item)=>{
-                    item[1].remove()
+                    item[1].remove();
+                });
+                await Object.entries(projectsFolder.children).forEach((item)=>{
+                    item[1].remove();
                 });
                 projectObj.createIcons(projectObj.projectData, "projects");
             break;
-            case "components-button" || "components-tab":
-                console.log("components");
-                const projectsFolder= document.getElementById("projects")
-                //const iconsContainer=document.querySelector(".icons-container")
+            case "components-button":
+            case "components-tab":
                 await Object.entries(iconsContainer.children).forEach((item)=>{
-                    item[1].remove()
+                    item[1].remove();
                 });
                 await Object.entries(projectsFolder.children).forEach((item)=>{
-                    item[1].remove()
+                    item[1].remove();
+                });
+                await Object.entries(componentFolder.children).forEach((item)=>{
+                    item[1].remove();
                 });
                 projectObj.createIcons(projectObj.componentData, "components");
             break;
         }
     },
     async generateUi(tagId){
-        const targetTag=document.getElementById(tagId)
+        const targetTag=document.getElementById(tagId);
         let sucess=false;
         do{
-            await this.componentFetch();
-            await this.projectFetch();
-            sucess=true;
+            try{
+                await this.componentFetch();
+                await this.projectFetch();
+                sucess=true;
+            }catch(err){
+                alert("error")
+            }
         }while(!sucess){
-            targetTag.prepend(elementCreator({tag:"div", classList:"tab-container"}))
-            targetTag.children[0].append(this.projectTab)
-            targetTag.children[0].prepend(this.componentsTab)
-            targetTag.append(this.mainContainer)
-            this.createPathBar()
-            this.mainContainer.append(this.filesDeco)
-            this.mainContainer.append(this.iconsLateralNavContainer)
-            this.createLateralNav()
-            this.createIcons(this.componentData, "components")
+            targetTag.prepend(elementCreator({tag:"div", classList:"tab-container"}));
+            targetTag.children[0].append(this.projectTab);
+            targetTag.children[0].prepend(this.componentsTab);
+            targetTag.append(this.mainContainer);
+            this.createPathBar();
+            this.mainContainer.append(this.filesDeco);
+            this.mainContainer.append(this.iconsLateralNavContainer);
+            this.createLateralNav();
+            this.createIcons(this.componentData, "components");
         };
     },
 };
-projectObj.generateUi("project-main")
+projectObj.generateUi("project-main");
