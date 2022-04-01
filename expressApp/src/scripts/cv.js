@@ -12,10 +12,6 @@ async function downLoadCv(){
         window.URL.revokeObjectURL(file);
     });
 };
-
-const downloadButton=document.getElementsByClassName("download-cv-button")
-console.log(downloadButton);
-Object.entries(downloadButton).forEach((item) => {
-    console.log(item[1]);
+Object.entries(document.getElementsByClassName("download-cv-button")).forEach((item, i) => {
     item[1].addEventListener("click",downLoadCv);
 });

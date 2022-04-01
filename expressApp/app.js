@@ -1,7 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const cookieParser = require('cookie-parser');
+const cookieParser=require("cookie-parser")
 const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const cors= require("cors");
 const multer = require('multer');
 const app = express();
+const csurf = require('csurf');
 require('dotenv').config();
 const sassMiddleware = require('node-sass-middleware');
 app.use(cors({
@@ -23,24 +24,61 @@ app.use(sassMiddleware({
   indentedSyntax: false, // true = .sass and false = .scss
   sourceMap: true,
 }));
-//app.use(bodyParser.urlencoded({extended:true}))
-// view engine setup
+app.use(bodyParser.urlencoded({extended:true}))
+/*VUE*/
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+/*FIN VUE*/
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+/*CSURF*/
+app.use(csurf({
+  cookie:  {
+    //maxAge: 300,
+    secure: true,
+    //sameSite: 'none'
+}
+}));
+/*app.use(function (req, res, next){
+    //res.locals._csrf = req.csrfToken();
+    console.log(req.csrfToken());
+    next();
+});*/
+app.use((req,res,next)=>{
+    console.log("Middleware", req.csrfToken())
+    next()
+})
+app.use((err, req, res, next) => {
+  if (err.code === 'EBADCSRFTOKEN'){
+    console.log(req.headers);
+    console.log("Cookie", req.cookies._csrf);
+    console.log("Token", req.csrfToken())
+
+    res.status(403);
+    res.send(`The CSRF token is invalid ${req.csrfToken()}`);
+  } else {
+    next();
+  }
+});
+/*FIN C SURF*/
+
+//app.use((err, req, res, next) => {}
+/*ROUTE ET FICHIER STATIQUE*/
 app.use(express.static(path.join(__dirname, 'src')));
 app.use('/src', express.static(path.join(__dirname, 'src')));
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/component", componentRouter);
+/*FIN ROUTE ET FICHIER STATIQUE*/
 
-// catch 404 and forward to error handler
+//console.log(csrfToken());
+
+
+
 app.use(function(req, res, next) {
   next(createError(404));
 });

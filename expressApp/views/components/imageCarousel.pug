@@ -1,7 +1,12 @@
 extends componentLayout
 
 block vars
-    - var bodyClass="about-body"
+    - var bodyClass="carousel-body"
 block content
-    p hello
+    div(id="carousel-root")
     p fuck
+block scripts 
+    script(src="/scripts/jsx/ImageCarousel.jsx" type="text/babel")
+    script(src="https://unpkg.com/babel-standalone@6/babel.min.js")
+    script(src="https://unpkg.com/react@16/umd/react.development.js" crossorigin)
+    script(src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin)

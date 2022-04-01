@@ -5,8 +5,9 @@
 @import "contact.scss";
 @import "popUp.scss";
 @import "project.scss";
+@import "carousel.scss";
 
-@import "btn-light-pulse.scss";
+//@import "btn-portfolio.scss";
 
 //@import "langage-slider-button.scss";
 //@import "../../../node_modules/bulma/bulma.sass";
@@ -32,4 +33,11 @@ body{
     animation-duration: 1s;
     animation-delay: 0.5s;
 
+}
+img{
+    width: 10rem;
+    height: 10rem;
+}
+.test{
+    color: black;
 }

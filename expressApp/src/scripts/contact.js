@@ -5,7 +5,6 @@ const response={
     message: null,
     validator: false
 };
-
 const popUpObj={
     message: null,
     tag: null,
@@ -52,9 +51,14 @@ sendingButton.addEventListener("click",(event)=>{
             break;
         };
     });
+
+    const csurfToken=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     fetch("http://localhost:4000/send-form",{
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "CSRF-token": csurfToken
+        },
         body: JSON.stringify(answers),
         credentials: "include",
     })

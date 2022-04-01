@@ -21,6 +21,7 @@ module.exports = router;
 router.get("/",(req,res,next)=>res.redirect("acceuil"))
 router.get('/acceuil', function(req, res, next) {
     const dataBase= req.app.locals.db;
+    //console.log(csurf());
     const sqlRequestHeader=`SELECT * FROM my_info`;
     dataBase.query(sqlRequestHeader,[],(err, my_info)=>{
         const description=my_info[0].description
@@ -47,59 +48,73 @@ router.get("/langages",function(req,res,next){
 
 
 router.get("/contact", function(req,res,next){
-    res.render("contact")
+    console.log(req.csrfToken());
+    //res.cookie("XSRF-token", req.csrfToken())
+    res.render("contact",{csrfToken: req.csrfToken()});
 })
 module.exports = router;
 
 router.post("/send-form",async function(req,res,next){
+    const csrfToken=req.csrfToken()
+    console.log(csrfToken);
+    console.log(req.body);
     const dataBase=req.app.locals.db;
     let sucess=false;
     const sendFormSqlRequest= `INSERT INTO contact(name,first_name,email,phone,message)
-                                VALUES(?,?,?,?,?)`;
-    do{
-        try{
-            await dataBase.promise().query(sendFormSqlRequest,[req.body.name,req.body.firstName,req.body.email,req.body.phone,req.body.message])
-            sucess=true;
-        } catch(err){
-            console.log(err);
-            console.log(err.message.split("'"));
-            switch(err.message){
-                case "Data too long for column 'phone' at row 1":
-                    res.json({
-                        message: "Votre numéro de téléphone comporte trop de caratère veuillez éssayer à nouveaux",
-                        validator: false
-                    });
-                break;
-                case "Data too long for column 'name' at row 1":
-                    res.json({
-                        message: "Votre nom comporte trop de caratère veuillez éssayer à nouveaux",
-                        validator: false
-                    });
-                break;
-                case "Data too long for column 'email' at row 1":
-                    res.json({
-                        message: "Votre email comporte trop de caratère veuillez éssayer à nouveaux",
-                        validator: false
-                    });
-                break;
-                case "Data too long for column 'first_name' at row 1":
-                    res.json({
-                        message: "Votre prénom comporte trop de caratère veuillez éssayer à nouveaux",
-                        validator: false
-                    });
-                break;
-                case "Data too long for column 'first_name' at row 1":
-                    res.json({
-                        message: "Votre prénom comporte trop de caratère veuillez éssayer à nouveaux",
-                        validator: false
-                    });
-                break;
-            };
+                            VALUES(?,?,?,?,?)`;
+    if(req.body.firstName && req.body.name && req.body.email && req.body.phone && req.body.message){
+    console.log(assertion);
+        do{
+            try{
+                await dataBase.promise().query(sendFormSqlRequest,[req.body.name,req.body.firstName,req.body.email,req.body.phone,req.body.message])
+                sucess=true;
+            } catch(err){
+                console.log(err);
+                console.log(err.message.split("'"));
+                switch(err.message){
+                    case "Data too long for column 'phone' at row 1":
+                        res.json({
+                            message: "Votre numéro de téléphone comporte trop de caratère veuillez éssayer à nouveaux",
+                            validator: false
+                        });
+                    break;
+                    case "Data too long for column 'name' at row 1":
+                        res.json({
+                            message: "Votre nom comporte trop de caratère veuillez éssayer à nouveaux",
+                            validator: false
+                        });
+                    break;
+                    case "Data too long for column 'email' at row 1":
+                        res.json({
+                            message: "Votre email comporte trop de caratère veuillez éssayer à nouveaux",
+                            validator: false
+                        });
+                    break;
+                    case "Data too long for column 'first_name' at row 1":
+                        res.json({
+                            message: "Votre prénom comporte trop de caratère veuillez éssayer à nouveaux",
+                            validator: false
+                        });
+                    break;
+                    case "Data too long for column 'first_name' at row 1":
+                        res.json({
+                            message: "Votre prénom comporte trop de caratère veuillez éssayer à nouveaux",
+                            validator: false
+                        });
+                    break;
+                };
+            }
+        } while(!sucess){
+            res.json({
+                message: "Votre méssage à bien été enregistrer, je vous recontacterais le plus tot possible.",
+                validator: true
+            })
         }
-    } while(!sucess){
+    }else{
+        console.log("np");
         res.json({
-            message: "Votre méssage à bien été enregistrer, je vous recontacterais le plus tot possible.",
-            validator: true
+            message: "Un des champ du formulaire est vide veuillez ré éssayer",
+            validator: false
         })
     }
 })

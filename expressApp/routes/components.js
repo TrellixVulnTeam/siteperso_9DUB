@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-router.get("/test",function(req,res,next){
+router.get("/imageCarousel",function(req,res,next){
     const dataBase= req.app.locals.db;
     const sqlRequestImageCarousel=`SELECT * FROM carousel_component_images`;
     dataBase.query(sqlRequestImageCarousel,[], (err,images)=>{
@@ -13,3 +13,4 @@ router.get("/test",function(req,res,next){
     })
 })
 module.exports = router;
+router.get("/image-carousel",(req,res,next)=>res.render("components/imageCarousel"))

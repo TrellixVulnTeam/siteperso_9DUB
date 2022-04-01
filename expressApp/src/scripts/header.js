@@ -37,7 +37,15 @@ class HeaderSite extends HTMLElement{
             this.firstChild.firstChild.children[i].append(elementCreator({tag: "a",text: item, href:`http://localhost:4000/${item.replace(" ","").toLowerCase()}` }))
             i++
         });
-        fetch(`http://localhost:4000/header`)
+        //const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        //console.log(_csrf);
+        fetch(`http://localhost:4000/header`,{
+            method:"GET",
+            headers:{
+                //"csurf-token": csrfToken,
+            },
+            //credentials: true,
+        })
             .then(response=>response.json())
             .then(data=>data)
             .then((data)=>data.map(item=>{

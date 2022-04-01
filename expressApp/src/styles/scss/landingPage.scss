@@ -1,4 +1,4 @@
-@import "btn-light.scss";
+@import "btn-portfolio.scss";
 
 .landing-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/backgroundportfolio.svg") no-repeat;
@@ -17,7 +17,7 @@
             width: 15%;
             height: 2rem;
             margin: auto;
-            @include btn-light($btn-light-rules...)
+            @include btn-site-protfolio();
         }
     }
 }

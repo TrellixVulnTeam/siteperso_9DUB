@@ -2,7 +2,9 @@ doctype html
 html
     head
         title= title
+        block meta
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        //meta(name="csrf-token" content=csrfToken)
         block stylesheet
             link(rel='scss', href='/styles/scss/main.scss', type="text/x-scss")
             link(rel='stylesheet', href='/styles/css/main.css')
@@ -11,6 +13,5 @@ html
     body(class= bodyClass)
         block content
         block scripts
-        
-        script(src="/scripts/header.js" type="text/javascript" async)
+        script(src="/scripts/header.js" type="text/javascript")
         

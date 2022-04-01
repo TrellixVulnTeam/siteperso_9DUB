@@ -1,5 +1,4 @@
-@import "btn-light-pulse.scss";
-
+@import "btn-portfolio.scss";
 .contact-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
     background-size: cover;
@@ -69,12 +68,12 @@
                 }
             }
             #form-sending-button{
-                @include btn-light-pulse($btn-light-pulse-rules...);
-                width: 10%;
-                height: 3rem;
-                font:{
-                    size: 2rem
-                }
+                @include btn-site-protfolio();
+                //width: 10%;
+                //height: 3rem;
+                //font:{
+                    //size: 2rem
+                //}
 
             }
         }

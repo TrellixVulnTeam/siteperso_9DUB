@@ -60,22 +60,45 @@ header .header-line {
   width: 15%;
   height: 2rem;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 1.6rem;
-  font-family: Ubuntu;
-  background: none;
-  transition: 0.6s;
-  border: rgba(237, 229, 233, 0.8) 0.1rem solid;
-  line-height: 1;
-  padding: 1rem 2rem;
-  box-shadow: 0.3rem 0.4rem 0 0 rgba(237, 229, 233, 0.8), inset 0.3rem 0.3rem 0 0 rgba(237, 229, 233, 0.8);
-}
-.landing-body main div:hover, .landing-body main div:focus {
-  box-shadow: 0 0 0 0 rgba(237, 231, 229, 0.8), inset 8rem 4.5rem 0 0 rgba(16, 16, 16, 0.4);
-  border-color: rgba(143, 143, 147, 0.77);
+  width: 15rem;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  border: 0.1px solid white;
   color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 2.2px -10px 12.8px rgba(39, 219, 245, 0.17), 25px -5px 25px rgba(39, 219, 245, 0.129);
+  overflow: hidden;
+  font-size: 1.6rem;
+  opacity: 0.75;
+  cursor: pointer;
+}
+.landing-body main div:hover {
+  background: linear-gradient(90deg, rgba(26, 130, 104, 0.1) 0%, rgba(33, 114, 168, 0.1) 36%, rgba(0, 140, 162, 0.1) 59%, rgba(0, 212, 255, 0.1) 100%);
+  background-color: rgba(39, 219, 245, 0.3);
+  transition: background-color 1s linear;
+  animation: btn-hover-animation 1.2s infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+@keyframes btn-hover-animation {
+  25% {
+    border-bottom: rgba(39, 219, 245, 0.1) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  50% {
+    border-left: rgba(39, 219, 245, 0.3) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  75% {
+    border-top: rgba(39, 219, 245, 0.6) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  100% {
+    border-right: rgba(39, 219, 245, 0.9) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
 }
 
 .arrow-btn-left {
@@ -173,32 +196,6 @@ header .header-line {
   font-size: 3rem;
 }
 
-.pulse {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(237, 229, 233, 0.8);
-  transition: 0.25s;
-  background: none;
-  border: 0.4rem solid;
-  font-size: 1.6rem;
-  font-family: Ubuntu;
-  line-height: 1;
-  margin: 0.5rem;
-  padding: 1rem 2rem;
-}
-.pulse:hover, .pulse:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-  border-color: rgba(143, 143, 147, 0.77);
-  color: rgba(237, 229, 233, 0.8);
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
-  }
-}
-
 .contact-body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
   background-size: cover;
@@ -269,57 +266,44 @@ header .header-line {
   font-size: 1.6rem;
 }
 .contact-body #contact-main form #form-sending-button {
-  display: flex;
+  width: 15rem;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  border: 0.1px solid white;
+  color: white;
   justify-content: center;
   align-items: center;
-  color: rgba(237, 229, 233, 0.8);
-  transition: 0.25s;
-  background: none;
-  border: 0.4rem solid;
+  display: flex;
+  box-shadow: 2.2px -10px 12.8px rgba(39, 219, 245, 0.17), 25px -5px 25px rgba(39, 219, 245, 0.129);
+  overflow: hidden;
   font-size: 1.6rem;
-  font-family: Ubuntu;
-  line-height: 1;
-  margin: 0.5rem;
-  padding: 1rem 2rem;
-  width: 10%;
-  height: 3rem;
-  font-size: 2rem;
+  opacity: 0.75;
+  cursor: pointer;
 }
-.contact-body #contact-main form #form-sending-button:hover, .contact-body #contact-main form #form-sending-button:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-  border-color: rgba(143, 143, 147, 0.77);
-  color: rgba(237, 229, 233, 0.8);
+.contact-body #contact-main form #form-sending-button:hover {
+  background: linear-gradient(90deg, rgba(26, 130, 104, 0.1) 0%, rgba(33, 114, 168, 0.1) 36%, rgba(0, 140, 162, 0.1) 59%, rgba(0, 212, 255, 0.1) 100%);
+  background-color: rgba(39, 219, 245, 0.3);
+  transition: background-color 1s linear;
+  animation: btn-hover-animation 1.2s infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
 }
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+@keyframes btn-hover-animation {
+  25% {
+    border-bottom: rgba(39, 219, 245, 0.1) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
   }
-}
-
-.pulse {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(237, 229, 233, 0.8);
-  transition: 0.25s;
-  background: none;
-  border: 0.4rem solid;
-  font-size: 1.6rem;
-  font-family: Ubuntu;
-  line-height: 1;
-  margin: 0.5rem;
-  padding: 1rem 2rem;
-}
-.pulse:hover, .pulse:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-  border-color: rgba(143, 143, 147, 0.77);
-  color: rgba(237, 229, 233, 0.8);
-}
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+  50% {
+    border-left: rgba(39, 219, 245, 0.3) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  75% {
+    border-top: rgba(39, 219, 245, 0.6) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  100% {
+    border-right: rgba(39, 219, 245, 0.9) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
   }
 }
 
@@ -354,48 +338,87 @@ header .header-line {
 .contact-pop-up .contact-pop-up-btn-container .download-cv-button {
   width: 20%;
   height: 2.1rem;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 1.6rem;
-  font-family: Ubuntu;
-  background: none;
-  transition: 0.6s;
-  border: rgba(237, 229, 233, 0.8) 0.1rem solid;
-  line-height: 1;
-  padding: 1rem 2rem;
-  box-shadow: 0.3rem 0.4rem 0 0 rgba(237, 229, 233, 0.8), inset 0.3rem 0.3rem 0 0 rgba(237, 229, 233, 0.8);
-}
-.contact-pop-up .contact-pop-up-btn-container .download-cv-button:hover, .contact-pop-up .contact-pop-up-btn-container .download-cv-button:focus {
-  box-shadow: 0 0 0 0 rgba(237, 231, 229, 0.8), inset 8rem 4.5rem 0 0 rgba(16, 16, 16, 0.4);
-  border-color: rgba(143, 143, 147, 0.77);
+  width: 15rem;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  border: 0.1px solid white;
   color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 2.2px -10px 12.8px rgba(39, 219, 245, 0.17), 25px -5px 25px rgba(39, 219, 245, 0.129);
+  overflow: hidden;
+  font-size: 1.6rem;
+  opacity: 0.75;
+  cursor: pointer;
+}
+.contact-pop-up .contact-pop-up-btn-container .download-cv-button:hover {
+  background: linear-gradient(90deg, rgba(26, 130, 104, 0.1) 0%, rgba(33, 114, 168, 0.1) 36%, rgba(0, 140, 162, 0.1) 59%, rgba(0, 212, 255, 0.1) 100%);
+  background-color: rgba(39, 219, 245, 0.3);
+  transition: background-color 1s linear;
+  animation: btn-hover-animation 1.2s infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+}
+@keyframes btn-hover-animation {
+  25% {
+    border-bottom: rgba(39, 219, 245, 0.1) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  50% {
+    border-left: rgba(39, 219, 245, 0.3) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  75% {
+    border-top: rgba(39, 219, 245, 0.6) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  100% {
+    border-right: rgba(39, 219, 245, 0.9) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
 }
 .contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn {
   width: 20%;
   height: auto;
-  display: flex;
+  width: 15rem;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  border: 0.1px solid white;
+  color: white;
   justify-content: center;
   align-items: center;
-  color: rgba(237, 229, 233, 0.8);
-  transition: 0.25s;
-  background: none;
-  border: 0.4rem solid;
+  display: flex;
+  box-shadow: 2.2px -10px 12.8px rgba(39, 219, 245, 0.17), 25px -5px 25px rgba(39, 219, 245, 0.129);
+  overflow: hidden;
   font-size: 1.6rem;
-  font-family: Ubuntu;
-  line-height: 1;
-  margin: 0.5rem;
-  padding: 1rem 2rem;
+  opacity: 0.75;
+  cursor: pointer;
 }
-.contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn:hover, .contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-  border-color: rgba(143, 143, 147, 0.77);
-  color: rgba(237, 229, 233, 0.8);
+.contact-pop-up .contact-pop-up-btn-container .pop-up-continue-btn:hover {
+  background: linear-gradient(90deg, rgba(26, 130, 104, 0.1) 0%, rgba(33, 114, 168, 0.1) 36%, rgba(0, 140, 162, 0.1) 59%, rgba(0, 212, 255, 0.1) 100%);
+  background-color: rgba(39, 219, 245, 0.3);
+  transition: background-color 1s linear;
+  animation: btn-hover-animation 1.2s infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
 }
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
+@keyframes btn-hover-animation {
+  25% {
+    border-bottom: rgba(39, 219, 245, 0.1) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  50% {
+    border-left: rgba(39, 219, 245, 0.3) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  75% {
+    border-top: rgba(39, 219, 245, 0.6) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
+  }
+  100% {
+    border-right: rgba(39, 219, 245, 0.9) solid 0.5px;
+    transition: border-width 0.5s ease-in-out;
   }
 }
 
@@ -544,32 +567,30 @@ img {
   text-align: center;
 }
 
-.pulse {
+.carousel-body {
+  background: #0a0a0a;
+  background: linear-gradient(317deg, #0a0a0a 0%, #4d5050 50%, #0f0f0f 100%);
+}
+.carousel-body .carousel-root .image-carousel-main-container .image-container {
+  width: 75%;
+  height: auto;
+}
+.carousel-body .carousel-root .image-carousel-main-container .image-container img {
+  width: 100%;
+  height: auto;
+}
+.carousel-body .carousel-root .image-carousel-main-container .frame-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: rgba(237, 229, 233, 0.8);
-  transition: 0.25s;
-  background: none;
-  border: 0.4rem solid;
-  font-size: 1.6rem;
-  font-family: Ubuntu;
-  line-height: 1;
-  margin: 0.5rem;
-  padding: 1rem 2rem;
 }
-.pulse:hover, .pulse:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-  border-color: rgba(143, 143, 147, 0.77);
-  color: rgba(237, 229, 233, 0.8);
+.carousel-body .carousel-root .image-carousel-main-container .frame-container div {
+  width: 10%;
+  height: auto;
 }
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(143, 143, 147, 0.77);
-  }
+.carousel-body .carousel-root .image-carousel-main-container .frame-container div img {
+  width: 100%;
+  height: auto;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -596,6 +617,15 @@ body {
   animation-fill-mode: forwards;
   animation-duration: 1s;
   animation-delay: 0.5s;
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.test {
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */

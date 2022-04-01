@@ -1,5 +1,4 @@
-@import "btn-light-pulse.scss";
-@import "btn-light.scss";
+@import "btn-portfolio.scss";
 
 .contact-pop-up{
     position: absolute;
@@ -34,12 +33,12 @@
         .download-cv-button{
             width: 20%;
             height: 2.1rem;
-            @include btn-light($btn-light-rules...);
+            @include btn-site-protfolio();
         }
         .pop-up-continue-btn{
             width: 20%;
             height: auto;
-            @include btn-light-pulse($btn-light-pulse-rules...);
+            @include btn-site-protfolio();
         }
     }
 }
