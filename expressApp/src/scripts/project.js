@@ -80,7 +80,7 @@ const projectObj={
         const projectFolder= document.getElementById(tagId);
         iconsData.map((item)=>{
             const projectOrComp= tagId==="components"?item.component_name:item.project_name;
-            const icon=elementCreator({tag: "a", href: "#"});
+            const icon=elementCreator({tag: "a", href: item.component_path});
             icon.append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt:projectOrComp}));
             icon.append(elementCreator({tag:"p", text:`${projectOrComp.replace(" ","-").toLowerCase()}.${item.langages_frameworks_name}`}));
             const folderIcon=icon.cloneNode(true);

@@ -3,11 +3,11 @@ const inputs=document.getElementsByClassName("form-input");
 const answers={};
 const response={
     message: null,
-    validator: false
 };
 const popUpObj={
     message: null,
     tag: null,
+    validator: false,
     firstPopUp(){
         const tag= document.getElementById(this.tag);
         const firstPopUp=elementCreator({tag:"div", classList: "contact-pop-up"});
@@ -20,37 +20,51 @@ const popUpObj={
     },
     secondPopUp(){
         const tag=document.getElementById(popUpObj.tag);
-        Object.entries(tag.children[0].children).forEach((item, i) => {
-            console.log(item);
-            item[1].remove()
-        });
-        const secondPopUp= tag.children[0];
-        secondPopUp.appendChild(elementCreator({tag:"p", text: popUpObj.message}));
-        const removePopUp=(secondPopUp)=>secondPopUp.remove();
-        setTimeout(()=>removePopUp(secondPopUp),4000);
+        if(popUpObj.validator){
+            Object.entries(tag.children[0].children).forEach((item, i) => {
+                item[1].remove()
+            });
+            const secondPopUp= tag.children[0];
+            const removePopUp=(secondPopUp)=>secondPopUp.remove();
+            secondPopUp.appendChild(elementCreator({tag:"p", text: popUpObj.message}));
+            setTimeout(()=>removePopUp(secondPopUp),4000);
+        }else{
+            const secondPopUp=elementCreator({tag:"div", classList: "contact-pop-up"});
+            const removePopUp=(secondPopUp)=>secondPopUp.remove();
+            secondPopUp.appendChild(elementCreator({tag:"p", text: popUpObj.message}));
+            tag.prepend(secondPopUp);
+            setTimeout(()=>removePopUp(secondPopUp),4000);
+        }
    },
 };
 
 sendingButton.addEventListener("click",(event)=>{
-    Object.entries(inputs).forEach((item) => {
-        switch(item[1].name){
+    const inputArray=["name","first-name","email","phone","message"];
+    Object.entries(inputs).forEach((input) => {
+        inputArray.find(item=>{
+            if(input[1].name===item){
+                return input[1].value?answers[item]=input[1].value:answers.item=null;
+            };
+        });
+        /*switch(item[1].name){
             case "name":
-                return answers.name=item[1].value;
+                return item[1].value?answers.name=item[1].value:answers.name=null;
             break;
             case "first-name":
-                return answers.firstName=item[1].value;
+                return item[1].value?answers.firstName=item[1].value:answers.firstName=null;
             break;
             case "email":
-                return answers.email=item[1].value;
+                return item[1].value?answers.email=item[1].value:answers.email=null;
             break;
             case "phone":
-                return answers.phone=item[1].value;
+                return item[1].value?answers.phone=item[1].value:answers.phone=null;
             break;
             case "message":
-                return answers.message=item[1].value;
+                return item[1].value?answers.message=item[1].value:answers.message=null;
             break;
-        };
+        };*/
     });
+    console.log(answers);
 
     const csurfToken=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     fetch("http://localhost:4000/send-form",{
@@ -64,8 +78,12 @@ sendingButton.addEventListener("click",(event)=>{
     })
     .then(response=>response.json())
     .then(data => {
+        console.log(data);
         popUpObj.tag="contact-main";
         popUpObj.message=data.message;
-        popUpObj.firstPopUp();
-    });
+        popUpObj.validator=data.validator;
+        console.log(data.validator);
+        data.validator?popUpObj.firstPopUp():popUpObj.secondPopUp();
+    }).catch(err=>console.log(err))
+
 });

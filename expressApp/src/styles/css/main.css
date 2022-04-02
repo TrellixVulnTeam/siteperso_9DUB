@@ -48,7 +48,6 @@ header .header-line {
   background-position: center;
   background-size: cover;
   background-clip: border-box;
-  height: 65rem;
 }
 .landing-body main {
   width: 70%;
@@ -567,30 +566,111 @@ img {
   text-align: center;
 }
 
+/*VAR*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .carousel-body {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
   background: #0a0a0a;
+  background: -webkit-linear-gradient(227deg, #0a0a0a 0%, #4d5050 50%, #0f0f0f 100%);
+  background: -o-linear-gradient(227deg, #0a0a0a 0%, #4d5050 50%, #0f0f0f 100%);
   background: linear-gradient(317deg, #0a0a0a 0%, #4d5050 50%, #0f0f0f 100%);
 }
-.carousel-body .carousel-root .image-carousel-main-container .image-container {
-  width: 75%;
-  height: auto;
+.carousel-body #carousel-root {
+  width: 70%;
+  height: 65rem;
 }
-.carousel-body .carousel-root .image-carousel-main-container .image-container img {
-  width: 100%;
-  height: auto;
+.carousel-body #carousel-root .image-carousel-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 65rem;
 }
-.carousel-body .carousel-root .image-carousel-main-container .frame-container {
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
-.carousel-body .carousel-root .image-carousel-main-container .frame-container div {
-  width: 10%;
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .previous-button {
+  box-sizing: border-box;
+  height: 8rem;
+  width: 8rem;
+  border-style: solid;
+  border-color: white;
+  border-width: 0rem 0.1rem 0.1rem 0rem;
+  transform: rotate(135deg);
+  transition: border-width 150ms ease-in-out;
+}
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .previous-button:hover {
+  border-bottom-width: 1rem;
+  border-right-width: 0.4rem;
+}
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .next-button {
+  height: 8rem;
+  width: 8rem;
+  border-style: solid;
+  border-color: white;
+  border-width: 0rem 0.1rem 0.1rem 0rem;
+  transform: rotate(-45deg);
+  transition: border-width 150ms ease-in-out;
+}
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .next-button:hover {
+  border-bottom-width: 1rem;
+  border-right-width: 0.4rem;
+}
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container {
+  width: 75%;
   height: auto;
+  overflow: hidden;
+  max-height: 45rem;
 }
-.carousel-body .carousel-root .image-carousel-main-container .frame-container div img {
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container img {
+  object-fit: cover;
+  border-radius: 0.5rem;
+  object-position: center;
+  transform: scale(1, 1);
   width: 100%;
-  height: auto;
+  height: 45rem;
 }
+.carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container .test {
+  transition: opacity 0.5s linear 0.25s;
+}
+.carousel-body #carousel-root .image-carousel-main-container .frame-container {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+  align-content: space-between;
+}
+.carousel-body #carousel-root .image-carousel-main-container .frame-container div {
+  width: 10%;
+  overflow: hidden;
+  height: 8rem;
+}
+.carousel-body #carousel-root .image-carousel-main-container .frame-container div img {
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+}
+.carousel-body #carousel-root .image-carousel-main-container .frame-container div .over-layed {
+  opacity: 25%;
+  transition: opacity 0.5s linear 0.25s;
+}
+.carousel-body #carousel-root .image-carousel-main-container .frame-container div .over-layed:hover {
+  opacity: 100%;
+  transition: opacity 0.5s linear 0.25s;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

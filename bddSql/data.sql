@@ -40,14 +40,14 @@ VALUES
 
 INSERT INTO my_component (component_name,component_path,component_langage_id)
 VALUES
-("Composant 1", "#", 1),
+("image-carousel", "component/image-carousel", 3),
 ("Composant 2", "#", 2),
-("Composant 3", "#", 3);
+("Composant 3", "#", 1);
 
 INSERT INTO carousel_component_images (image_path)
 VALUES
 ("src/images/carousel/esteiro.jpg"),
-("src/images/carousel/esteiroxove.png"),
+/*("src/images/carousel/esteiroxove.png"),*/
 ("src/images/carousel/general.jpg"),
 ("src/images/carousel/longa.jpg"),
 ("src/images/carousel/machacona.png"),
