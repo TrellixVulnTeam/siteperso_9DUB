@@ -1,10 +1,3 @@
-/*const obj={};
-fetch(`http://localhost:4000/header`)
-    .then(response=>response.json())
-    .then(data=>obj.firstName=data.work)
-    .then(()=>console.log(obj))
-console.log(obj);*/
-
 function elementCreator({tag,text= null, classList, eventFunction, href, src, alt, id}){
     const newElement= classList?Object.assign(document.createElement(tag),{classList:classList , innerText:text}):Object.assign(document.createElement(tag),{ innerText:text})
     if(eventFunction){
@@ -12,6 +5,7 @@ function elementCreator({tag,text= null, classList, eventFunction, href, src, al
         return newElement
     } else if(id){
         newElement.id=id
+        console.log(newElement.id);
         return newElement
     } else if(href) {
         newElement.href=href;
@@ -28,8 +22,25 @@ function elementCreator({tag,text= null, classList, eventFunction, href, src, al
 class HeaderSite extends HTMLElement{
     constructor(){
         super();
+        function handleMobileMenu(){
+            const mobileMenu=document.getElementById("mobile-menu");
+            if(mobileMenu.classList[0]==="inactive"){
+                const hidden= document.body.querySelector(".hidden")
+                mobileMenu.classList.add("active")
+                mobileMenu.classList.remove("inactive")
+                hidden.classList.remove("hidden")
+                hidden.classList.add("displayed")
+                document.body.children[0].firstChild.style.background="rgba(14, 14, 14, 0.992)"
+            }else{
+                const displayed= document.body.querySelector(".displayed")
+                mobileMenu.classList.add("inactive")
+                mobileMenu.classList.remove("active")
+                displayed.classList.add("hidden")
+                displayed.classList.remove("displayed")
+                document.body.children[0].firstChild.style.backgroundColor=null
+            }
+        }
         const buttons=["Acceuil","A propos","Projet","Contact"];
-        //this.classList.add("column");
         this.append(elementCreator({tag:"nav"}));
         this.firstChild.append(elementCreator({tag:"ul",/*classList:"columns"*/}));
         buttons.forEach((item,i) => {
@@ -37,14 +48,21 @@ class HeaderSite extends HTMLElement{
             this.firstChild.firstChild.children[i].append(elementCreator({tag: "a",text: item, href:`http://localhost:4000/${item.replace(" ","").toLowerCase()}` }))
             i++
         });
-        //const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        //console.log(_csrf);
+        if (window.screen.width<=480){
+            const mobileMenuContainer= elementCreator({tag: "div", classList:"mobile-menu-container"})
+            const mobileMenu=elementCreator({tag:"div",id:"mobile-menu", classList:"inactive",eventFunction: handleMobileMenu})
+            mobileMenu.id="mobile-menu"
+            mobileMenu.append(elementCreator({tag:"span"}))
+            mobileMenuContainer.append(mobileMenu)
+            this.firstChild.children[0].classList.add("hidden")
+            this.firstChild.prepend(mobileMenuContainer)
+        }
         fetch(`http://localhost:4000/header`,{
             method:"GET",
-            headers:{
-                //"csurf-token": csrfToken,
+            /*headers:{
+
             },
-            //credentials: true,
+            credentials: true,*/
         })
             .then(response=>response.json())
             .then(data=>data)

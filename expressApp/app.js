@@ -14,9 +14,11 @@ const csurf = require('csurf');
 require('dotenv').config();
 const sassMiddleware = require('node-sass-middleware');
 app.use(cors({
-    origin:true,
+    origin: "192.168.1.22",
     methods:["GET","POST"],
-    credentials: true
+    credentials: true,
+    optionsSuccessStatus: true,
+    //Access-Control-Allow-Origin: true
 }))
 app.use(sassMiddleware({
   src: path.join(__dirname, 'src/styles/scss'),
@@ -43,21 +45,22 @@ app.use(csurf({
     //sameSite: 'none'
 }
 }));
-/*app.use(function (req, res, next){
-    //res.locals._csrf = req.csrfToken();
-    console.log(req.csrfToken());
-    next();
-});*/
 app.use((req,res,next)=>{
-    console.log("Middleware", req.csrfToken())
+    //console.log(res);
+    //console.log(res);
+    //console.log(cors());
+    console.log(err);
     next()
 })
+/*app.use((req,res,next)=>{
+    console.log("Middleware", req.csrfToken())
+    next()
+})*/
 app.use((err, req, res, next) => {
   if (err.code === 'EBADCSRFTOKEN'){
     console.log(req.headers);
     console.log("Cookie", req.cookies._csrf);
     console.log("Token", req.csrfToken())
-
     res.status(403);
     res.send(`The CSRF token is invalid ${req.csrfToken()}`);
   } else {
@@ -93,5 +96,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 module.exports = app;

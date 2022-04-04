@@ -5,10 +5,10 @@ block vars
     - var bodyClass="contact-body"
 block content
     main(id="contact-main")
-        h2 Contact
+        //h2 Contact
         form(id="contact-form" method="post" action='send-form')
             div(class="form-data-container")
-                div(class="form-container")
+                div(class="form-container mobile-reverse")
                     input(type="hidden" name="_csrf" value=csrfToken)
                     div
                         label(for="name") Nom:
@@ -16,7 +16,7 @@ block content
                     div
                         label(for="email") Email:
                         input(class="form-input" name="email" type="email")
-                div(class="form-container" id="contact-form")
+                div(class="form-container mobile-no-reverse" id="contact-form")
                     div
                         label(for="first-name") Prénom:
                         input(class="form-input" name="first-name" type="text")
@@ -26,7 +26,7 @@ block content
             div(class="form-message-container")
                 label(for="message") Message:
                 textarea(class="form-input" name="message")
-            button(type="submit" id="formbutton")
+            //button(type="submit" id="formbutton")
             div(id="form-sending-button") Envoyer
 block scripts
     script(src="/scripts/contact.js" type="module")

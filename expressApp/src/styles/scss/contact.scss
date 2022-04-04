@@ -1,15 +1,28 @@
 @import "btn-portfolio.scss";
+
+//@include desktop-screen-medium{width: 30%;}
+//@include mobile-screens-small{width: 50%;}
+
 .contact-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     height: 100rem;
+    @include mobile-screens-small{
+        height: 120rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
     #contact-main{
         width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include mobile-screens-small{
+            width: 100%;
+        }
         h2{
             margin-right: auto;
             font:{
@@ -18,63 +31,127 @@
         }
         form{
             width: 100%;
-            height: 45rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            @include desktop-screen-medium{
+                height: 45rem;
+            }
+            @include mobile-screens-small{
+                height: auto;
+            }
                 .form-data-container{
                     display: flex;
                     width: 100%;
                     align-items: center;
                     justify-content: center;
-                    .form-container{
-                        display: flex;
+                    @include mobile-screens-small{
                         flex-direction: column;
-                        justify-content: space-around;
-                        height: 20rem;
-                        width: 45%;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .form-container{
+                        @include desktop-screen-medium{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 20rem;
+                            width: 45%;
+                        }
                         div{
                             display: flex;
                             justify-content: space-around;
                             width: 95%;
+                            @include mobile-screens-small{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                height: 8rem;
+                            }
                             label{
                                 font-size: 2rem;
+                                @include mobile-screens-small{
+                                    margin-right: auto;
+                                    margin-left: 9%;
+                                }
                         }
                         input{
+                            //General mobile desktop
                             background-color: rgba(113, 112, 113, 0.5);
                             border: none;
                             height: 3rem;
                             width: 75%;
                             font-size: 2rem;
+                            @include mobile-screens-small{
+                                width: 80%;
+                            }
                         }
+                    }
+                }//ici
+                .mobile-reverse{
+                    @include mobile-screens-small{
+                        display: flex;
+                        flex-direction: column-reverse;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 20rem;
+                        width: 90%;
+                    }
+                }
+                .mobile-no-reverse{
+                    @include mobile-screens-small{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 20rem;
+                        width: 90%;
                     }
                 }
             }
             .form-message-container{
                 display: flex;
                 flex-direction: column;
-                width: 88%;
+                @include desktop-screen-medium{
+                    width: 88%;
+                }
+                @include mobile-screens-small{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 85%;
+                    height: 15rem;
+                }
                 label{
                     font-size: 2rem;
+                    @include mobile-screens-small{
+                        margin-right: auto;
+                        margin-left: 9%;
+                    }
                 }
                 textarea{
                     background-color: rgba(113, 112, 113, 0.5);
                     border: none;
-                    width: 50%;
                     height: 10rem;
-                    margin-left: 9%;
                     font-size: 1.6rem;
+                    @include desktop-screen-medium{
+                        width: 50%;
+                        margin-left: 9%;
+                    }
+                    @include mobile-screens-small{
+                        width: 80%;
+                    }
                 }
             }
             #form-sending-button{
                 @include btn-site-protfolio();
-                //width: 10%;
-                //height: 3rem;
-                //font:{
-                    //size: 2rem
-                //}
-
+                @include mobile-screens-small{
+                    width: 65%;
+                    height: 5rem;
+                    font-size: 2rem;
+                    margin-top: 2.5%;
+                }
             }
         }
     }

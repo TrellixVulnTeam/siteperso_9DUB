@@ -56,3 +56,17 @@ VALUES
 ("src/images/carousel/secretspot.jpg"),
 ("src/images/carousel/tube.jpg"),
 ("src/images/carousel/userprofildefaultpicture.jpg");
+
+INSERT INTO shopping_cart_component (product_name,product_brand,product_description,product_price,product_image_path)
+VALUES
+("Faded 2.0","Chili ","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac nisi sit amet nisi tempus vestibulum. Vivamus blandit non enim nec ullamcorper. Cras a dolor vitae quam tincidunt consectetur ut id mi. Ut purus mi, volutpat eu ornare sed, tristique et tortor. Nunc ultricies leo eget sem venenatis auctor. ", 850, "src/images/shopping/faded.jpg"),
+
+("Houdini", "Fire Wire ","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac nisi sit amet nisi tempus vestibulum. Vivamus blandit non enim nec ullamcorper. Cras a dolor vitae quam tincidunt consectetur ut id mi. Ut purus mi, volutpat eu ornare sed, tristique et tortor. Nunc ultricies leo eget sem venenatis auctor. ", 900, "src/images/shopping/houdini.jpg"),
+
+("Go-Fish","Fire Wire","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac nisi sit amet nisi tempus vestibulum. Vivamus blandit non enim nec ullamcorper. Cras a dolor vitae quam tincidunt consectetur ut id mi. Ut purus mi, volutpat eu ornare sed, tristique et tortor. Nunc ultricies leo eget sem venenatis auctor. ", 870, "src/images/shopping/go-fish.jpg"),
+
+("7Seas","Vissla","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac nisi sit amet nisi tempus vestibulum. Vivamus blandit non enim nec ullamcorper. Cras a dolor vitae quam tincidunt consectetur ut id mi. Ut purus mi, volutpat eu ornare sed, tristique et tortor. Nunc ultricies leo eget sem venenatis auctor. ", 350, "src/images/shopping/vissla.jpg"),
+
+("Supreme (M)","Volte","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac nisi sit amet nisi tempus vestibulum. Vivamus blandit non enim nec ullamcorper. Cras a dolor vitae quam tincidunt consectetur ut id mi. Ut purus mi, volutpat eu ornare sed, tristique et tortor. Nunc ultricies leo eget sem venenatis auctor. ", 370, "src/images/shopping/volte.jpg"),
+
+("Supreme (W)","Volte","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac nisi sit amet nisi tempus vestibulum. Vivamus blandit non enim nec ullamcorper. Cras a dolor vitae quam tincidunt consectetur ut id mi. Ut purus mi, volutpat eu ornare sed, tristique et tortor. Nunc ultricies leo eget sem venenatis auctor. ", 370, "src/images/shopping/volte-women.jpg");

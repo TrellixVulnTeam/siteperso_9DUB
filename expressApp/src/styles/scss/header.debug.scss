@@ -1,0 +1,109 @@
+@mixin mobile-screens-small{
+    @media(max-width: 480px){
+        @content;
+    }
+}
+/*@include mobile-screens-small{
+
+}*/
+@mixin desktop-screen-medium{
+    @media(min-width: 481px){
+        @content;
+    }
+}
+
+
+header{
+    border:  $box-show;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 70%;
+    nav{
+        @include desktop-screen-medium{
+            border: $box-show;
+            }
+            display: flex;
+            justify-content: flex-end;
+            border-color: red;
+            width: 50%;
+            height: 20rem;
+        }
+        @include mobile-screens-small{
+            flex-direction: column;
+            justify-content: center;
+            width: 75%;
+        ul{
+            @include desktop-screen-medium{
+                border: $box-show;
+                display: flex;
+                flex-direction: row;
+                width: 20rem;
+                height: 4rem;
+                justify-content: space-around;
+                align-items: center;
+            }
+            @include mobile-screens-small{
+                display: flex;
+                flex-direction: column;
+                background-color: red;
+                justify-content: space-around;
+                //align-items: center;
+                height: 20rem;
+                width: 20rem;
+            }
+            li{
+                @include desktop-screen-medium{
+                    display: block;
+                }
+                @include mobile-screens-small{
+                    display: flex;
+                    justify-content: center;
+                    //border: $box-show;
+                    width: 75%;
+                    margin-right:auto;
+                }
+                a{
+                    @include desktop-screen-medium{
+                        font-size: 2rem;
+                        width: 20rem;
+                        text-decoration: none;
+                        border: $box-show;
+                    }
+                    @include mobile-screens-small{
+                        //display: flex;
+                        border: $box-show;
+                        width: 100%;
+                        font-size: 2rem;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .header-info-cntainer{
+        display: block;
+        width: 100%;
+        //height: 50rem;
+        h2{
+            font:{
+                size: 8rem;
+            }
+        }
+        h1{
+            font:{
+                size:6rem;
+            }
+        }
+        h3{
+            font:{
+                size: 4rem;
+            }
+        }
+    }
+    .header-line{
+        width: 30%;
+        border-bottom: 0.4rem solid rgba(8, 233, 248, 0.8);
+    }
+}

@@ -1,12 +1,13 @@
 extends componentLayout
-block titles
-    title Image Carousel
+
 block vars 
-    - var bodyClass="carousel-body"
+    - var bodyClass="shoping-body"
 block content
-    div(id="carousel-root")
+    div(id="shoping-root")
 block scripts 
-    script(src="/scripts/jsx/ImageCarousel.jsx" type="text/babel")
+    script(src="/scripts/jsx/Product.jsx" type="text/babel")
+    script(src="/scripts/jsx/Cart.jsx" type="text/babel")
+    script(src="/scripts/jsx/Shoping.jsx" type="text/babel")
     script(src="https://unpkg.com/babel-standalone@6/babel.min.js")
     script(src="https://unpkg.com/react@16/umd/react.development.js" crossorigin)
     script(src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin)

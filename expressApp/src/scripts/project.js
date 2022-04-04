@@ -41,7 +41,8 @@ const projectObj={
             lateralContainer.children[i].append(elementCreator({tag: "h3", text: item}));
         });
         this.lateralNavFolder.forEach((item)=>{
-
+            const projectFolder=elementCreator({tag: "div", id: "project-folder"});
+            console.log(projectFolder);
             if(item==="Projects"){
                 //const projectFolder=elementCreator({tag: "div", id: "project-folder"});
                 const folder=elementCreator({tag: "div",classList: "folder" });
@@ -80,6 +81,7 @@ const projectObj={
         const projectFolder= document.getElementById(tagId);
         iconsData.map((item)=>{
             const projectOrComp= tagId==="components"?item.component_name:item.project_name;
+            console.log(projectOrComp);
             const icon=elementCreator({tag: "a", href: item.component_path});
             icon.append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt:projectOrComp}));
             icon.append(elementCreator({tag:"p", text:`${projectOrComp.replace(" ","-").toLowerCase()}.${item.langages_frameworks_name}`}));

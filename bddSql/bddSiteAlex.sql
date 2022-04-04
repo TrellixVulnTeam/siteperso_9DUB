@@ -56,6 +56,7 @@ CREATE TABLE carousel_component_images(
 CREATE TABLE shopping_cart_component(
     product_id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     product_name VARCHAR(60) UNIQUE NOT NULL,
+    product_brand VARCHAR(50),
     product_description VARCHAR(500) NOT NULL,
     product_price INTEGER NOT NULL,
     product_image_path VARCHAR(100) UNIQUE

@@ -1,0 +1,28 @@
+$shoping-font-color: black;
+.shoping-body{
+    border: 1px solid black;
+    background-color: black;
+    #shoping-root{
+        //Juste pour le dev
+        /*p{
+            color: $shoping-font-color;
+        }
+        h2{
+            color: $shoping-font-color;
+        }
+        h3{
+            color: $shoping-font-color;
+        }
+        .button{
+            color: black;
+        }*/
+        //
+        border: 1px solid black;
+        header{
+            border: 1px solid black;
+        }
+        main{
+            color: black;
+        }
+    }
+}

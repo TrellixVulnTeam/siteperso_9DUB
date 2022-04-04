@@ -13,4 +13,11 @@ router.get("/imageCarousel",function(req,res,next){
     })
 })
 module.exports = router;
-router.get("/image-carousel",(req,res,next)=>res.render("components/imageCarousel"))
+router.get("/image-carousel",(req,res,next)=>res.render("components/imageCarousel"));
+
+router.get("/products", function(req,res,next){
+    const dataBase= req.app.locals.db;
+    const sqlRequestProducts= `SELECT * FROM shopping_cart_component`
+    dataBase.query(sqlRequestProducts,[], (err, products)=>res.json(products))
+})
+router.get("/shoping",(req,res,next)=>res.render("components/shoping"));
