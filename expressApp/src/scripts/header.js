@@ -1,3 +1,22 @@
+/*document.getElementById("sqlactive").addEventListener("click",(event)=>{
+    event.preventDefault();
+    const sql=document.getElementById("sql")
+    console.log(sql.value);
+    const obj={answer: sql.value}
+    const csurfToken=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    fetch("http://localhost:4000/testsql",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json",
+            "CSRF-token": csurfToken
+        },
+        body: JSON.stringify(obj)
+    })
+    .then(response=>response.json())
+    .then(dat=>console.log(data))
+*/
+
+
 function elementCreator({tag,text= null, classList, eventFunction, href, src, alt, id}){
     const newElement= classList?Object.assign(document.createElement(tag),{classList:classList , innerText:text}):Object.assign(document.createElement(tag),{ innerText:text})
     if(eventFunction){

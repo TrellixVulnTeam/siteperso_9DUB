@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser=require("cookie-parser")
 const logger = require('morgan');
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const contactRouter = require('./routes/contact');
 const componentRouter= require("./routes/components");
 const bodyParser = require('body-parser');
 const cors= require("cors");
@@ -46,16 +46,9 @@ app.use(csurf({
 }
 }));
 app.use((req,res,next)=>{
-    //console.log(res);
-    //console.log(res);
-    //console.log(cors());
     console.log(err);
     next()
 })
-/*app.use((req,res,next)=>{
-    console.log("Middleware", req.csrfToken())
-    next()
-})*/
 app.use((err, req, res, next) => {
   if (err.code === 'EBADCSRFTOKEN'){
     console.log(req.headers);
@@ -74,24 +67,16 @@ app.use((err, req, res, next) => {
 app.use(express.static(path.join(__dirname, 'src')));
 app.use('/src', express.static(path.join(__dirname, 'src')));
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use("/component", componentRouter);
+app.use("/contact", contactRouter);
 /*FIN ROUTE ET FICHIER STATIQUE*/
-
-//console.log(csrfToken());
-
-
-
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-// error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');

@@ -1,54 +1,105 @@
 @import "langage-slider-button.scss";
+@keyframes fadeInFuck{from{opacity:0.25;}to{opacity:1;}};
+@keyframes fadeOutFuck{from{opacity:1;}to{opacity:0.25;}}
+//@include desktop-screen-medium{}
+//@include mobile-screens-small{}
+$letter-fs: 3rem;
 .about-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/background-about.jpg")/*rgba(0, 0, 0, 0.44)*/  no-repeat;
     background-size: cover;
     background-position: center;
-    height: 190rem;
+    height: 150rem;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-around;
+    @include mobile-screens-small{
+        height: 210rem;
+    }
     .letter{
-        width: 70%;
+        margin-top: 2rem;
+        @include desktop-screen-medium{
+            width: 70%;
+        }
+        @include mobile-screens-small{
+            width: 85%;
+        }
         p{
-            font-size: 3rem;
+            font-size: $letter-fs;
+            @include mobile-screens-small{
+                font-size: clac($letter-fs - 1.5rem);
+            }
         }
     }
-    #languages-frame{
+    section{
+        margin-top: 2rem;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        width: 65%;
-        //border: $box-show;
-        .frames-main-container{
-            //border: $box-show;
+        justify-content: space-around;
+        @include desktop-screen-medium{
+            width: 75%;
+        }
+        @include mobile-screens-small{
+            width: 50rem;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: space-around;
-            .frame-container{
+            justify-content: space-between;
+        }
+        .prev{
+            @include langages-slider-button($langages-slider-button-rules...);
+            @include mobile-screens-small{
+                width: 10rem;
+                height: 15rem;
+            }
+        }
+        .next{
+            @include langages-slider-button($langages-slider-button-rules...);
+            @include mobile-screens-small{
+                width: 10rem;
+                height: 15rem;
+            }
+        }
+        #langages{
+            display: flex;
+            overflow: hidden;
+            gap: 3rem;
+            @include desktop-screen-medium{
+                width: 76%;
+            }
+            @include mobile-screens-small{
+                width: 25rem;
+            }
+            .image-animation{
+                animation: fadeOutFuck ease-in-out 1;
+                animation-fill-mode: backwards;
+                animation-duration: 0.5s;
+                animation-delay: 0s;
+            }
+            div{
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                //border: $box-show;
-                width: 50%;
-                overflow: hidden;
-                gap: 5rem;
-                .arrow-btn{
-                    @include langages-slider-button($langages-slider-button-rules...);
-                    //display: block;
+                animation: fadeInFuck ease-in-out 1;
+                animation-fill-mode: forwards;
+                animation-duration: 0.5s;
+                @include desktop-screen-medium{
+                    width: 25rem;
                 }
-                .image-container{
-                    display: flex;
-                    flex-direction: column;
-                    height: 35rem;
-                    align-items: center;
-                    justify-content: center;
-                    img{
+                @include mobile-screens-small{
+                    width: 30rem;
+                }
+                img{
+                    height: auto;
+                    margin: auto;
+                    @include desktop-screen-medium{
                         width: 20rem;
-                        height: auto;
-                        margin-top: auto;
                     }
-                    h3{
-                        margin-top: auto;
-                        font-size: 3rem;
+                    @include mobile-screens-small{
+                        width: 25rem;
                     }
+                }
+                h3{
+                    font-size: 2rem;
                 }
             }
         }

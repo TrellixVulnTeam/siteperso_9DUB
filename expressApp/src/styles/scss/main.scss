@@ -23,6 +23,7 @@
     font-size: 10px;
     font-family: "Ubuntu";
     color: $main-font-color;
+    //height: 100%;
     @include mobile-screens{
         font-size: 7px;
     }
@@ -45,7 +46,4 @@ body{
 img{
     width: 10rem;
     height: 10rem;
-}
-.test{
-    color: black;
 }

@@ -15,10 +15,10 @@ class ImageCarousel extends React.Component{
             imagesData: data,
             displayedImage: data[1]
         }))
-    } handleNextFrame(event){
+    } async handleNextFrame(event){
         const image=document.getElementById("carousel-image")
-        image.classList.add("carousel-animation")
-        image.classList.remove("carousel-image")
+        await image.classList.add("carousel-animation")
+        await image.classList.remove("carousel-image")
         setTimeout(()=>{
             if(this.state.displayedImage.image_id<this.state.imagesData.length){
             this.setState({

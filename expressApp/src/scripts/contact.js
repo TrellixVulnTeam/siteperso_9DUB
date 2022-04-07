@@ -43,31 +43,15 @@ sendingButton.addEventListener("click",(event)=>{
     Object.entries(inputs).forEach((input) => {
         inputArray.find(item=>{
             if(input[1].name===item){
-                return input[1].value?answers[item]=input[1].value:answers.item=null;
+                return answers[item]=input[1].value
+                //return input[1].value?answers[item]=input[1].value:answers[item]=null;
             };
         });
-        /*switch(item[1].name){
-            case "name":
-                return item[1].value?answers.name=item[1].value:answers.name=null;
-            break;
-            case "first-name":
-                return item[1].value?answers.firstName=item[1].value:answers.firstName=null;
-            break;
-            case "email":
-                return item[1].value?answers.email=item[1].value:answers.email=null;
-            break;
-            case "phone":
-                return item[1].value?answers.phone=item[1].value:answers.phone=null;
-            break;
-            case "message":
-                return item[1].value?answers.message=item[1].value:answers.message=null;
-            break;
-        };*/
     });
     console.log(answers);
 
     const csurfToken=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    fetch("http://localhost:4000/send-form",{
+    fetch("http://localhost:4000/contact/send-form",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
