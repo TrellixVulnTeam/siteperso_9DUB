@@ -1,5 +1,5 @@
 async function downLoadCv(){
-    await fetch("http://localhost:4000/download")
+    await fetch(`${localAdress}download`)
     .then(response=>response.blob())
     .then(blob=>{
         const file = window.URL.createObjectURL(blob);

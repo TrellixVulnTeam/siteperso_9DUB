@@ -14,12 +14,13 @@ const csurf = require('csurf');
 require('dotenv').config();
 const sassMiddleware = require('node-sass-middleware');
 app.use(cors({
-    origin: "192.168.1.22",
+    origin: true,//"http://192.168.1.22:4000",
     methods:["GET","POST"],
     credentials: true,
-    optionsSuccessStatus: true,
-    //Access-Control-Allow-Origin: true
-}))
+    optionsSuccessStatus: 204,
+    sameSite: "none",
+    "Access-Control-Allow-Origin": true
+}));
 app.use(sassMiddleware({
   src: path.join(__dirname, 'src/styles/scss'),
   dest: path.join(__dirname, 'src/styles/css'),

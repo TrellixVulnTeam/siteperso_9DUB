@@ -4,14 +4,14 @@ class Langages extends HTMLElement{
         this.prepend(elementCreator({tag:"div",classList:"prev arrow-btn-left",eventFunction: this.handleFrame}))
         this.append(elementCreator({tag:"div", id: "langages"}))
         this.append(elementCreator({tag:"div",classList:"next arrow-btn-right",eventFunction: this.handleFrame}))
-        this.langagesFetch=fetch("http://localhost:4000/langages",{
+        this.langagesFetch=fetch(`${localAdress}langages`,{
             method: "GET",
             credentials: "include"
         })
         .then(response=>response.json())
         .then(data=>data.map(item=>{
             const langage= elementCreator({tag: "div"})
-            langage.append(elementCreator({tag:"img",src:`http://localhost:4000/${item.langages_frameworks_image_path}`,alt: item.langages_frameworks_name}))
+            langage.append(elementCreator({tag:"img",src:`${localAdress}${item.langages_frameworks_image_path}`,alt: item.langages_frameworks_name}))
             langage.append(elementCreator({tag:"h3",text: item.langages_frameworks_name}))
             this.children[1].append(langage)
         }));

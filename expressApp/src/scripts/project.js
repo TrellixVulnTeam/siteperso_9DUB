@@ -7,10 +7,10 @@ const projectObj={
     lateralNavSection: ["Computer","Devices","Networks"],
     networkDevicesData: [{
         name: "Hard Drive",
-        imagePath: "http://localhost:4000/src/images/project/hard-drive.svg"
+        imagePath: `${localAdress}src/images/project/hard-drive.svg`
     },{
         name: "Browse Networks",
-        imagePath: "http://localhost:4000/src/images/project/network.svg",
+        imagePath: `${localAdress}src/images/project/network.svg`,
     }],
     componentData: [],
     projectData: [],
@@ -20,12 +20,12 @@ const projectObj={
     filesDeco: elementCreator({tag: "div", classList:"files-deco",text:"Files"}),
     iconsLateralNavContainer: elementCreator({tag:"div", classList:"icons-lateralNav-container"}),
     async componentFetch(){
-        await fetch("http://localhost:4000/my-component")
+        await fetch(`${localAdress}my-component`)
         .then(response=>response.json())
         .then(data=>this.componentData=data);
     },
     async projectFetch(){
-        await fetch("http://localhost:4000/my-project")
+        await fetch(`${localAdress}my-project`)
         .then(response=>response.json())
         .then(data=>this.projectData=data);
     },
@@ -47,20 +47,20 @@ const projectObj={
                 //const projectFolder=elementCreator({tag: "div", id: "project-folder"});
                 const folder=elementCreator({tag: "div",classList: "folder" });
                 folder.append(elementCreator({tag: "div", classList: "projects-button", eventFunction: this.changeFolder}));
-                folder.children[0].append(elementCreator({tag:"img",classList: "projects-button" ,src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
+                folder.children[0].append(elementCreator({tag:"img",classList: "projects-button" ,src:`${localAdress}src/images/project/folder.svg`, alt: "folder"}));
                 folder.children[0].append(elementCreator({tag: "p", classList: "projects-button",text: item}));
                 folder.append(elementCreator({tag: "div", id: item.toLowerCase()}));
                 lateralContainer.children[0].appendChild(folder);
             }else if(item==="Components"){
                 const folder=elementCreator({tag: "div", classList: "folder"});
                 folder.append(elementCreator({tag: "div", classList: "components-button", eventFunction: this.changeFolder}));
-                folder.children[0].append(elementCreator({tag:"img", classList: "components-button", src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
+                folder.children[0].append(elementCreator({tag:"img", classList: "components-button", src:`${localAdress}src/images/project/folder.svg`, alt: "folder"}));
                 folder.children[0].append(elementCreator({tag: "p", classList: "components-button", text: item}));
                 folder.append(elementCreator({tag: "div", id: item.toLowerCase()}));
                 lateralContainer.children[0].appendChild(folder);
             } else{
                 const folder=elementCreator({tag: "div"});
-                folder.append(elementCreator({tag:"img", src:"http://localhost:4000/src/images/project/folder.svg", alt: item}));
+                folder.append(elementCreator({tag:"img", src:`${localAdress}src/images/project/folder.svg`, alt: item}));
                 folder.append(elementCreator({tag: "p", text: item}));
                 lateralContainer.children[0].appendChild(folder);
             }

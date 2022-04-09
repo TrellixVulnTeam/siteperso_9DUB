@@ -25,13 +25,19 @@ router.post("/send-form",async function(req,res,next){
     let message;
     Object.entries(req.body).find(function(item) {
         if(validator.isEmpty(item[1])){
-            return(
+            return item[0]!=="phone"?(
                 message=`Le champ ${traductionFrObj[item[0]]} est vide`,
-                delete req.body[item[0]]
-            )
-        }else if(item[0]==="email" && !validator.isEmpty(item[1])) {
+                delete req.body[item[0]],
+                console.log(req.body)
+            ): delete req.body[item[0]]
+        } else if(item[0]==="email" && !validator.isEmpty(item[1])) {
             return !validator.isEmail(item[1])?(
                 message="Email invalide",
+                delete req.body[item[0]]
+            ):null
+        } else if(item[0]==="phone" && !validator.isEmpty(item[1])){
+            return !validator.isMobilePhone(item[1],"fr-FR")?(
+                message="Téléphone invalide",
                 delete req.body[item[0]]
             ):null
         }
@@ -129,7 +135,7 @@ router.post("/send-form",async function(req,res,next){
         })
     }
 }else{
-    res.status(666).json({
+    res.status(600).json({
         message: message,
         validator: false
     })

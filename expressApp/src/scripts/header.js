@@ -15,7 +15,7 @@
     .then(response=>response.json())
     .then(dat=>console.log(data))
 */
-
+const localAdress="http://localhost:4000/"//"http://192.168.1.22:4000/"
 
 function elementCreator({tag,text= null, classList, eventFunction, href, src, alt, id}){
     const newElement= classList?Object.assign(document.createElement(tag),{classList:classList , innerText:text}):Object.assign(document.createElement(tag),{ innerText:text})
@@ -64,7 +64,7 @@ class HeaderSite extends HTMLElement{
         this.firstChild.append(elementCreator({tag:"ul",/*classList:"columns"*/}));
         buttons.forEach((item,i) => {
             this.firstChild.firstChild.append(elementCreator({tag:"li", /*classList:"column",*/}))
-            this.firstChild.firstChild.children[i].append(elementCreator({tag: "a",text: item, href:`http://localhost:4000/${item.replace(" ","").toLowerCase()}` }))
+            this.firstChild.firstChild.children[i].append(elementCreator({tag: "a",text: item, href:`${localAdress}${item.replace(" ","").toLowerCase()}` }))
             i++
         });
         if (window.screen.width<=480){
@@ -76,7 +76,7 @@ class HeaderSite extends HTMLElement{
             this.firstChild.children[0].classList.add("hidden")
             this.firstChild.prepend(mobileMenuContainer)
         }
-        fetch(`http://localhost:4000/header`,{
+        fetch(`${localAdress}header`,{
             method:"GET",
             /*headers:{
 

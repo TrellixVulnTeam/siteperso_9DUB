@@ -51,7 +51,7 @@ sendingButton.addEventListener("click",(event)=>{
     console.log(answers);
 
     const csurfToken=document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    fetch("http://localhost:4000/contact/send-form",{
+    fetch(`${localAdress}contact/send-form`,{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
