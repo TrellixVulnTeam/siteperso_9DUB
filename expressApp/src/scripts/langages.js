@@ -16,7 +16,6 @@ class Langages extends HTMLElement{
             this.children[1].append(langage)
         }));
     }async handleFrame(event){
-        console.log("here");
         const frame=document.getElementById("langages");
         const srcArray=[];
         const langagesName=[];

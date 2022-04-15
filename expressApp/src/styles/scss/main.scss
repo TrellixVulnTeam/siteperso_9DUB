@@ -7,7 +7,7 @@
 @import "project.scss";
 @import "carousel.scss";
 @import "mobile-menu.scss";
-@import "shoping.scss";
+@import "shopping/shoping.scss";
 
 //@import "btn-portfolio.scss";
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
@@ -24,9 +24,16 @@
     font-family: "Ubuntu";
     color: $main-font-color;
     //height: 100%;
+    @include tablets-laptops-screens{
+        font-size: 8px;
+    }
+    @include tablets-screens{
+        font-size: 8px;
+    }
     @include mobile-screens{
         font-size: 7px;
     }
+
 }
 body{
     display: flex;
@@ -41,6 +48,8 @@ body{
     animation-fill-mode: forwards;
     animation-duration: 1s;
     animation-delay: 0.5s;
+    min-height: 100vh;
+    //height: auto;
 
 }
 img{

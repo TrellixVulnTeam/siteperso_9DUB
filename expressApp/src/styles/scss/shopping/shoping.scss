@@ -1,0 +1,272 @@
+$shopping-font-color: black;
+$shopping-main-color: rgba(20,187,228,1);
+$shopping-box-shadow:
+-0.1px -0.2px 3.3px rgba(0, 0, 0, 0.038),
+1px 1.7px 10.3px rgba(0, 0, 0, 0.055),
+4.1px 7px 24.4px rgba(0, 0, 0, 0.072),
+17px 29px 80px rgba(0, 0, 0, 0.11)
+;
+$header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228,1) 35%, rgba(5,206,241,1) 95%);
+//rgb(23,149,191);
+.shoping-body{
+    #shoping-root{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        header{
+                box-shadow: $shopping-box-shadow;
+                background-color: $shopping-main-color;
+                background: $header-background;
+                width: 85%;
+                height: 15rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border-radius: 1.5rem;
+            h1{
+                color: white;
+                font-size: 4rem;
+            }
+            nav{
+
+                ul{
+                    li{
+                        p{
+                            color: white;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .shopping-list-main{
+            display: flex;
+            flex-wrap: wrap;
+            width: 75%;
+            height: 100rem;
+            margin-top: 5%;
+            align-content: space-around;
+            justify-content: space-around;
+            article{
+                border-radius: 1.5rem;
+                box-shadow: $shopping-box-shadow;
+                border: 0.1px solid rgba(172, 172, 172, 0.2);
+                display: flex;
+                flex-direction: column;
+                //justify-content: space-around;
+                align-items: center;
+                width: 30%;
+                height: 45rem;
+                .product-image{
+                    margin-top: 2.5%;
+                    width: 50%;
+                    height: 20rem;
+                    overflow: hidden;
+                    align-self: center;
+                    object-fit: cover;
+                    object-position: center;
+                    border: 0.1px solid rgba(172, 172, 172, 0.2);
+                    border-radius: 1.5rem;
+                    img{
+                        //object-fit: cover;
+                        //object-position: center;
+                        border-radius: 1.5rem;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .product-info-container{
+                    width: 85%;
+                    border-radius: 1.5rem;
+                    //border: 0.1px solid rgba(172, 172, 172, 0.1);
+                    h2{
+                        color: $shopping-font-color;
+                        font-size: 1.8rem;
+                    }
+                    h3{
+                        margin-top: -5%;
+                        color: $shopping-font-color;
+                        font-size: 1.8rem;
+                    }
+                    .product-description{
+                        margin-top: -2.5%;
+                        font-size: 1.3rem;
+                        color: $shopping-font-color
+                    }
+                    .product-price{
+                        color: $shopping-font-color;
+                        font-size: 1.6rem;
+                    }
+                }
+                .button-container{
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 5%;
+                    div{
+                        color: white;
+                        font-size: 1.6rem;
+                        background:$shopping-main-color;
+                        border-radius: 1.5rem;
+                        border: 2px solid white;
+                        box-shadow: $shopping-box-shadow;
+                        width: 60%;
+                        height: 3rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &:hover{
+                            background-color: white;
+                            border-color:$shopping-main-color;
+                            color: $shopping-main-color;
+                            transition: linear 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+        .product-main{
+            //border: 1px solid yellow;
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            article{
+                margin-top: 10%;
+                border: 1px solid red;
+                width: 85%;
+                display: flex;
+                justify-content: space-around;
+                height: 45rem;
+                .product-image{
+                    width: 40%;
+                    align-self: center;
+                    border: 0.1px solid rgba(172, 172, 172, 0.2);
+                    border-radius: 1.5rem;
+                    overflow: hidden;
+                    box-shadow: $shopping-box-shadow;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .product-info-container{
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    //justify-content: space-around;
+                    align-self: center;
+                    align-items: flex-start;
+                    height: 30rem;
+                    //border: 1px solid black;
+                    h2{
+                        font-size: 3rem;
+                        margin-bottom: -2.5%;
+                        color: $shopping-font-color;
+                    }
+                    h3{
+                        font-size: 3rem;
+                        color: $shopping-font-color;
+                    }
+                    .product-description{
+                        color: $shopping-font-color;
+                        font-size: 1.8rem;
+                    }
+                    .product-price{
+                        color: $shopping-font-color;
+                        font-size: 1.8rem;
+                    }
+                }
+                .button-container{
+                    width: 35%;
+                    position: absolute;
+                    margin-left: 36%;
+                    margin-top: 24.5%;
+                    div{
+                        cursor: pointer;
+                        color: white;
+                        font-size: 1.6rem;
+                        background:$shopping-main-color;
+                        border-radius: 1.5rem;
+                        border: 2px solid white;
+                        box-shadow: $shopping-box-shadow;
+                        width: 60%;
+                        height: 3rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &:hover{
+                            background-color: white;
+                            border-color:$shopping-main-color;
+                            color: $shopping-main-color;
+                            transition: linear 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+        .cart-main{
+            .cart-band{
+                h2{
+
+                }
+            }
+            .cart-list-container{
+                .cart-columns{
+                    p{
+
+                    }
+                }
+                .cart-list{
+                    ul{
+                        li{
+                            article{
+                                .cart-product-image{
+                                    img{
+
+                                    }
+                                }
+                                .cart-product-info-container{
+                                    h2{
+                                        color: $shopping-font-color
+                                    }
+                                    h3{
+                                        color: $shopping-font-color
+                                    }
+                                }
+                                .cart-buttons-container{
+                                    div{
+                                        color: $shopping-font-color
+                                    }
+                                    .cart-add-btn{
+
+                                    }
+                                    .cart-remove-btn{
+
+                                    }
+                                }
+                                p{
+                                    color: $shopping-font-color
+                                }
+                            }
+                        }
+                    }
+                }
+                .button-price{
+                    h3{
+
+                    }
+                    div{
+
+                    }
+                }
+            }
+        }
+        footer{
+
+        }
+    }
+}

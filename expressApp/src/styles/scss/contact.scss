@@ -7,12 +7,12 @@
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100rem;
+    //height: 100rem;
     @include mobile-screens-small{
-        height: 120rem;
+        //height: 120rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        //justify-content: space-around;
     }
     #contact-main{
         width: 70%;
@@ -20,8 +20,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include tablets-laptops-screens{
+            width: 70%;
+        }
+        @include tablets-screens{
+            width: 85%;
+        }
         @include mobile-screens-small{
             width: 100%;
+            margin-top: 7.5%;
         }
         h2{
             margin-right: auto;
@@ -38,6 +45,12 @@
             @include desktop-screen-medium{
                 height: 45rem;
             }
+            @include tablets-laptops-screens{
+                height: 50rem;
+            }
+            @include tablets-screens{
+                height: 50rem;
+            }
             @include mobile-screens-small{
                 height: auto;
             }
@@ -46,6 +59,12 @@
                     width: 100%;
                     align-items: center;
                     justify-content: center;
+                    @include tablets-laptops-screens{
+                        justify-content: space-around;
+                    }
+                    @include tablets-screens{
+                        justify-content: space-around;
+                    }
                     @include mobile-screens-small{
                         flex-direction: column;
                         align-items: center;
@@ -59,10 +78,32 @@
                             height: 20rem;
                             width: 45%;
                         }
+                        @include tablets-laptops-screens{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 20rem;
+                            width: 50%;
+                        }
+                        @include tablets-screens{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 20rem;
+                            width: 50%;
+                        }
                         div{
                             display: flex;
                             justify-content: space-around;
                             width: 95%;
+                            @include tablets-laptops-screens{
+                                width: 100%;
+                                align-items: center;
+                            }
+                            @include tablets-screens{
+                                width: 100%;
+                                align-items: center;
+                            }
                             @include mobile-screens-small{
                                 display: flex;
                                 flex-direction: column;
@@ -81,9 +122,19 @@
                             background-color: rgba(113, 112, 113, 0.5);
                             border: none;
                             height: 3rem;
-                            width: 75%;
+                            width: 80%;
                             font-size: 2rem;
+                            border-radius: 0.5rem;
+                            @include tablets-laptops-screens{
+                                height: 4rem;
+                                width: 75%;
+                            }
+                            @include tablets-screens{
+                                height: 4rem;
+                                width: 75%;
+                            }
                             @include mobile-screens-small{
+                                height: 4rem;
                                 width: 80%;
                             }
                         }
@@ -116,6 +167,12 @@
                 @include desktop-screen-medium{
                     width: 88%;
                 }
+                @include tablets-laptops-screens{
+                    width: 98%;
+                }
+                @include tablets-screens{
+                    width: 98%;
+                }
                 @include mobile-screens-small{
                     display: flex;
                     align-items: center;
@@ -129,13 +186,25 @@
                         margin-right: auto;
                         margin-left: 9%;
                     }
+                    @include tablets-screens{
+                        //margin-left: 9%;
+                    }
                 }
                 textarea{
                     background-color: rgba(113, 112, 113, 0.5);
                     border: none;
                     height: 10rem;
                     font-size: 1.6rem;
+                    border-radius: 0.5rem;
                     @include desktop-screen-medium{
+                        width: 50%;
+                        margin-left: 9%;
+                    }
+                    @include tablets-laptops-screens{
+                        width: 50%;
+                        margin-left: 9%;
+                    }
+                    @include tablets-screens{
                         width: 50%;
                         margin-left: 9%;
                     }
@@ -146,6 +215,18 @@
             }
             #form-sending-button{
                 @include btn-site-protfolio();
+                @include tablets-laptops-screens{
+                    width: 40%;
+                    height: 5rem;
+                    font-size: 2rem;
+                    margin-top: 2.5%;
+                }
+                @include tablets-screens{
+                    width: 40%;
+                    height: 5rem;
+                    font-size: 2rem;
+                    margin-top: 2.5%;
+                }
                 @include mobile-screens-small{
                     width: 65%;
                     height: 5rem;

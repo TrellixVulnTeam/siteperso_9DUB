@@ -2,19 +2,31 @@ $nav-bar-link-fs: 2rem;
 $header-h2-fs: 8rem;
 $header-h1-fs: 6rem;
 $header-h3-fs: 4rem;
+
+//@include tablets-screens{}
+@mixin desktop-screen-medium{
+    @media(min-width: 1024px){
+        @content;
+    }
+}
+
+@mixin tablets-laptops-screens{
+    @media(min-width: 769px) and (max-width: 1024px){
+        @content;
+    }
+}
+
+@mixin tablets-screens{
+    @media(min-width: 481px) and (max-width: 768px){
+        @content;
+    }
+}
 @mixin mobile-screens-small{
     @media(max-width: 480px){
         @content;
     }
 }
-/*@include mobile-screens-small{
 
-}*/
-@mixin desktop-screen-medium{
-    @media(min-width: 481px){
-        @content;
-    }
-}
 //@include desktop-screen-medium
 header{
     @include desktop-screen-medium{
@@ -23,6 +35,20 @@ header{
         justify-content: space-around;
         align-content: space-around;
         width: 70%;
+    }
+    @include tablets-laptops-screens{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-around;
+        width: 70%;
+    }
+    @include tablets-screens{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-around;
+        width: 85%;
     }
     @include mobile-screens-small{
         display: flex;
@@ -36,8 +62,26 @@ header{
             display: flex;
             justify-content: flex-end;
         }
+        @include tablets-laptops-screens{
+            margin-right: -15%;display: flex;
+            justify-content: flex-end;
+        }
+        @include tablets-screens{
+            align-self: flex-end;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 75%;
+            height: auto;
+            position: fixed;
+            top:2%;
+            right: 2%;
+            border-radius: 0.5rem;
+        }
         @include mobile-screens-small{
             align-self: flex-end;
+            border-radius: 0.5rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -60,6 +104,21 @@ header{
                 justify-content: space-around;
                 align-items: center;
             }
+            @include tablets-laptops-screens{
+                display: flex;
+                flex-direction: row;
+                width: 35rem;
+                height: 4rem;
+                justify-content: space-around;
+                align-items: center;
+            }
+            @include tablets-screens{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 35rem;
+                width: 100%;
+            }
             @include mobile-screens-small{
                 display: flex;
                 flex-direction: column;
@@ -68,8 +127,14 @@ header{
                 width: 100%;
             }
             li{
-                @include desktop-screen-medium{
-                    display: block;
+                display: block;
+                @include tablets-screens{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 90%;
+                    height: 5rem;
+                    margin-left: -5%;
                 }
                 @include mobile-screens-small{
                     display: flex;
@@ -81,28 +146,40 @@ header{
                 }
                 a{
                     font-size: $nav-bar-link-fs;
-                    @include desktop-screen-medium{
-                        text-decoration: none;
-                    }
-                    @include mobile-screens-small{
-                        text-decoration: none;
-                    }
+                    text-decoration: none;
                 }
             }
         }
     }
     .header-info-cntainer{
-        display: block;
-        width: 100%;
+        //display: block;
+        //width: 100%;
+        @include desktop-screen-medium{
+            //display: block;
+            width: 100%;
+        }
+        @include tablets-laptops-screens(){
+            width: 100%;
+        }
+        @include tablets-screens{
+            margin-top: 5%;
+            display: block;
+            width: 100%;
+        }
         @include mobile-screens-small{
             margin-top: 5%;
             display: block;
             width: 100%;
         }
         h2{
-            @include desktop-screen-medium{
+            //@include desktop-screen-medium{
                 font:{
                     size: $header-h2-fs;
+                }
+            //}
+            @include tablets-screens{
+                font:{
+                    size: calc($header-h2-fs - 1.55rem);
                 }
             }
             @include mobile-screens-small{
@@ -112,9 +189,14 @@ header{
             }
         }
         h1{
-            @include desktop-screen-medium{
+            //@include desktop-screen-medium{
                 font:{
                     size:$header-h1-fs;
+                }
+            //}
+            @include tablets-screens{
+                font:{
+                    size: calc($header-h1-fs - 1rem);
                 }
             }
             @include mobile-screens-small{
@@ -124,9 +206,14 @@ header{
             }
         }
         h3{
-            @include desktop-screen-medium{
+            //@include desktop-screen-medium{
                 font:{
                     size: $header-h3-fs;
+                }
+            //}
+            @include tablets-screens{
+                font:{
+                    size: calc($header-h3-fs - 0.75rem);
                 }
             }
             @include mobile-screens-small{
@@ -139,6 +226,8 @@ header{
     .header-line{
         border-bottom: 0.4rem solid rgba(8, 233, 248, 0.8);
         @include desktop-screen-medium{width: 30%;}
+        @include tablets-laptops-screens{width: 30%;}
+        @include tablets-screens{width: 40%;}
         @include mobile-screens-small{width: 50%;}
     }
 }

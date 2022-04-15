@@ -81,6 +81,14 @@ class Shoping extends React.Component{
             displayProduct: true,
             displayList: false
         })
+    } classSelector(){
+        if(this.state.displayProduct){
+            return "product-main";
+        }else if(this.state.displayCart){
+            return "cart-main"
+        }else{
+            return "shopping-list-main"
+        }
     } render(){
         console.log(this.state.cart);
         const productJsx= this.state.productsData.map(product=>(
@@ -98,13 +106,10 @@ class Shoping extends React.Component{
                             <li>
                                 <p id="cart">Panier</p>
                             </li>
-                            <li>
-                                <p id="unknow">LOLLOLO</p>
-                            </li>
                         </ul>
                     </nav>
                 </header>
-                <main>
+                <main className={this.classSelector()}>
                     {this.state.displayList?productJsx:null}
                     {this.state.displayProduct?<Product product={this.state.selectedProduct} addToCart={(product)=>this.handleAddProduct(product)}/>:null}
                     {this.state.displayCart?<Cart cartItem={this.state.cart} removeProduct={(product)=>this.handleRemoveProduct(product)} addToCart={(product)=>this.handleAddProduct(product)}/>:null}

@@ -8,23 +8,38 @@ $letter-fs: 3rem;
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/background-about.jpg")/*rgba(0, 0, 0, 0.44)*/  no-repeat;
     background-size: cover;
     background-position: center;
-    height: 150rem;
+    //height: 150rem;
     display: flex;
     flex-direction: column;
     //justify-content: space-around;
+    @include tablets-screens{
+        //height: 190rem;
+    }
     @include mobile-screens-small{
-        height: 210rem;
+        //height: 210rem;
     }
     .letter{
         margin-top: 2rem;
         @include desktop-screen-medium{
             width: 70%;
         }
+        @include tablets-laptops-screens{
+            width: 70%;
+        }
+        @include tablets-screens{
+            width: 85%;
+        }
         @include mobile-screens-small{
             width: 85%;
         }
         p{
             font-size: $letter-fs;
+            @include tablets-laptops-screens{
+                font-size: 2.7rem;
+            }
+            @include tablets-screens{
+                font-size: 2.5rem;
+            }
             @include mobile-screens-small{
                 font-size: clac($letter-fs - 1.5rem);
             }
@@ -32,11 +47,25 @@ $letter-fs: 3rem;
     }
     section{
         margin-top: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
         @include desktop-screen-medium{
             width: 75%;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @include tablets-laptops-screens{
+            width: 75%;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @include tablets-screens{
+            width: 50rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         @include mobile-screens-small{
             width: 50rem;
@@ -46,6 +75,14 @@ $letter-fs: 3rem;
         }
         .prev{
             @include langages-slider-button($langages-slider-button-rules...);
+            @include tablets-laptops-screens{
+                width: 10rem;
+                height: 10rem;
+            }
+            @include tablets-screens{
+                width: 10rem;
+                height: 15rem
+            }
             @include mobile-screens-small{
                 width: 10rem;
                 height: 15rem;
@@ -53,6 +90,14 @@ $letter-fs: 3rem;
         }
         .next{
             @include langages-slider-button($langages-slider-button-rules...);
+            @include tablets-laptops-screens{
+                width: 10rem;
+                height: 10rem;
+            }
+            @include tablets-screens{
+                width: 10rem;
+                height: 15rem
+            }
             @include mobile-screens-small{
                 width: 10rem;
                 height: 15rem;
@@ -64,6 +109,12 @@ $letter-fs: 3rem;
             gap: 3rem;
             @include desktop-screen-medium{
                 width: 76%;
+            }
+            @include tablets-laptops-screens{
+                width: 45rem;
+            }
+            @include tablets-screens{
+                width: 20rem;
             }
             @include mobile-screens-small{
                 width: 25rem;
@@ -85,6 +136,12 @@ $letter-fs: 3rem;
                 @include desktop-screen-medium{
                     width: 25rem;
                 }
+                @include tablets-laptops-screens{
+                    width: 25rem;
+                }
+                @include tablets-screens{
+                    width: 30rem;
+                }
                 @include mobile-screens-small{
                     width: 30rem;
                 }
@@ -92,6 +149,12 @@ $letter-fs: 3rem;
                     height: auto;
                     margin: auto;
                     @include desktop-screen-medium{
+                        width: 20rem;
+                    }
+                    @include tablets-laptops-screens{
+                        width: 20rem;
+                    }
+                    @include tablets-screens{
                         width: 20rem;
                     }
                     @include mobile-screens-small{

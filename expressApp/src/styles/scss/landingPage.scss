@@ -13,9 +13,6 @@ $landing-page-fs: 3rem;
     background-clip: border-box;
     height: auto;
     height: 100vh;
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: space-around;
     @include mobile-screens-small{
         height: auto;
         display: flex;
@@ -24,20 +21,16 @@ $landing-page-fs: 3rem;
     }
     main{
         width: 70%;
+        @include tablets-screens{
+            width: 85%;
+        }
         @include mobile-screens-small{
             width: 85%;
         }
         p{
-            @include desktop-screen-medium{
-                font:{
-                    size: $landing-page-fs;
-                }
-                line-height: 5rem;
-            }
+            font-size: $landing-page-fs;
+            line-height: 5rem;
             @include mobile-screens-small{
-                font:{
-                    size: calc($landing-page-fs - 0.5rem);
-                }
                 line-height: 4rem;
             }
         }
@@ -46,6 +39,10 @@ $landing-page-fs: 3rem;
             height: 2rem;
             margin: auto;
             @include btn-site-protfolio();
+            @include tablets-screens{
+                width: 35rem;
+                height: 5rem;
+            }
             @include mobile-screens-small{
                 width: 35rem;
                 height: 5rem;
