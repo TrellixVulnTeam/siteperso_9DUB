@@ -14,9 +14,11 @@ class Cart extends React.Component{
                         <h2>{product.product_brand}</h2>
                         <h3>{product.product_name}</h3>
                     </div>
+                    <div className="cart-count-container">
+                        <p>{product.count}</p>
+                    </div>
                     <div className="cart-buttons-container">
                         <div className="cart-add-btn" onClick={()=>this.props.addToCart(product)}>Add to cart</div>
-                            <p>{product.count}</p>
                         <div className="cart-remove-btn" onClick={()=>this.props.removeProduct(product)}>Remove from cart</div>
                     </div>
                     <p>{product.product_price}</p>

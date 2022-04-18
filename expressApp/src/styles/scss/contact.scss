@@ -1,34 +1,49 @@
 @import "btn-portfolio.scss";
 
-//@include desktop-screen-medium{width: 30%;}
-//@include mobile-screens-small{width: 50%;}
-
 .contact-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/cssAssets/contact.jpg") no-repeat;
     background-size: cover;
     background-position: center;
-    //height: 100rem;
     @include mobile-screens-small{
-        //height: 120rem;
         display: flex;
         flex-direction: column;
-        //justify-content: space-around;
     }
     #contact-main{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include desktop-screen-medium{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @include desktops-screens-small{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         @include tablets-laptops-screens{
             width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         @include tablets-screens{
             width: 85%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         @include mobile-screens-small{
             width: 100%;
             margin-top: 7.5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         h2{
             margin-right: auto;
@@ -37,35 +52,72 @@
             }
         }
         form{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
             @include desktop-screen-medium{
                 height: 45rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+            @include desktops-screens-small{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
             }
             @include tablets-laptops-screens{
                 height: 50rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
             }
             @include tablets-screens{
                 height: 50rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
             }
             @include mobile-screens-small{
                 height: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
             }
                 .form-data-container{
-                    display: flex;
-                    width: 100%;
-                    align-items: center;
-                    justify-content: center;
+                    @include desktop-screen-medium{
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    @include desktops-screens-small{
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
+                    }
                     @include tablets-laptops-screens{
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
                         justify-content: space-around;
                     }
                     @include tablets-screens{
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
                         justify-content: space-around;
                     }
                     @include mobile-screens-small{
+                        display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
@@ -77,6 +129,13 @@
                             justify-content: space-around;
                             height: 20rem;
                             width: 45%;
+                        }
+                        @include desktops-screens-small{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 20rem;
+                            width: 50%;
                         }
                         @include tablets-laptops-screens{
                             display: flex;
@@ -93,16 +152,27 @@
                             width: 50%;
                         }
                         div{
-                            display: flex;
-                            justify-content: space-around;
-                            width: 95%;
+                            @include desktop-screen-medium{
+                                display: flex;
+                                justify-content: space-around;
+                                width: 95%;
+                            }
+                            @include desktops-screens-small{
+                                display: flex;
+                                justify-content: space-around;
+                                width: 95%;
+                            }
                             @include tablets-laptops-screens{
                                 width: 100%;
                                 align-items: center;
+                                display: flex;
+                                justify-content: space-around;
                             }
                             @include tablets-screens{
                                 width: 100%;
                                 align-items: center;
+                                display: flex;
+                                justify-content: space-around;
                             }
                             @include mobile-screens-small{
                                 display: flex;
@@ -120,11 +190,16 @@
                         input{
                             //General mobile desktop
                             background-color: rgba(113, 112, 113, 0.5);
+                            height: 4rem;
                             border: none;
-                            height: 3rem;
-                            width: 80%;
                             font-size: 2rem;
                             border-radius: 0.5rem;
+                            @include desktop-screen-medium{
+                                width: 80%;
+                            }
+                            @include desktops-screens-small{
+                                width: 70%;
+                            }
                             @include tablets-laptops-screens{
                                 height: 4rem;
                                 width: 75%;
@@ -162,16 +237,25 @@
                 }
             }
             .form-message-container{
-                display: flex;
-                flex-direction: column;
                 @include desktop-screen-medium{
                     width: 88%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                @include desktops-screens-small{
+                    display: flex;
+                    flex-direction: column;
+                    width: 97%;
                 }
                 @include tablets-laptops-screens{
                     width: 98%;
+                    display: flex;
+                    flex-direction: column;
                 }
                 @include tablets-screens{
                     width: 98%;
+                    display: flex;
+                    flex-direction: column;
                 }
                 @include mobile-screens-small{
                     display: flex;
@@ -182,9 +266,13 @@
                 }
                 label{
                     font-size: 2rem;
+                    @include desktop-screen-medium{
+                        margin-right: auto;
+                        //margin-left: 9%;
+                    }
                     @include mobile-screens-small{
                         margin-right: auto;
-                        margin-left: 9%;
+                        //margin-left: 9%;
                     }
                     @include tablets-screens{
                         //margin-left: 9%;
@@ -199,6 +287,10 @@
                     @include desktop-screen-medium{
                         width: 50%;
                         margin-left: 9%;
+                    }
+                    @include desktops-screens-small{
+                        width: 45%;
+                        margin-left: 11%;
                     }
                     @include tablets-laptops-screens{
                         width: 50%;
@@ -215,6 +307,9 @@
             }
             #form-sending-button{
                 @include btn-site-protfolio();
+                @include desktops-screens-small{
+                    margin-top: 2.5%;
+                }
                 @include tablets-laptops-screens{
                     width: 40%;
                     height: 5rem;

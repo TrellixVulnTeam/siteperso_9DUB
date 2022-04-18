@@ -1,21 +1,13 @@
 USE portfolio;
 
 INSERT INTO my_info (name, first_name, description, front_back, work, email)
-VALUES  ("Sage", "Alexandre", "Développeur web et mobile junior je souhaite à terme devenir développeur full-stack spécialiser dans le dévellopement de site web et d'applications mobile.", "Front-end & Back-end", "Developpeur web et mobile", "alexandresage56@gmail.com");
+VALUES  ("Sage", "Alexandre", "Développeur web et mobile junior je souhaite à terme devenir développeur full-stack spécialisé dans le développement de site web et d'applications mobile..", "Front-end & Back-end", "Developpeur web et mobile", "alexandresage56@gmail.com");
 
 INSERT INTO about (about_paragraph)
-VALUES ("Terminant une formation de développeur Web et Mobile je suis à la recherche
-d'un poste de développeur Web et Mobile Junior pour parfaire mes compétences."),
-("Vous avez découvert au travers de ce site,les compétences que j’ai
-aquises lors de ma formation de développeur web et web mobile chez Digigtal
-Campus à Rennes. Lorsdes modules de cette formation j’ai étudié différents
-langages et les frameworks."),
-("J’ai également acquis des compétences dans le développement d’applications
-mobiles via ReactNative."),
-("Cette formation constitue pour moi une réelle oportunité de reconversion dans
-un secteur qui mepassionne car il est en constante évolution. J’ai par exemple
-a titre personnel souscrit un abonnement ausite Codecademy afin de
-compléter les conaissances aquises lors de ma formation.");
+VALUES (" Terminant une formation de développeur Web et Mobile je suis à la recherche d'un poste de développeur Web et Mobile Junior pour parfaire mes compétences."),
+(" Vous avez découvert au travers de ce site, les compétences que j’ai acquises lors de ma formation de développeur web et web mobile chez Digigtal Campus à Rennes. Lors des modules de cette formation j’ai étudié différents langages et les frameworks."),
+("J’ai également acquis des compétences dans le développement d’applications mobiles via ReactNative."),
+("Cette formation constitue pour moi une réelle opportunité de reconversion dans un secteur qui me passionne car il est en constante évolution. J’ai par exemple à titre personnel souscrit un abonnement au site Codecademy afin de compléter les connaissances acquises lors de ma formation.");
 
 INSERT INTO langages_frameworks (langages_frameworks_name,langages_frameworks_image_path)
 VALUES
@@ -41,7 +33,7 @@ VALUES
 INSERT INTO my_component (component_name,component_path,component_langage_id)
 VALUES
 ("image-carousel", "component/image-carousel", 3),
-("shopping-cart", "component/shopping", 2),
+("shopping-cart", "component/shopping", 3),
 ("Composant 3", "#", 1);
 
 INSERT INTO carousel_component_images (image_path)

@@ -4,22 +4,6 @@ const multer = require('multer');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
-//const upload= multer({dest: "./public/images/usersImages"});
-
-router.post("/testsql",function(req,res,next){
-    dataBase= req.app.locals.db;
-    const sql=`SELECT * FROM contact WHERE contact_id = "${req.body.answer}"`
-    //console.log(req.body.answer);
-    //console.log(dataBase.query(sql,req.body.answer));
-    dataBase.query(sql,(err,response)=>{
-            console.log(req.body.answer);
-            console.log(response);
-            res.json({response: response})
-        })
-
-
-})
-
 router.get("/header", function(req,res,next){
     const dataBase= req.app.locals.db;
     const sqlRequestHeader=`SELECT * FROM my_info`;
@@ -34,7 +18,6 @@ module.exports = router;
 router.get("/",(req,res,next)=>res.redirect("acceuil"))
 router.get('/acceuil', function(req, res, next) {
     const dataBase= req.app.locals.db;
-    //console.log(csurf());
     const sqlRequestHeader=`SELECT * FROM my_info`;
     dataBase.query(sqlRequestHeader,[],(err, my_info)=>{
         const description=my_info[0].description

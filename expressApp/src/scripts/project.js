@@ -42,9 +42,7 @@ const projectObj={
         });
         this.lateralNavFolder.forEach((item)=>{
             const projectFolder=elementCreator({tag: "div", id: "project-folder"});
-            console.log(projectFolder);
             if(item==="Projects"){
-                //const projectFolder=elementCreator({tag: "div", id: "project-folder"});
                 const folder=elementCreator({tag: "div",classList: "folder" });
                 folder.append(elementCreator({tag: "div", classList: "projects-button", eventFunction: this.changeFolder}));
                 folder.children[0].append(elementCreator({tag:"img",classList: "projects-button" ,src:`${localAdress}src/images/project/folder.svg`, alt: "folder"}));
@@ -64,15 +62,21 @@ const projectObj={
                 folder.append(elementCreator({tag: "p", text: item}));
                 lateralContainer.children[0].appendChild(folder);
             }
-            //lateralContainer.children[0].appendChild(folder);
         });
         this.networkDevicesData.map((item,i)=>{
             lateralContainer.children[1+i].append(elementCreator({tag:"div"}));
             lateralContainer.children[1+i].children[1].append(elementCreator({tag: "img", src: item.imagePath, alt: item.name}));
             lateralContainer.children[1+i].children[1].append(elementCreator({tag: "p", text: item.name}));
         });
-        targetTag.children[2].append(lateralContainer);
-        targetTag.children[2].append(elementCreator({tag: "div", classList:"icons-container"}))
+        //targetTag.children[2].append(lateralContainer);
+        targetTag.children[2].append(elementCreator({tag: "div", classList:"icons-container"}),lateralContainer)
+        if (window.screen.width<=769){
+            lateralContainer.classList.add("hidden");
+            const mobileBar=elementCreator({tag:"div",id:"mobile-bar"});
+            mobileBar.append(elementCreator({tag:"div", id:"mobile-bar-button", classList:"arrow-btn-right"}));
+            mobileBar.addEventListener("click",()=>lateralContainer.classList[0]==="hidden"?lateralContainer.classList.remove("hidden"):lateralContainer.classList.add("hidden"))
+            targetTag.children[2].append(mobileBar)
+        }
     },
     createIcons(iconsData, tagId){
         this.projectTab.addEventListener("click", (event)=>this.changeFolder(event));
@@ -84,7 +88,7 @@ const projectObj={
             console.log(projectOrComp);
             const icon=elementCreator({tag: "a", href: item.component_path});
             icon.append(elementCreator({tag: "img", src: item.langages_frameworks_image_path, alt:projectOrComp}));
-            icon.append(elementCreator({tag:"p", text:`${projectOrComp.replace(" ","-").toLowerCase()}.${item.langages_frameworks_name}`}));
+            icon.append(elementCreator({tag:"p", text:`${projectOrComp.replace(" ","-").toLowerCase()}`}));
             const folderIcon=icon.cloneNode(true);
             iconsContainer.append(icon);
             projectFolder.append(folderIcon);

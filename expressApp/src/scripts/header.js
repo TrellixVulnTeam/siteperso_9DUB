@@ -43,9 +43,9 @@ class HeaderSite extends HTMLElement{
         }
         const buttons=["Acceuil","A propos","Projet","Contact"];
         this.append(elementCreator({tag:"nav"}));
-        this.firstChild.append(elementCreator({tag:"ul",/*classList:"columns"*/}));
+        this.firstChild.append(elementCreator({tag:"ul"}));
         buttons.forEach((item,i) => {
-            this.firstChild.firstChild.append(elementCreator({tag:"li", /*classList:"column",*/}));
+            this.firstChild.firstChild.append(elementCreator({tag:"li"}));
             this.firstChild.firstChild.children[i].append(elementCreator({tag: "a",text: item, href:`${localAdress}${item.replace(" ","").toLowerCase()}` }));
             i++;
         });
@@ -60,21 +60,17 @@ class HeaderSite extends HTMLElement{
         }
         fetch(`${localAdress}header`,{
             method:"GET",
-            /*headers:{
-
-            },
-            credentials: true,*/
         })
-            .then(response=>response.json())
-            .then(data=>data)
-            .then((data)=>data.map(item=>{
-                this.append(elementCreator({tag: "div", classList:"header-info-cntainer"}));
-                this.children[1].append(elementCreator( {tag:"h2", text:`${item.first_name} ${item.name}`}));
-                this.children[1].append(elementCreator({tag:"h1",text:item.work}));
-                this.children[1].append(elementCreator({tag:"h3",text:item.front_back}));
-                this.children[1].append(elementCreator({tag:"div", classList: "header-line"}));
-                })
-            );
+        .then(response=>response.json())
+        .then(data=>data)
+        .then((data)=>data.map(item=>{
+            this.append(elementCreator({tag: "div", classList:"header-info-cntainer"}));
+            this.children[1].append(elementCreator( {tag:"h2", text:`${item.first_name} ${item.name}`}));
+            this.children[1].append(elementCreator({tag:"h1",text:item.work}));
+            this.children[1].append(elementCreator({tag:"h3",text:item.front_back}));
+            this.children[1].append(elementCreator({tag:"div", classList: "header-line"}));
+            })
+        );
     }
 }
 window.customElements.define("header-site", HeaderSite, {extends: "header"});

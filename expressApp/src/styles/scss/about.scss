@@ -1,26 +1,19 @@
 @import "langage-slider-button.scss";
 @keyframes fadeInFuck{from{opacity:0.25;}to{opacity:1;}};
 @keyframes fadeOutFuck{from{opacity:1;}to{opacity:0.25;}}
-//@include desktop-screen-medium{}
-//@include mobile-screens-small{}
 $letter-fs: 3rem;
 .about-body{
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), url("../../images/cssAssets/background-about.jpg")/*rgba(0, 0, 0, 0.44)*/  no-repeat;
     background-size: cover;
     background-position: center;
-    //height: 150rem;
     display: flex;
     flex-direction: column;
-    //justify-content: space-around;
-    @include tablets-screens{
-        //height: 190rem;
-    }
-    @include mobile-screens-small{
-        //height: 210rem;
-    }
     .letter{
         margin-top: 2rem;
         @include desktop-screen-medium{
+            width: 70%;
+        }
+        @include desktops-screens-small{
             width: 70%;
         }
         @include tablets-laptops-screens{
@@ -48,6 +41,13 @@ $letter-fs: 3rem;
     section{
         margin-top: 2rem;
         @include desktop-screen-medium{
+            width: 75%;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @include desktops-screens-small{
             width: 75%;
             margin-top: 2rem;
             display: flex;
@@ -110,6 +110,9 @@ $letter-fs: 3rem;
             @include desktop-screen-medium{
                 width: 76%;
             }
+            @include desktops-screens-small{
+                width: 68rem;
+            }
             @include tablets-laptops-screens{
                 width: 45rem;
             }
@@ -136,6 +139,9 @@ $letter-fs: 3rem;
                 @include desktop-screen-medium{
                     width: 25rem;
                 }
+                @include desktops-screens-small{
+                    width: 25rem;
+                }
                 @include tablets-laptops-screens{
                     width: 25rem;
                 }
@@ -149,6 +155,9 @@ $letter-fs: 3rem;
                     height: auto;
                     margin: auto;
                     @include desktop-screen-medium{
+                        width: 20rem;
+                    }
+                    @include desktops-screens-small{
                         width: 20rem;
                     }
                     @include tablets-laptops-screens{

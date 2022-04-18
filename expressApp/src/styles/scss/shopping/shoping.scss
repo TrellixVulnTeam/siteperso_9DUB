@@ -237,6 +237,11 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                                         color: $shopping-font-color
                                     }
                                 }
+                                .cart-count-container{
+                                    p{
+                                        color: $shopping-font-color;
+                                    }
+                                }
                                 .cart-buttons-container{
                                     div{
                                         color: $shopping-font-color
