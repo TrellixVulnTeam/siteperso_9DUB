@@ -16,13 +16,16 @@
             width: 85%;
         }
         @include mobile-screens-small{
-
+            width: 85%;
         }
         .tab-container{
             display: flex;
             width: 45%;
             @include tablets-screens{
                 width: 60%;
+            }
+            @include mobile-screens-small{
+                width: 80%;
             }
             div{
                 background-color:  rgba(76, 74, 75, 1);/*rgba(18, 18, 19, 0.8);*/
@@ -35,7 +38,11 @@
                 border-top-left-radius: 0.5rem;
                 border-top-right-radius: 0.5rem;
                 font-size: 2rem;
+                cursor: pointer;
                 @include tablets-screens{
+                    width: 70%;
+                }
+                @include mobile-screens-small{
                     width: 70%;
                 }
             }
@@ -54,6 +61,9 @@
             align-items: center;
             justify-content: space-around;
             @include tablets-screens{
+                height: 60rem;
+            }
+            @include mobile-screens-small{
                 height: 60rem;
             }
             .path-bar-container{
@@ -79,6 +89,10 @@
                 display: flex;
                 width: 100%;
                 @include tablets-screens{
+                    height: 45rem;
+                    width: 90%;
+                }
+                @include mobile-screens-small{
                     height: 45rem;
                     width: 90%;
                 }
@@ -120,19 +134,33 @@
                         overflow: hidden;
                         animation: fadeIn 1.25s linear;
                     }
+                    @include mobile-screens-small{
+                        margin-left:0%;
+                        width: 25rem;
+                        border-top-right-radius: 0rem;
+                        border-bottom-right-radius: 0rem;
+                        height: 45rem;
+                        overflow: hidden;
+                        animation: fadeIn 1.25s linear;
+                    }
                     div{
                         margin-left: 2%;
                         h3{
                             font-size: 2rem;
                             text-align: center;
+                            //background-color: yellow;
                         }
                         div{
+
                             display: flex;
                             align-items: center;
                             gap: 1rem;
                             height: 3rem;
                             @include tablets-screens{
                                 margin-top: 2.5%;
+                            }
+                            @include mobile-screens-small{
+                                margin-top: 6%;
                             }
                             img{
                                 width: 2rem;
@@ -157,13 +185,17 @@
                                 a{
                                     //background-color: green;
                                     text-decoration: none;
-                                    margin-left: 95%;
+                                    margin-left: 50%;
                                     display: flex;
                                     align-items: center;
                                     height: 2rem;
                                     //overflow: hidden;
                                     @include tablets-screens{
                                         margin-left: 50%;
+                                    }
+                                    @include mobile-screens-small{
+                                        margin-left: 80%;
+                                        margin-top: 1.5rem;
                                     }
                                     p{
                                         //border: $box-show;
@@ -190,6 +222,13 @@
                         margin-left: 10%;
                         overflow: scroll;
                     }
+                    @include mobile-screens-small{
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 5%;
+                        margin-left: 10%;
+                        overflow: scroll;
+                    }
                     a{
                         //border: $box-show;
                         text-decoration: none;
@@ -200,6 +239,11 @@
                         width: 15rem;
                         height: 15rem;
                         @include tablets-screens{
+                            margin-left: 5%;
+                            width: 15rem;
+                            height: 10rem;
+                        }
+                        @include mobile-screens-small{
                             margin-left: 5%;
                             width: 15rem;
                             height: 10rem;

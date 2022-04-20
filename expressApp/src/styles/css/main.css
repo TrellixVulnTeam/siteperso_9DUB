@@ -1267,6 +1267,11 @@ header .header-line {
     width: 85%;
   }
 }
+@media (max-width: 480px) {
+  .project-body #project-main {
+    width: 85%;
+  }
+}
 .project-body #project-main .tab-container {
   display: flex;
   width: 45%;
@@ -1274,6 +1279,11 @@ header .header-line {
 @media (min-width: 481px) and (max-width: 768px) {
   .project-body #project-main .tab-container {
     width: 60%;
+  }
+}
+@media (max-width: 480px) {
+  .project-body #project-main .tab-container {
+    width: 80%;
   }
 }
 .project-body #project-main .tab-container div {
@@ -1288,8 +1298,14 @@ header .header-line {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   font-size: 2rem;
+  cursor: pointer;
 }
 @media (min-width: 481px) and (max-width: 768px) {
+  .project-body #project-main .tab-container div {
+    width: 70%;
+  }
+}
+@media (max-width: 480px) {
   .project-body #project-main .tab-container div {
     width: 70%;
   }
@@ -1308,6 +1324,11 @@ header .header-line {
   justify-content: space-around;
 }
 @media (min-width: 481px) and (max-width: 768px) {
+  .project-body #project-main .project-main-container {
+    height: 60rem;
+  }
+}
+@media (max-width: 480px) {
   .project-body #project-main .project-main-container {
     height: 60rem;
   }
@@ -1335,6 +1356,12 @@ header .header-line {
   width: 100%;
 }
 @media (min-width: 481px) and (max-width: 768px) {
+  .project-body #project-main .project-main-container .icons-lateralNav-container {
+    height: 45rem;
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
   .project-body #project-main .project-main-container .icons-lateralNav-container {
     height: 45rem;
     width: 90%;
@@ -1402,6 +1429,17 @@ header .header-line {
     animation: fadeIn 1.25s linear;
   }
 }
+@media (max-width: 480px) {
+  .project-body #project-main .project-main-container .icons-lateralNav-container aside {
+    margin-left: 0%;
+    width: 25rem;
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    height: 45rem;
+    overflow: hidden;
+    animation: fadeIn 1.25s linear;
+  }
+}
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div {
   margin-left: 2%;
 }
@@ -1418,6 +1456,11 @@ header .header-line {
 @media (min-width: 481px) and (max-width: 768px) {
   .project-body #project-main .project-main-container .icons-lateralNav-container aside div div {
     margin-top: 2.5%;
+  }
+}
+@media (max-width: 480px) {
+  .project-body #project-main .project-main-container .icons-lateralNav-container aside div div {
+    margin-top: 6%;
   }
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div div img {
@@ -1442,7 +1485,7 @@ header .header-line {
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components a, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects a {
   text-decoration: none;
-  margin-left: 95%;
+  margin-left: 50%;
   display: flex;
   align-items: center;
   height: 2rem;
@@ -1450,6 +1493,12 @@ header .header-line {
 @media (min-width: 481px) and (max-width: 768px) {
   .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components a, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects a {
     margin-left: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components a, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects a {
+    margin-left: 80%;
+    margin-top: 1.5rem;
   }
 }
 .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #components a p, .project-body #project-main .project-main-container .icons-lateralNav-container aside div .folder #projects a p {
@@ -1472,6 +1521,15 @@ header .header-line {
     overflow: scroll;
   }
 }
+@media (max-width: 480px) {
+  .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin-left: 10%;
+    overflow: scroll;
+  }
+}
 .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a {
   text-decoration: none;
   display: flex;
@@ -1482,6 +1540,13 @@ header .header-line {
   height: 15rem;
 }
 @media (min-width: 481px) and (max-width: 768px) {
+  .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a {
+    margin-left: 5%;
+    width: 15rem;
+    height: 10rem;
+  }
+}
+@media (max-width: 480px) {
   .project-body #project-main .project-main-container .icons-lateralNav-container .icons-container a {
     margin-left: 5%;
     width: 15rem;
@@ -1888,10 +1953,46 @@ header .header-line {
   color: #14bbe4;
   transition: linear 0.5s;
 }
+.shoping-body #shoping-root .cart-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+.shoping-body #shoping-root .cart-main .cart-band {
+  width: 75%;
+  height: 10rem;
+  border-radius: 1.5rem;
+  background-color: #14bbe4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shoping-body #shoping-root .cart-main .cart-band h2 {
+  color: white;
+  font-size: 3rem;
+}
+.shoping-body #shoping-root .cart-main .cart-list-container {
+  border: 1px solid green;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.shoping-body #shoping-root .cart-main .cart-list-container .cart-columns {
+  border: 1px solid blue;
+  display: flex;
+  width: 100%;
+}
+.shoping-body #shoping-root .cart-main .cart-list-container .cart-columns p {
+  color: black;
+}
 .shoping-body #shoping-root .cart-main .cart-list-container .cart-list ul li article .cart-product-info-container h2 {
   color: black;
 }
 .shoping-body #shoping-root .cart-main .cart-list-container .cart-list ul li article .cart-product-info-container h3 {
+  color: black;
+}
+.shoping-body #shoping-root .cart-main .cart-list-container .cart-list ul li article .cart-count-container p {
   color: black;
 }
 .shoping-body #shoping-root .cart-main .cart-list-container .cart-list ul li article .cart-buttons-container div {

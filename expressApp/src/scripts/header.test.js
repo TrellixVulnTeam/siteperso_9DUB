@@ -20,6 +20,13 @@ function elementCreator({tag,text= null, classList, eventFunction, href, src, al
     }
 }
 
+//alert(window.navigator.platform);
+/*if (window.navigator.platform==="iPad" || window.navigator.platform==="iPhone" ){
+    alert("ok");
+} else if (window.navigator.platform.split(" ")[0]==="Linux") {
+    alert('linux')
+}*/
+
 const headerObj={
     header: document.createElement("header"),
     buttons: ["Acceuil","A propos","Projet","Contact"],
