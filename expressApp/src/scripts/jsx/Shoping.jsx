@@ -22,7 +22,6 @@ class Shoping extends React.Component{
         console.log(productExist);
         if (productExist){
             this.setState({
-                //cart: this.state.cart.map(item=>item.product_id===product.product_id? item.count++:null)
                 cart: this.state.cart.map(item=>{
                     if(item.product_id===product.product_id){
                         item.count++
@@ -37,26 +36,26 @@ class Shoping extends React.Component{
             });
         };
     } handleRemoveProduct(product){
-        console.log("here");
         this.state.cart.map(item=>{
             if(item.product_id===product.product_id && item.count>1){
-                item.count--
+                item.count-=1
+                console.log(item);
                 return this.setState({
                     cart: this.state.cart.map(item=>{
                         if(item.product_id===product.product_id){
+                            console.log(item);
+                            console.log(product);
                             return product
                         }
                         return item
                     })
                 })
-            } else {
-                console.log("here");
+            } else if(item.product_id===product.product_id && item.count===1){
                 return this.setState({
                     cart:this.state.cart.filter(item=>item.product_id!==product.product_id)
                 })
             }
         });
-        console.log(this.state.cart);
     } handleNav(event){
         switch(event.target.id){
             case "products":
@@ -91,20 +90,21 @@ class Shoping extends React.Component{
         }
     } render(){
         console.log(this.state.cart);
-        const productJsx= this.state.productsData.map(product=>(
-            <Product product={product} addToCart={()=>this.handleAddProduct(product)} displayProduct={()=>this.handleDisplayProduct(product)}/>
+        const productJsx= this.state.productsData.map((product,key)=>(
+            <Product key={key} product={product} addToCart={()=>this.handleAddProduct(product)} displayProduct={()=>this.handleDisplayProduct(product)}/>
         ));
+        const testJsx=<p>TEST</p>
         return(
             <React.Fragment>
-                <header>
+                <header className="shopping-header">
                     <h1>SHOPING</h1>
-                    <nav>
+                    <nav className="shopping-nav">
                         <ul onClick={(event)=>this.handleNav(event)}>
                             <li>
-                                <p id="products">Produits</p>
+                                <p id="products">Products</p>
                             </li>
                             <li>
-                                <p id="cart">Panier</p>
+                                <p id="cart">Cart</p>
                             </li>
                         </ul>
                     </nav>

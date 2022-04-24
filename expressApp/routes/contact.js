@@ -23,7 +23,7 @@ router.post("/send-form",async function(req,res,next){
     });
     const notification={
         from: process.env.MAIL_USER_NAME,
-        to: "alexandresage3556@gmail.com",
+        to: "alexandresage56@gmail.com",
         subject: `Demande de contact de: ${req.body.first_name} ${req.body.name}`,
         html: `<div>
                     <p>Nom: ${req.body.name}</p>
@@ -38,15 +38,15 @@ router.post("/send-form",async function(req,res,next){
         to: req.body.email,
         subject: "Confirmation demande de contact",
         html:`
-                <div style="
+                <div  style="
                 border: 1px solid black;
-                width: 35%;
+                width: 75%;
                 heigth: 250px;
-                border-radius: 5px">
+                border-radius: 5px;">
                     <p style="
                     color: blue;
                     font-size: 1.6rem;
-                    ">Hello ${req.body.name}</p>
+                    ">Bonjour ${req.body["first-name"]} ${req.body.name} j'ai bien reçu votre demande de contact, je vous remercie pour l'intéret que vous portez à mon projet professionel, je vous recontacterais dans les délais les plus bref \n Cordialement \n Alexandre Sage</p>
                 </div>`
     }
     /**/

@@ -12,7 +12,7 @@ $landing-page-fs: 3rem;
     background-size: cover;
     background-clip: border-box;
     height: auto;
-    height: 100vh;
+    min-height: 100vh;
     @include mobile-screens-small{
         height: auto;
         display: flex;

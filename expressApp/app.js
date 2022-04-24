@@ -6,6 +6,8 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const contactRouter = require('./routes/contact');
 const componentRouter= require("./routes/components");
+//A ajouter en prod
+const projectRouter=require("./routes/project");
 const bodyParser = require('body-parser');
 const cors= require("cors");
 const multer = require('multer');
@@ -70,6 +72,8 @@ app.use('/src', express.static(path.join(__dirname, 'src')));
 app.use('/', indexRouter);
 app.use("/component", componentRouter);
 app.use("/contact", contactRouter);
+//A ajouter en prod
+app.use('/project',projectRouter);
 /*FIN ROUTE ET FICHIER STATIQUE*/
 app.use(function(req, res, next) {
   next(createError(404));
