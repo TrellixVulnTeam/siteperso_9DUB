@@ -16,7 +16,7 @@ module.exports = router;
 
 
 router.get("/",(req,res,next)=>res.redirect("acceuil"))
-router.get('/acceuil', function(req, res, next) {
+router.get('/accueil', function(req, res, next) {
     const dataBase= req.app.locals.db;
     const sqlRequestHeader=`SELECT * FROM my_info`;
     dataBase.query(sqlRequestHeader,[],(err, my_info)=>{
@@ -43,7 +43,7 @@ router.get("/langages",function(req,res,next){
 })
 
 router.get("/download",(req,res,next)=>{
-    res.download(path.resolve("./src/downloads/cv.txt") ,err=>console.log(err))
+    res.download(path.resolve("./src/downloads/CV-Alexandre-Sage.pdf") ,err=>console.log(err))
 })
 module.exports = router;
 

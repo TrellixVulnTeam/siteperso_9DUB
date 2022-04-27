@@ -155,25 +155,25 @@
                         div{
                             @include desktop-screen-medium{
                                 display: flex;
-                                justify-content: space-around;
+                                align-items: center;
                                 width: 95%;
                             }
                             @include desktops-screens-small{
                                 display: flex;
-                                justify-content: space-around;
+                                align-items: center;
                                 width: 95%;
                             }
                             @include tablets-laptops-screens{
                                 width: 100%;
                                 align-items: center;
                                 display: flex;
-                                justify-content: space-around;
+                                align-items: center;
                             }
                             @include tablets-screens{
                                 width: 100%;
                                 align-items: center;
                                 display: flex;
-                                justify-content: space-around;
+                                //justify-content: space-around;
                             }
                             @include mobile-screens-small{
                                 width: 100%;
@@ -196,19 +196,24 @@
                             border: none;
                             font-size: 2rem;
                             border-radius: 0.5rem;
+
                             @include desktop-screen-medium{
                                 width: 80%;
+                                margin-left: 2.5%;
                             }
                             @include desktops-screens-small{
                                 width: 70%;
+                                margin-left: 2.5%;
                             }
                             @include tablets-laptops-screens{
                                 height: 4rem;
                                 width: 75%;
+                                margin-left: 2.5%;
                             }
                             @include tablets-screens{
                                 height: 4rem;
                                 width: 75%;
+                                margin-left: 2.5%;
                             }
                             @include mobile-screens-small{
                                 height: 4rem;

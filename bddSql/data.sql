@@ -1,7 +1,7 @@
 USE portfolio;
 
 INSERT INTO my_info (name, first_name, description, front_back, work, email)
-VALUES  ("Sage", "Alexandre", "Développeur web et mobile junior je souhaite à terme devenir développeur full-stack spécialisé dans le développement de site web et d'applications mobile..", "Front-end & Back-end", "Developpeur web et mobile", "alexandresage56@gmail.com");
+VALUES  ("Sage", "Alexandre", "Développeur web et mobile junior je souhaite à terme devenir développeur full-stack spécialisé dans le développement de site web et d'applications mobile.", "Front-end & Back-end", "Développeur web et mobile", "alexandresage56@gmail.com");
 
 INSERT INTO about (about_paragraph)
 VALUES (" Terminant une formation de développeur Web et Mobile je suis à la recherche d'un poste de développeur Web et Mobile Junior pour parfaire mes compétences."),
@@ -26,15 +26,14 @@ VALUES
 
 INSERT INTO my_project (project_name,project_path,project_langage_id)
 VALUES
-("Projet 1", "#", 1),
-("Projet 2", "#", 2),
-("Projet 3", "#", 3);
+("Test Projet 1", "#", 1);
+
 
 INSERT INTO my_component (component_name,component_path,component_langage_id)
 VALUES
 ("image-carousel", "component/image-carousel", 3),
-("shopping-cart", "component/shopping", 3),
-("Composant 3", "#", 1);
+("shopping-cart", "component/shopping", 3);
+
 
 INSERT INTO carousel_component_images (image_path)
 VALUES

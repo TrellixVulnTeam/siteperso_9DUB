@@ -1,5 +1,9 @@
 @import "btn-portfolio.scss";
-
+/*@include desktop-screen-medium{}
+@include desktops-screens-small{}
+@include tablets-laptops-screens{}
+@include tablets-screens{}
+@include mobile-screens-small{}*/
 .contact-pop-up{
     position: absolute;
     margin: auto;
@@ -14,6 +18,12 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 0.5rem;
+    @include tablets-screens{
+        width: 85%;
+    }
+    @include mobile-screens-small{
+        width: 85%;
+    }
     p{
         width: 40rem;
         text-align: center;

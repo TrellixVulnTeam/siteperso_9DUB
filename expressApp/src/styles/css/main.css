@@ -879,14 +879,14 @@ header .header-line {
 @media (min-width: 1200px) {
   .contact-body #contact-main form .form-data-container .form-container div {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
     width: 95%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px) {
   .contact-body #contact-main form .form-data-container .form-container div {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
     width: 95%;
   }
 }
@@ -895,7 +895,7 @@ header .header-line {
     width: 100%;
     align-items: center;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -903,7 +903,6 @@ header .header-line {
     width: 100%;
     align-items: center;
     display: flex;
-    justify-content: space-around;
   }
 }
 @media (max-width: 480px) {
@@ -934,23 +933,27 @@ header .header-line {
 @media (min-width: 1200px) {
   .contact-body #contact-main form .form-data-container .form-container div input {
     width: 80%;
+    margin-left: 2.5%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px) {
   .contact-body #contact-main form .form-data-container .form-container div input {
     width: 70%;
+    margin-left: 2.5%;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .contact-body #contact-main form .form-data-container .form-container div input {
     height: 4rem;
     width: 75%;
+    margin-left: 2.5%;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .contact-body #contact-main form .form-data-container .form-container div input {
     height: 4rem;
     width: 75%;
+    margin-left: 2.5%;
   }
 }
 @media (max-width: 480px) {
@@ -1139,6 +1142,11 @@ header .header-line {
   }
 }
 
+/*@include desktop-screen-medium{}
+@include desktops-screens-small{}
+@include tablets-laptops-screens{}
+@include tablets-screens{}
+@include mobile-screens-small{}*/
 .contact-pop-up {
   position: absolute;
   margin: auto;
@@ -1153,6 +1161,16 @@ header .header-line {
   justify-content: space-around;
   align-items: center;
   border-radius: 0.5rem;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .contact-pop-up {
+    width: 85%;
+  }
+}
+@media (max-width: 480px) {
+  .contact-pop-up {
+    width: 85%;
+  }
 }
 .contact-pop-up p {
   width: 40rem;
@@ -1314,6 +1332,9 @@ header .header-line {
   .project-body #project-main .tab-container div {
     width: 70%;
   }
+}
+.project-body #project-main .tab-container .not-selected {
+  opacity: 0.5;
 }
 .project-body #project-main .project-main-container {
   background-color: #4c4a4b;
@@ -1584,6 +1605,11 @@ header .header-line {
     opacity: 0;
   }
 }
+/*@include desktop-screen-medium{}
+@include desktops-screens-small{}
+@include tablets-laptops-screens{}
+@include tablets-screens{}
+@include mobile-screens-small{}*/
 .carousel-body {
   background: #0a0a0a;
   background: -webkit-linear-gradient(227deg, #0a0a0a 0%, #4d5050 50%, #0f0f0f 100%);
@@ -1594,6 +1620,16 @@ header .header-line {
   width: 70%;
   height: 65rem;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root {
+    width: 100%;
+  }
+}
 .carousel-body #carousel-root .image-carousel-main-container {
   display: flex;
   flex-direction: column;
@@ -1602,6 +1638,11 @@ header .header-line {
   animation: fadeIn ease-in 1;
   animation-fill-mode: forwards;
   animation-duration: 2s;
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container {
+    overflow: hidden;
+  }
 }
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container {
   display: flex;
@@ -1615,6 +1656,18 @@ header .header-line {
   width: 8rem;
   display: block;
 }
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div {
+    display: flex;
+    width: 0%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div {
+    display: flex;
+    width: 0%;
+  }
+}
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .previous-button {
   height: 8rem;
   width: 8rem;
@@ -1624,6 +1677,22 @@ header .header-line {
   transform: rotate(135deg);
   transition: border-width 150ms ease-in-out;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .previous-button {
+    position: absolute;
+    z-index: 1;
+    left: 8.5%;
+    align-self: center;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .previous-button {
+    position: absolute;
+    z-index: 1;
+    left: 8.5%;
+    align-self: center;
+  }
+}
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .previous-button:hover {
   border-bottom-width: 1rem;
   border-right-width: 0.4rem;
@@ -1631,6 +1700,18 @@ header .header-line {
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container div {
   display: block;
   width: 8rem;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div {
+    display: flex;
+    width: 0%;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div {
+    width: 0%;
+    display: flex;
+  }
 }
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .next-button {
   height: 8rem;
@@ -1640,6 +1721,22 @@ header .header-line {
   border-width: 0rem 0.1rem 0.1rem 0rem;
   transform: rotate(-45deg);
   transition: border-width 150ms ease-in-out;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .next-button {
+    position: absolute;
+    z-index: 1;
+    right: 8.5%;
+    align-self: center;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .next-button {
+    position: absolute;
+    z-index: 1;
+    right: 8.5%;
+    align-self: center;
+  }
 }
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container div .next-button:hover {
   border-bottom-width: 1rem;
@@ -1651,6 +1748,16 @@ header .header-line {
   overflow: hidden;
   max-height: 45rem;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container {
+    width: 100%;
+  }
+}
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container img {
   object-fit: cover;
   border-radius: 0.5rem;
@@ -1658,6 +1765,16 @@ header .header-line {
   transform: scale(1, 1);
   width: 100%;
   height: 45rem;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container img {
+    height: 50rem;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container img {
+    height: 50rem;
+  }
 }
 .carousel-body #carousel-root .image-carousel-main-container .image-button-container .image-container .carousel-image {
   animation: fadeIn ease-in-out 1;
@@ -1673,17 +1790,43 @@ header .header-line {
 }
 .carousel-body #carousel-root .image-carousel-main-container .frame-container {
   display: flex;
-  overflow: hidden;
   justify-content: space-around;
   align-content: space-between;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .frame-container {
+    overflow: scroll;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .frame-container {
+    overflow: scroll;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
 .carousel-body #carousel-root .image-carousel-main-container .frame-container div {
   width: 10%;
-  overflow: hidden;
   height: 8rem;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-body #carousel-root .image-carousel-main-container .frame-container div {
+    width: 25rem;
+    height: 10rem;
+    margin-left: 2.5%;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-body #carousel-root .image-carousel-main-container .frame-container div {
+    width: 25rem;
+    height: 10rem;
+    margin-left: 2.5%;
+  }
+}
 .carousel-body #carousel-root .image-carousel-main-container .frame-container div img {
-  width: 100%;
+  width: 10rem;
   height: 8rem;
   object-fit: cover;
   object-position: center;
@@ -1796,6 +1939,11 @@ header .header-line {
   align-items: center;
   border-radius: 1.5rem;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root header {
+    width: 95%;
+  }
+}
 @media (max-width: 480px) {
   .shoping-body #shoping-root header {
     box-shadow: -0.1px -0.2px 3.3px rgba(0, 0, 0, 0.038), 1px 1.7px 10.3px rgba(0, 0, 0, 0.055), 4.1px 7px 24.4px rgba(0, 0, 0, 0.072), 17px 29px 80px rgba(0, 0, 0, 0.11);
@@ -1879,6 +2027,11 @@ header .header-line {
   align-content: space-around;
   justify-content: space-around;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .shopping-list-main {
+    width: 90%;
+  }
+}
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .shopping-list-main {
     height: auto;
@@ -1899,6 +2052,11 @@ header .header-line {
   align-items: center;
   width: 30%;
   height: 45rem;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .shopping-list-main article {
+    width: 30%;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .shopping-list-main article {
@@ -1926,6 +2084,11 @@ header .header-line {
   object-position: center;
   border: 0.1px solid rgba(172, 172, 172, 0.2);
   border-radius: 1.5rem;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .shopping-list-main article .product-image {
+    width: 65%;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .shopping-list-main article .product-image {
@@ -1978,6 +2141,7 @@ header .header-line {
   margin-bottom: 5%;
 }
 .shoping-body #shoping-root .shopping-list-main article .button-container div {
+  cursor: pointer;
   color: white;
   font-size: 1.6rem;
   background: #14bbe4;
@@ -1997,16 +2161,21 @@ header .header-line {
   transition: linear 0.5s;
 }
 .shoping-body #shoping-root .product-main {
-  width: 75%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .product-main {
+    width: 90%;
+  }
+}
 .shoping-body #shoping-root .product-main article {
   margin-top: 7.5%;
   margin-bottom: 7.5%;
-  width: 85%;
+  width: 90%;
   height: 45rem;
 }
 @media (min-width: 1200px) {
@@ -2016,6 +2185,27 @@ header .header-line {
     margin-top: 7.5%;
     margin-bottom: 7.5%;
     width: 85%;
+    height: 45rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .shoping-body #shoping-root .product-main article {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+    width: 85%;
+    height: 45rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .product-main article {
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 45rem;
   }
 }
@@ -2035,12 +2225,17 @@ header .header-line {
   }
 }
 .shoping-body #shoping-root .product-main article .product-image {
-  width: 40%;
+  width: 50%;
   align-self: center;
   border: 0.1px solid rgba(172, 172, 172, 0.2);
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: -0.1px -0.2px 3.3px rgba(0, 0, 0, 0.038), 1px 1.7px 10.3px rgba(0, 0, 0, 0.055), 4.1px 7px 24.4px rgba(0, 0, 0, 0.072), 17px 29px 80px rgba(0, 0, 0, 0.11);
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .product-main article .product-image {
+    width: 45%;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .product-main article .product-image {
@@ -2063,6 +2258,12 @@ header .header-line {
   align-self: center;
   align-items: flex-start;
   height: 30rem;
+  margin-bottom: 7.5%;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .product-main article .product-info-container {
+    margin-bottom: 7.5%;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .product-main article .product-info-container {
@@ -2106,20 +2307,34 @@ header .header-line {
   color: black;
   font-size: 1.8rem;
 }
-.shoping-body #shoping-root .product-main article .button-container {
-  /*width: 35%;
-  position: absolute;
-  margin-left: 36%;
-  display: flex;
-  align-self: flex-end;*/
-}
 @media (min-width: 1200px) {
+  .shoping-body #shoping-root .product-main article .button-container {
+    width: 35%;
+    position: absolute;
+    margin-left: 40%;
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 1%;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .shoping-body #shoping-root .product-main article .button-container {
+    width: 35%;
+    position: absolute;
+    margin-left: 40%;
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 2%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
   .shoping-body #shoping-root .product-main article .button-container {
     width: 35%;
     position: absolute;
     margin-left: 36%;
     display: flex;
     align-self: flex-end;
+    margin-bottom: 3.5%;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -2165,6 +2380,16 @@ header .header-line {
   width: 75%;
   height: 90rem;
 }
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .shoping-body #shoping-root .cart-main {
+    width: 90%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .cart-main {
+    width: 90%;
+  }
+}
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .cart-main {
     width: 90%;
@@ -2209,6 +2434,11 @@ header .header-line {
   border-radius: 1.5rem;
   margin-top: 2.5%;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .cart-main .cart-list-container {
+    width: 90%;
+  }
+}
 @media (min-width: 481px) and (max-width: 768px) {
   .shoping-body #shoping-root .cart-main .cart-list-container {
     width: 95%;
@@ -2244,9 +2474,19 @@ header .header-line {
 .shoping-body #shoping-root .cart-main .cart-list-container .cart-columns .price {
   margin-left: 14%;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .cart-main .cart-list-container .cart-columns .price {
+    margin-left: 12.5%;
+  }
+}
 @media (max-width: 480px) {
   .shoping-body #shoping-root .cart-main .cart-list-container .cart-columns .price {
     display: none;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shoping-body #shoping-root .cart-main .cart-list-container .cart-list {
+    width: 95%;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -2422,6 +2662,7 @@ header .header-line {
 .shoping-body #shoping-root .cart-main .cart-list-container .cart-list ul li article p {
   font-size: 2rem;
   color: black;
+  margin-right: -4.5%;
 }
 .shoping-body #shoping-root .cart-main .cart-list-container .button-price {
   box-shadow: -0.1px -0.2px 3.3px rgba(0, 0, 0, 0.038), 1px 1.7px 10.3px rgba(0, 0, 0, 0.055), 4.1px 7px 24.4px rgba(0, 0, 0, 0.072), 17px 29px 80px rgba(0, 0, 0, 0.11);

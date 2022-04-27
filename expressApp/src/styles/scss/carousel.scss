@@ -1,7 +1,11 @@
 /*VAR*/
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}};
 @keyframes fadeOut{from{opacity: 1;}to{opacity:0; }};
-
+/*@include desktop-screen-medium{}
+@include desktops-screens-small{}
+@include tablets-laptops-screens{}
+@include tablets-screens{}
+@include mobile-screens-small{}*/
 .carousel-body{
     background: rgb(10,10,10);
     background: -webkit-linear-gradient(227deg, rgba(10,10,10,1) 0%, rgba(77,80,80,1) 50%, rgba(15,15,15,1) 100%);
@@ -10,6 +14,12 @@
     #carousel-root{
         width: 70%;
         height: 65rem;
+        @include tablets-screens{
+            width: 100%;
+        }
+        @include mobile-screens-small{
+            width: 100%;
+        }
         .image-carousel-main-container{
             display: flex;
             flex-direction: column;
@@ -18,6 +28,10 @@
             animation: fadeIn ease-in 1;
             animation-fill-mode: forwards;
             animation-duration: 2s;
+
+            @include mobile-screens-small{
+                overflow: hidden;
+            }
             .image-button-container{
                 display: flex;
                 align-items: center;
@@ -25,9 +39,20 @@
                 animation: fadeIn ease-in 1;
                 animation-fill-mode: forwards;
                 animation-duration: 2s;
+                @include mobile-screens-small{
+                    //border: 1px solid black;
+                }
                 div{
                     width: 8rem;
                     display: block;
+                    @include mobile-screens-small{
+                        display: flex;
+                        width: 0%;
+                    }
+                    @include tablets-screens{
+                        display: flex;
+                        width: 0%;
+                    }
                     .previous-button{
                         height: 8rem;
                         width: 8rem;
@@ -36,6 +61,18 @@
                         border-width: 0rem 0.1rem 0.1rem 0rem;
                         transform: rotate(135deg);
                         transition: border-width 150ms ease-in-out;
+                        @include tablets-screens{
+                            position: absolute;
+                            z-index: 1;
+                            left: 8.5%;
+                            align-self: center;
+                        }
+                        @include mobile-screens-small{
+                            position: absolute;
+                            z-index: 1;
+                            left: 8.5%;
+                            align-self: center;
+                        }
                         &:hover{
                             border-bottom-width: 1rem;
                             border-right-width: 0.4rem;
@@ -45,6 +82,15 @@
                 div{
                     display: block;
                     width: 8rem;
+                    @include tablets-screens{
+                        display: flex;
+                        width: 0%;
+                    }
+                    @include mobile-screens-small{
+                        width: 0%;
+                        display: flex;
+                    }
+
                     .next-button{
                         height: 8rem;
                         width: 8rem;
@@ -53,6 +99,18 @@
                         border-width: 0rem 0.1rem 0.1rem 0rem;
                         transform: rotate(-45deg);
                         transition: border-width 150ms ease-in-out;
+                        @include tablets-screens{
+                            position: absolute;
+                            z-index: 1;
+                            right: 8.5%;
+                            align-self: center;
+                        }
+                        @include mobile-screens-small{
+                            position: absolute;
+                            z-index: 1;
+                            right: 8.5%;
+                            align-self: center;
+                        }
                         &:hover{
                             border-bottom-width: 1rem;
                             border-right-width: 0.4rem;
@@ -64,6 +122,13 @@
                     height: auto;
                     overflow: hidden;
                     max-height: 45rem;
+                    @include tablets-screens{
+                        width: 100%;
+                    }
+                    @include mobile-screens-small{
+                        //border: 1px solid red;
+                        width: 100%;
+                    }
                     img{
                         object-fit: cover;
                         border-radius: 0.5rem;
@@ -71,6 +136,12 @@
                         transform: scale(1,1);
                         width: 100%;
                         height: 45rem;
+                        @include tablets-screens{
+                            height: 50rem;
+                        }
+                        @include mobile-screens-small{
+                            height: 50rem;
+                        }
                     }
                     .carousel-image{
                         animation: fadeIn ease-in-out 1;
@@ -88,20 +159,40 @@
             }
             .frame-container{
                 display: flex;
-                overflow: hidden;
+                //overflow: hidden;
                 justify-content: space-around;
                 align-content: space-between;
+                @include tablets-screens{
+                    overflow: scroll;
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+                @include mobile-screens-small{
+                    overflow: scroll;
+                    width: 100%;
+                    justify-content: flex-start;
+                }
                 div{
-
                     width: 10%;
-                    overflow: hidden;
+                    //overflow: hidden;
                     height: 8rem;
+                    @include tablets-screens{
+                        width: 25rem;
+                        height: 10rem;
+                        margin-left: 2.5%;
+                    }
+                    @include mobile-screens-small{
+                        width: 25rem;
+                        height: 10rem;
+                        margin-left: 2.5%;
+                    }
                     img{
-                        width: 100%;
+                        width: 10rem;
                         height: 8rem;
                         object-fit: cover;
                         object-position: center;
                         border-radius: 0.5rem;
+                        @include mobile-screens-small{}
                     }
                     .displayed{
                     }

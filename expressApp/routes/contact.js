@@ -27,7 +27,7 @@ router.post("/send-form",async function(req,res,next){
         subject: `Demande de contact de: ${req.body.first_name} ${req.body.name}`,
         html: `<div>
                     <p>Nom: ${req.body.name}</p>
-                    <p>Prénom: ${req.body.first_name}</p>
+                    <p>Prénom: ${req.body["first-name"]}</p>
                     <p>Mail: ${req.body.email}</p>
                     <p>Téléphone: ${req.body.phone}</p>
                     <p>Message: Nom: ${req.body.message}</p>
@@ -38,18 +38,20 @@ router.post("/send-form",async function(req,res,next){
         to: req.body.email,
         subject: "Confirmation demande de contact",
         html:`
-                <div  style="
-                border: 1px solid black;
-                width: 75%;
-                heigth: 250px;
-                border-radius: 5px;">
-                    <p style="
-                    color: blue;
-                    font-size: 1.6rem;
-                    ">Bonjour ${req.body["first-name"]} ${req.body.name} j'ai bien reçu votre demande de contact, je vous remercie pour l'intéret que vous portez à mon projet professionel, je vous recontacterais dans les délais les plus bref \n Cordialement \n Alexandre Sage</p>
+                <div>
+                    <div>
+                        <p >Bonjour ${req.body["first-name"]} ${req.body.name}, j'ai bien reçu votre demande de contact, je vous remercie pour l'intéret que vous portez à mon projet professionel, je vous recontacterais dans les délais les plus bref</p>
+                        <p>Cordialement Alexandre Sage</p>
+                    </div>
                 </div>`
     }
-    /**/
+    /*style="
+    width: 100%;
+    heigth: 35rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;"*/
     const dataBase=req.app.locals.db;
     let sucess=false;
     console.log(req.body);

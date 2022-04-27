@@ -16,7 +16,7 @@ const projectObj={
     projectData: [],
     mainContainer: elementCreator({tag:"div", classList:"project-main-container"}),
     componentsTab: elementCreator({tag: "div", classList:"components-tab", text: "Components"}),
-    projectTab: elementCreator({tag:"div", classList: "projects-tab", text: "Projects"}),
+    projectTab: elementCreator({tag:"div", classList: "projects-tab not-selected", text: "Projects"}),
     filesDeco: elementCreator({tag: "div", classList:"files-deco",text:"Files"}),
     iconsLateralNavContainer: elementCreator({tag:"div", classList:"icons-lateralNav-container"}),
     async componentFetch(){
@@ -112,6 +112,8 @@ const projectObj={
                     item[1].remove();
                 });
                 projectObj.createIcons(projectObj.projectData, "projects");
+                this.componentsTab.classList.add("not-selected")
+                this.projectTab.classList.remove("not-selected")
             break;
             case "components-button":
             case "components-tab":
@@ -125,6 +127,8 @@ const projectObj={
                     item[1].remove();
                 });
                 projectObj.createIcons(projectObj.componentData, "components");
+                this.projectTab.classList.add("not-selected")
+                this.componentsTab.classList.remove("not-selected")
             break;
         }
     },

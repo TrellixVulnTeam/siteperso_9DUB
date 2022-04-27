@@ -32,7 +32,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                 border-radius: 1.5rem;
                 @include desktop-screen-medium{}
                 @include desktops-screens-small{}
-                @include tablets-laptops-screens{}
+                @include tablets-laptops-screens{
+                    width: 95%;
+                }
                 @include tablets-screens{}
                 @include mobile-screens-small{
                     box-shadow: $shopping-box-shadow;
@@ -56,7 +58,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
             .shopping-nav{
                 @include desktop-screen-medium{}
                 @include desktops-screens-small{}
-                @include tablets-laptops-screens{}
+                @include tablets-laptops-screens{
+
+                }
                 @include tablets-screens{
                     display: flex;
                     //border: 1px solid yellow;
@@ -123,7 +127,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
             justify-content: space-around;
             @include desktop-screen-medium{}
             @include desktops-screens-small{}
-            @include tablets-laptops-screens{}
+            @include tablets-laptops-screens{
+                width: 90%;
+            }
             @include tablets-screens{
                 height: auto;
                 width: 90%;
@@ -143,7 +149,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                 height: 45rem;
                 @include desktop-screen-medium{}
                 @include desktops-screens-small{}
-                @include tablets-laptops-screens{}
+                @include tablets-laptops-screens{
+                    width: 30%;
+                }
                 @include tablets-screens{
                     width: 45%;
                     margin-top: 7.5%;
@@ -168,7 +176,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     border-radius: 1.5rem;
                     @include desktop-screen-medium{}
                     @include desktops-screens-small{}
-                    @include tablets-laptops-screens{}
+                    @include tablets-laptops-screens{
+                        width: 65%;
+                    }
                     @include tablets-screens{
                         width: 70%;
                     }
@@ -241,6 +251,7 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     @include tablets-screens{}
                     @include mobile-screens-small{}
                     div{
+                        cursor: pointer;
                         color: white;
                         font-size: 1.6rem;
                         background:$shopping-main-color;
@@ -264,22 +275,22 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
         }
         .product-main{
             //border: 1px solid yellow;
-            width: 75%;
+            width: 80%;
             display: flex;
             flex-direction: column;
             align-items: center;
             height: auto;
             @include desktop-screen-medium{}
             @include desktops-screens-small{}
-            @include tablets-laptops-screens{}
+            @include tablets-laptops-screens{
+                width: 90%;
+            }
             @include tablets-screens{}
             @include mobile-screens-small{}
             article{
                 margin-top: 7.5%;
                 margin-bottom: 7.5%;
-                width: 85%;
-                //display: flex;
-                //justify-content: space-around;
+                width: 90%;
                 height: 45rem;
                 @include desktop-screen-medium{
                     display: flex;
@@ -289,8 +300,23 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     width: 85%;
                     height: 45rem;
                 }
-                @include desktops-screens-small{}
-                @include tablets-laptops-screens{}
+                @include desktops-screens-small{
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 7.5%;
+                    margin-bottom: 7.5%;
+                    width: 85%;
+                    height: 45rem;
+                }
+                @include tablets-laptops-screens{
+                    margin-top: 7.5%;
+                    margin-bottom: 7.5%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 45rem;
+                }
                 @include tablets-screens{
                     width: 90%;
                 }
@@ -303,7 +329,7 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     margin-bottom: 7.5%;
                 }
                 .product-image{
-                    width: 40%;
+                    width: 50%;
                     align-self: center;
                     border: 0.1px solid rgba(172, 172, 172, 0.2);
                     border-radius: 1.5rem;
@@ -311,7 +337,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     box-shadow: $shopping-box-shadow;
                     @include desktop-screen-medium{}
                     @include desktops-screens-small{}
-                    @include tablets-laptops-screens{}
+                    @include tablets-laptops-screens{
+                        width: 45%;
+                    }
                     @include tablets-screens{
                         width: 100%;
                     }
@@ -335,9 +363,14 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     align-self: center;
                     align-items: flex-start;
                     height: 30rem;
+                    margin-bottom: 7.5%;
                     @include desktop-screen-medium{}
-                    @include desktops-screens-small{}
-                    @include tablets-laptops-screens{}
+                    @include desktops-screens-small{
+
+                    }
+                    @include tablets-laptops-screens{
+                        margin-bottom: 7.5%;
+                    }
                     @include tablets-screens{
                         width: 100%;
                         height: auto;
@@ -376,20 +409,30 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     }
                 }
                 .button-container{
-                    /*width: 35%;
-                    position: absolute;
-                    margin-left: 36%;
-                    display: flex;
-                    align-self: flex-end;*/
                     @include desktop-screen-medium{
+                        width: 35%;
+                        position: absolute;
+                        margin-left: 40%;
+                        display: flex;
+                        align-self: flex-end;
+                        margin-bottom: 1%;
+                    }
+                    @include desktops-screens-small{
+                        width: 35%;
+                        position: absolute;
+                        margin-left: 40%;
+                        display: flex;
+                        align-self: flex-end;
+                        margin-bottom: 2%;
+                    }
+                    @include tablets-laptops-screens{
                         width: 35%;
                         position: absolute;
                         margin-left: 36%;
                         display: flex;
                         align-self: flex-end;
+                        margin-bottom: 3.5%;
                     }
-                    @include desktops-screens-small{}
-                    @include tablets-laptops-screens{}
                     @include tablets-screens{
                         width: 35.5rem;
                         align-self: flex-end;
@@ -432,8 +475,12 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
             width: 75%;
             height: 90rem;
             @include desktop-screen-medium{}
-            @include desktops-screens-small{}
-            @include tablets-laptops-screens{}
+            @include desktops-screens-small{
+                width: 90%;
+            }
+            @include tablets-laptops-screens{
+                width: 90%;
+            }
             @include tablets-screens{
                 width: 90%;
             }
@@ -475,7 +522,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                 margin-top: 2.5%;
                 @include desktop-screen-medium{}
                 @include desktops-screens-small{}
-                @include tablets-laptops-screens{}
+                @include tablets-laptops-screens{
+                    width: 90%;
+                }
                 @include tablets-screens{
                     width: 95%;
                     height: 60rem;
@@ -515,6 +564,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                     }
                     .price{
                         margin-left:14%;
+                        @include tablets-laptops-screens{
+                            margin-left: 12.5%;
+                        }
                         @include mobile-screens-small{
                             display: none;
                         }
@@ -523,7 +575,9 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                 .cart-list{
                     @include desktop-screen-medium{}
                     @include desktops-screens-small{}
-                    @include tablets-laptops-screens{}
+                    @include tablets-laptops-screens{
+                        width: 95%;
+                    }
                     @include tablets-screens{
                         width: 95%;
                     }
@@ -704,7 +758,8 @@ $header-background:linear-gradient(90deg, rgba(23,149,191,1) 0%, rgba(20,187,228
                                 }
                                 p{
                                     font-size: 2rem;
-                                    color: $shopping-font-color
+                                    color: $shopping-font-color;
+                                    margin-right: -4.5%;
                                 }
                             }
                         }
